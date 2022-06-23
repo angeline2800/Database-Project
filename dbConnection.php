@@ -1035,7 +1035,7 @@
 			UNION ALL
 				SELECT userID,BlockID,purchaseDate,blockQty,totalPrice
 				FROM (SELECT 10013 AS userID, 5004 AS BlockID, '2022-01-04' AS purchaseDate, 1 AS blockQty, 'RM4000' AS totalPrice)
-				AS tempp4 WHERE NOT EXISTS (SELECT userID,BlockID FROM Block_Client WHERE userID = 10013 AND BlockID = 5003)
+				AS tempp4 WHERE NOT EXISTS (SELECT userID,BlockID FROM Block_Client WHERE userID = 10013 AND BlockID = 5004)
 			UNION ALL
 				SELECT userID,BlockID,purchaseDate,blockQty,totalPrice
 				FROM (SELECT 10014 AS userID, 5007 AS BlockID, '2022-02-20' AS purchaseDate, 1 AS blockQty, 'RM4899' AS totalPrice)
