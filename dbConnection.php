@@ -138,7 +138,7 @@
 				tree_type VARCHAR(100) NOT NULL,
 				BlockID INT(5) NOT NULL,
 				PRIMARY KEY(TreeID),
-				FOREIGN KEY(BlockID) REFERENCES Block(BlockID)
+				FOREIGN KEY(BlockID) REFERENCES Block(BlockID) ON DELETE CASCADE
 			)";
 
 	if (mysqli_query($conn, $sqlTree))
@@ -507,7 +507,7 @@
 	 $sqlBlockData = "INSERT INTO Block(BlockID,Price,orchardID)
 	 SELECT BlockID,Price,orchardID
 		FROM (SELECT BlockID,Price,orchardID
-			FROM (SELECT 10001 AS BlockID, 'RM5000' AS Price, 2001 AS orchardID)
+			FROM (SELECT 5001 AS BlockID, 'RM5000' AS Price, 2001 AS orchardID)
 			AS temp_59 WHERE NOT EXISTS (SELECT BlockID FROM Block WHERE BlockID = 5001)
 		UNION ALL
 			SELECT BlockID,Price,orchardID
