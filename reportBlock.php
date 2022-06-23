@@ -11,8 +11,18 @@ function display_block()
 //     if($_SERVER["REQUEST_METHOD"]=="POST") 
 //     {
         
-        $sql = "SELECT * FROM block_client";
+        $sql = "SELECT
+        user.userID,
+        user.userName,
+        SUM(block_client.blockQty) AS 'totalBlk'
+    FROM
+        user
+    INNER JOIN block_client ON user.userID = block_client.userID
+    GROUP BY
+        userID";
+
         $result = $conn->query($sql) ;
+	    
         
         echo "Report - Block";
       
@@ -22,10 +32,8 @@ function display_block()
             {
               echo"<tr>";
               echo" <td>".$row['userID']."</td>";
-              echo" <td>".$row['BlockID']."</td>";
-              echo" <td>".$row['purchaseDate']." </td>";
-              echo" <td>".$row['blockQty']."</td>";
-              echo" <td>".$row['totalPrice']."</td>";
+              echo" <td>".$row['userName']."</td>";
+              echo" <td>".$row['totalBlk']."</td>";
               echo"</tr>";
             }
         }
@@ -93,10 +101,8 @@ function display_block()
     <table style="width:100%">
       <tr>
         <th>Client ID</th>
-        <th>Block ID</th>
-        <th>purchaseDate</th>
-        <th>blockQty </th>
-        <th>Total Price</th>
+        <th>Client Name</th>
+        <th>Total Block</th>
       </tr>
       <?php display_block()?>
     </table>
@@ -109,6 +115,7 @@ function display_block()
       <a href="reportBlock.php"><button>Blocks of tree</button></a>
       <a href="reportOrchard.php"><button>Orchard of tree</button></a>
       <a href="reportTree.php"><button>Trees</button></a>
+      <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
     </div>
   </div>
 

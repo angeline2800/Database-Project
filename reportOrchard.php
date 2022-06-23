@@ -11,23 +11,32 @@ function display_orchard()
 //     if($_SERVER["REQUEST_METHOD"]=="POST") 
 //     {
         
-        $sql = "SELECT * FROM orchard";
-        $result = $conn->query($sql) ;
-        
-        echo "Report - Orchard";
-      
-        if ($result->num_rows > 0) 
+    $sql = "SELECT
+    user.userID,
+    user.userName,
+    COUNT(orchard.orchardID) AS 'totalOrchard'
+FROM
+    user
+INNER JOIN orchard ON user.userID = orchard.userID
+GROUP BY
+    userID";
+
+    $result = $conn->query($sql) ;
+    
+    
+    echo "Report - Orchard";
+  
+    if ($result->num_rows > 0) 
+    {
+      while($row = $result->fetch_assoc())
         {
-          while($row = $result->fetch_assoc())
-            {
-              echo"<tr>";
-              echo" <td>".$row['orchardID']."</td>";
-              echo" <td>".$row['orchard_add']."</td>";
-              echo" <td>".$row['orchard_location']." </td>";
-              echo" <td>".$row['userID']."</td>";
-              echo"</tr>";
-            }
+          echo"<tr>";
+          echo" <td>".$row['userID']."</td>";
+          echo" <td>".$row['userName']."</td>";
+          echo" <td>".$row['totalOrchard']."</td>";
+          echo"</tr>";
         }
+    }
         else
         {
           echo "<tr>";
@@ -90,10 +99,9 @@ function display_orchard()
 
     <table style="width:100%">
       <tr>
-        <th>Orchard ID</th>
-        <th>Orchard Address</th>
-        <th>Orchard Location</th>
         <th>Company ID</th>
+        <th>Company Name</th>
+        <th>Total Orchard</th>
       </tr>
       <?php display_orchard()?>
     </table>
@@ -106,6 +114,7 @@ function display_orchard()
       <a href="reportBlock.php"><button>Blocks of tree</button></a>
       <a href="reportOrchard.php"><button>Orchard of tree</button></a>
       <a href="reportTree.php"><button>Trees</button></a>
+      <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
     </div>
   </div>
 

@@ -46,6 +46,7 @@
       <a href="reportBlock.php"><button>Blocks of tree</button></a>
       <a href="reportOrchard.php"><button>Orchard of tree</button></a>
       <a href="reportTree.php"><button>Trees</button></a>
+      <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
     </div>
   </div>
 
