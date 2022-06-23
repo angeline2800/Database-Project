@@ -17,11 +17,11 @@
 		$tree_type = $_POST["tree_type"];
 		$BlockID = $_POST["BlockID"];
 		
-		$query = "INSERT INTO tree('spesiesName', 'plantDate', 'tree_height', 'diameter', 'status', 'GPS_location', 'tree_type', 'BlockID') 
+		$sqlTree = "INSERT INTO tree('spesiesName', 'plantDate', 'tree_height', 'diameter', 'status', 'GPS_location', 'tree_type', 'BlockID') 
 				VALUES ('$spesiesName', '$plantDate', '$tree_height', '$diameter', '$status', '$GPS_location', '$tree_type', '$BlockID')";
-		$query_run = mysqli_query($conn, $query);
+		$result = mysqli_query($conn, $sqlTree);
 		
-		if($query_run)
+		if($result)
 		{
 			echo '<script type="text/javascript">alert("Tree Image Uploaded") </script>';
 		}
