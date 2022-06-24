@@ -61,6 +61,7 @@
 </html>
 
 <?php
+/*Fail updated等下改*/
 	$connection = mysqli_connect("localhost", "root", "");
 	$db = mysqli_select_db($conn, 'tmf2034_Group4_Project');
 	
