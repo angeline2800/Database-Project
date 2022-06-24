@@ -155,7 +155,7 @@ form, .content {
 		<button type="submit" class="btn" name="Login">Login</button>
 	</div>
 	<p>
-		Don't have an account? <a href="register.php">Register</a>
+		Please Inform Our Admin For Further Help
 	</p>
     
 </form>
