@@ -17,7 +17,7 @@
 		$tree_type = $_POST["tree_type"];
 		$BlockID = $_POST["BlockID"];
 		
-		$sqlTree = "INSERT INTO tree('spesiesName', 'plantDate', 'tree_height', 'diameter', 'status', 'GPS_location', 'tree_type', 'BlockID') 
+		$sqlTree = "INSERT INTO `tree` ('spesiesName', 'plantDate', 'tree_height', 'diameter', 'status', 'GPS_location', 'tree_type', 'BlockID') 
 				VALUES ('$spesiesName', '$plantDate', '$tree_height', '$diameter', '$status', '$GPS_location', '$tree_type', '$BlockID')";
 		$result = mysqli_query($conn, $sqlTree);
 		
