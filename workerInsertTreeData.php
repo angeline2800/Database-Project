@@ -1,5 +1,5 @@
 <?php
-	
+	/*Fail uploaded image & data 等下改*/
 	
 	$conn = mysqli_connect("localhost", "root", "");
 	$db = mysqli_select_db($conn, 'tmf2034_Group4_Project');
