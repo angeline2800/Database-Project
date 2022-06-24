@@ -1,5 +1,5 @@
 <?php
-	/*Fail uploaded image & data 等下改*/
+	
 	
 	include"dbConnection.php";
 	
