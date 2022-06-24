@@ -93,8 +93,8 @@
 		
 			<input type="submit" name="insert" value="Insert Image & Data" /><br>
 			
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/updateTreeData.php" role="button">Update Tree Data</a>
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/deleteTreeData.php" role="button">Delete Tree Data</a>
+			<a class="btn btn-primary" href="/tmf2034/Database-Project/workerUpdateTreeData.php" role="button">Update Tree Data</a>
+			<a class="btn btn-primary" href="/tmf2034/Database-Project/workerDeleteTreeData.php" role="button">Delete Tree Data</a>
 		</form>
 	</center>
 	
