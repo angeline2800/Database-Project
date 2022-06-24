@@ -1,33 +1,32 @@
 <?php
 	
 	
-	$conn = mysqli_connect("localhost", "root", "");
-	$db = mysqli_select_db($conn, 'tmf2034_Group4_Project');
+	include"dbConnection.php";
 	
 	if(isset($_POST['insert']))
 	{
 		$file = addslashes(file_get_contents($_FILES["tree_Image"]["tmp_name"]));
 		
-		$spesiesName = $_POST["spesiesName"];
-		$plantDate = $_POST["plantDate"];
-		$tree_height = $_POST["tree_height"];
-		$diameter = $_POST["diameter"];
-		$status = $_POST["status"];
-		$GPS_location = $_POST["GPS_location"];
-		$tree_type = $_POST["tree_type"];
-		$BlockID = $_POST["BlockID"];
+		$spesiesName = $_POST['spesiesName'];
+		$plantDate = $_POST['plantDate'];
+		$tree_height = $_POST['tree_height'];
+		$diameter = $_POST['diameter'];
+		$status = $_POST['status'];
+		$GPS_location = $_POST['GPS_location'];
+		$tree_type = $_POST['tree_type'];
+		$BlockID = $_POST['BlockID'];
 		
-		$sqlTree = "INSERT INTO tree('spesiesName', 'plantDate', 'tree_height', 'diameter', 'status', 'GPS_location', 'tree_type', 'BlockID') 
-				VALUES ('$spesiesName', '$plantDate', '$tree_height', '$diameter', '$status', '$GPS_location', '$tree_type', '$BlockID')";
-		$result = mysqli_query($conn, $sqlTree);
+		$query = "INSERT INTO `tree`(`tree_Image`, `spesiesName`, `plantDate`, `tree_height`, `diameter`, `status`, `GPS_location`, `tree_type`, `BlockID`) 
+				VALUES ('$file', '$spesiesName', '$plantDate', '$tree_height', '$diameter', '$status', '$GPS_location', '$tree_type', '$BlockID')";
+		$query_run = mysqli_query($conn, $query);
 		
-		if($result)
+		if($query_run)
 		{
-			echo '<script type="text/javascript">alert("Tree Image Uploaded") </script>';
+			echo '<script type="text/javascript">alert("Tree Data Uploaded") </script>';
 		}
 		else
 		{
-			echo '<script type="text/javascript">alert("Tree Image Fail Uploaded") </script>';
+			echo '<script type="text/javascript">alert("Tree Data Fail Uploaded") </script>';
 		}
 	}
 
@@ -93,8 +92,8 @@
 		
 			<input type="submit" name="insert" value="Insert Image & Data" /><br>
 			
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/updateTree.php" role="button">Update Tree Data</a>
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/deleteTree.php" role="button">Delete Tree Data</a>
+			<a class="btn btn-primary" href="/tmf2034/Database-Project/workerUpdateTreeData.php" role="button">Update Tree Data</a>
+			<a class="btn btn-primary" href="/tmf2034/Database-Project/workerDeleteTreeData.php" role="button">Delete Tree Data</a>
 		</form>
 	</center>
 	

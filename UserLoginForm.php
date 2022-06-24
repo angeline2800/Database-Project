@@ -21,16 +21,19 @@ if(isset($_POST['Login'])){
    );
    $userType=$_SESSION['user']['userType'];
    //Redirecting User Based on Role
-    switch($userType){
-  case 'company':
-  header('location:company.php');
-  break;
-  case 'worker':
-  header('location:worker.php');
-  break;
-  case 'client':
-  header('location:client.php');
-  break;
+	switch($userType){
+  		case 'company':
+  		header('location:company.php');
+  		break;
+  		case 'worker':
+  		header('location:worker.php');
+  		break;
+  		case 'client':
+  		header('location:client.php');
+  		break;
+  		case 'admin':
+		header('location:admin.php');
+		break;
  }
  }else{
  $error='Your UserID or Password is Wrong!';
@@ -85,15 +88,7 @@ form, .content {
 	border-radius: 5px;
 	border: 1px solid gray;
 }
-#user_type {
-	height: 40px;
-	width: 98%;
-	padding: 5px 10px;
-	background: white;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid gray;
-}
+
 .btn {
 	padding: 10px;
 	font-size: 15px;
@@ -112,28 +107,10 @@ form, .content {
 	border-radius: 5px; 
 	text-align: left;
 }
-.success {
-	color: #3c763d; 
-	background: #dff0d8; 
-	border: 1px solid #3c763d;
-	margin-bottom: 20px;
+.container {
+        padding: 16px;
 }
-.profile_info img {
-	display: inline-block; 
-	width: 50px; 
-	height: 50px; 
-	margin: 5px;
-	float: left;
-}
-.profile_info div {
-	display: inline-block; 
-	margin: 5px;
-}
-.profile_info:after {
-	content: "";
-	display: block;
-	clear: both;
-}
+
     </style>
 </head>
 <body>
@@ -154,9 +131,13 @@ form, .content {
 	<div class="input-group">
 		<button type="submit" class="btn" name="Login">Login</button>
 	</div>
-	<p>
-		Don't have an account? <a href="register.php">Register</a>
-	</p>
+
+	<div class="container" style="background-color:#f1f1f1">
+         <p>
+		Please Inform Our Admin For Further Help
+		</p>   
+    </div>
+	
     
 </form>
 </body>
