@@ -1,5 +1,5 @@
 <?php
-	
+	/*Fail uploaded image&data into database等下改*/
 	
 	$conn = mysqli_connect("localhost", "root", "");
 	$db = mysqli_select_db($conn, 'tmf2034_Group4_Project');
@@ -93,8 +93,8 @@
 		
 			<input type="submit" name="insert" value="Insert Image & Data" /><br>
 			
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/updateTree.php" role="button">Update Tree Data</a>
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/deleteTree.php" role="button">Delete Tree Data</a>
+			<a class="btn btn-primary" href="/tmf2034/Database-Project/updateTreeData.php" role="button">Update Tree Data</a>
+			<a class="btn btn-primary" href="/tmf2034/Database-Project/deleteTreeData.php" role="button">Delete Tree Data</a>
 		</form>
 	</center>
 	
