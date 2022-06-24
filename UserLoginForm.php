@@ -22,15 +22,18 @@ if(isset($_POST['Login'])){
    $userType=$_SESSION['user']['userType'];
    //Redirecting User Based on Role
     switch($userType){
-  case 'company':
-  header('location:company.php');
-  break;
-  case 'worker':
-  header('location:worker.php');
-  break;
-  case 'client':
-  header('location:client.php');
-  break;
+  		case 'company':
+  		header('location:company.php');
+  		break;
+  		case 'worker':
+  		header('location:worker.php');
+  		break;
+  		case 'client':
+  		header('location:client.php');
+  		break;
+  		case 'admin':
+		header('location:admin.php');
+		break;
  }
  }else{
  $error='Your UserID or Password is Wrong!';
