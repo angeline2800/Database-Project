@@ -59,8 +59,8 @@
 							<td>$row[userID]</td>
 							
 							<td>
-								<a class='btn btn-primary btn-sm' href='/tmf2034/update.php?userID=$row[userID]'>Update</a>
-								<a class='btn btn-primary btn-sm' href='/tmf2034/delete.php?userID=$row[userID]'>Delete</a>
+								<a class='btn btn-primary btn-sm' href='/tmf2034/project/adminUpdateOrchard.php?orchardID=$row[orchardID]'>Update</a>
+								<a class='btn btn-primary btn-sm' href='/tmf2034/project/adminDeleteOrchard.php?orchardID=$row[orchardID]'>Delete</a>
 							</td>	
 						</tr>
 						";
