@@ -25,8 +25,7 @@
 		</form>
 		
 		<?php
-			$conn = mysqli_connect("localhost", "root", "");
-			$db = mysqli_select_db($conn, 'tmf2034_Group4_Project');
+		include "dbConnection.php";
 			
 			if(isset($_POST['search']))
 			{
@@ -61,10 +60,9 @@
 </html>
 
 <?php
-/*Fail updated等下改*/
-	$conn = mysqli_connect("localhost", "root", "");
-	$db = mysqli_select_db($conn, 'tmf2034_Group4_Project');
-	
+	include "dbConnection.php";
+
+/*fail updated等下改*/
 	if(isset($_POST['update']))
 	{
 		//$file = addslashes(file_get_contents($_FILES["tree_Image"]["tmp_name"]));
