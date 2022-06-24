@@ -51,7 +51,20 @@ function display_block()
 //     }
 //   }  
 
+$sqlChart = "SELECT userID,  SUM(blockQty) AS 'totalBlkC' FROM block_client group by userID";
+	$resultChart = $conn->query($sqlChart);
+	$userID = array();
+	$totalBlkC = array();
 
+
+	if ($resultChart->num_rows > 0) {
+		while($row = mysqli_fetch_array($resultChart)){
+			$userID[] = $row['userID'];
+			$totalBlk[] = $row['totalBlkC'];
+		}	
+    }
+
+    
 ?>
 
 <html>
@@ -60,10 +73,12 @@ function display_block()
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <meta name="keywords" content="100%  Fruit Juice Concentrate/ concentrated juice, 100 percent, blend, Apple, grape, white grape, orange  concentrated, flavors, Childcare, Preschool, Daycare, BASP, Extended Day, Before and After School, Head Start , JUICE, KID, CHILD, Natural, Brand, CACFP, USDA, No sugar added, no added sugar, Real fruit , organic, Best, leader, top, quality, exclusive, better , delicious, FREE DELIVERY"/>
   <meta name="description" content="563-386-1999 - FREE shipping. Juice concentrates for kids. Different juice flavors in a case. Fruit juice concentrates for childcare centers."/>
-  <link rel="icon" type="image/x-icon" href="https://static-res-cdn.websites.hibu.com/runtime/favicon_d1_res.ico"/> 
+  <link rel="icon" type="image/x-icon" href="https://static-res-cdn.websites.hibu.com/runtime/favicon_d1_res.ico"/>  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
+  <link rel="stylesheet" href="CSS/style.css">
   <title>Reports | Block of Tree | Tree Profiling Management System</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 
 <body>
@@ -106,6 +121,46 @@ function display_block()
       </tr>
       <?php display_block()?>
     </table>
+
+    <div class="chart">
+			<h4>Report Of Blocks Owned By Clients</h4>
+	
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+			<script>
+			
+           
+           
+			var barColors = "#7FFFA9";
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+     labels:<?php echo json_encode($userID); ?>,
+    datasets: [{
+      backgroundColor: barColors,
+      data: <?php echo json_encode($totalBlk); ?>
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Total Blocks of Clients"
+    },
+    	    	scales: {
+			    		yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                              
+                            }
+                        }]
+                    }
+  }
+});
+
+			</script>
+		</div>
 
     <!-- <br />
     <a href="reportD.php" target="_blank"><button class="generateBtn">Generate Transaction Report</button></a>

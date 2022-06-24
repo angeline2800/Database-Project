@@ -26,66 +26,6 @@ include "dbConnection.php";
 // 		$_SESSION['start'] = time();
 // 	}
 // } 
-
-function display_daily()
-{
-  global $conn;
-
-  if (isset($_POST['daily_r'])) 
-  {
-      
-    if($_SERVER["REQUEST_METHOD"]=="POST") 
-    {
-        
-      if (!($_POST['daily']))
-      {
-         
-        echo "<tr>";
-        echo"<td>-------</td>";
-        echo"<td>-------</td>";
-        echo "<td>---- Please select the date.----</td>";
-        echo"<td>-------</td>";
-        echo"<td>-------</td>";
-        echo"<td>-------</td>";
-        echo "</tr>";
-      }
-      else
-      {
-         
-        $date= $_POST['daily'];
-
-        $sql = "SELECT COUNT(treeID) AS totalTree FROM tree WHERE plantDate = '$date'";
-        $result = $conn->query($sql) ;
-        
-        echo "DATE : $date";
-      
-        if ($result->num_rows > 0) 
-        {
-          while($row = $result->fetch_assoc())
-            {
-              echo"<tr>";
-              echo" <td>".$row['totalTree']."</td>";
-              echo"</tr>";
-            }
-        }
-        else
-        {
-          echo "<tr>";
-          echo"<td>-------</td>";
-          echo"<td>-------</td>";
-          echo "<td>---- No record available. ----</td>";
-          echo"<td>-------</td>";
-          echo"<td>-------</td>";
-          echo"<td>-------</td>";
-          echo "</tr>";
-        }
-      }  
-    }
-    
-      $_SESSION['Daily'] = $_POST['daily'];
-  }  
-}
-
 ?>
 
 <html>
@@ -98,6 +38,10 @@ function display_daily()
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Trees Reports | Daily | Tree Profiling Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 
 <body>
@@ -113,7 +57,7 @@ function display_daily()
   </header> -->
 
 
-  <div class="sidenav">
+  <!-- <div class="sidenav">
     <a href=""><span><img src="../Images/sidebar.png" alt="sidebar">Dashboard</span></a>
     <a href=""><span><img src="../Images/account.png" alt="account">Registered User Accounts</span></a>
     <a href=""><span><img src="../Images/product.png" alt="product">All Products</span></a>
@@ -122,7 +66,7 @@ function display_daily()
     <div class="fixed">
 		<a href="../logout.php"><span><i class="fa fa-sign-out" style="font-size: 30px;"></i> Log Out </span></a>
 	</div>
-  </div>
+  </div> -->
 
 
   <div class="transaction">
@@ -139,11 +83,116 @@ function display_daily()
     </form>
 
     <table style="width:100%">
-      <tr>
-        <th>Total Trees</th>
+     
+<?php 
+      if (isset($_POST['daily_r'])) 
+  {
+      
+    if($_SERVER["REQUEST_METHOD"]=="POST") 
+    {
+        ?>
+         <tr>
+        <th>Planting Date</th>
+        <th>Tree ID</th>
+        <th>Spesies Name</th>
       </tr>
-      <h6><?php display_daily()?></h6>
-    </table>
+      <?php 
+      if (!($_POST['daily']))
+      {
+         
+        echo "<tr>";
+        echo"<td>----------------------------</td>";
+        echo "<td>-------------- Please select the date.-------------</td>";
+        echo"<td>-----------------</td>";
+        echo "</tr>";
+      }
+      else
+      {
+         
+       $date= $_POST['daily'];
 
+        $sql = "SELECT * FROM tree WHERE plantDate = '$date'";
+        $result = $conn->query($sql) ;
+        
+        echo "DATE : $date";
+      
+        if ($result->num_rows > 0) 
+        {
+          while($row = $result->fetch_assoc())
+            {
+              echo"<tr>";
+              echo" <td> $date </td>";
+              echo" <td>".$row['TreeID']."</td>";
+              echo" <td>".$row['spesiesName']."</td>";
+              echo"</tr>";
+            }
+            
+        }
+        else
+        {
+          echo "<tr>";
+          echo"<td>-------</td>";
+          echo "<td>---- No record available. ----</td>";
+          echo"<td>-------</td>";
+          echo "</tr>";
+        }
+      }  
+     
+    }?>
+    </table>
+    
+    <?php
+     $date= $_POST['daily'];
+
+        $sqlChart ="SELECT* FROM tree WHERE plantDate = '$date'";
+        $resultChart = $conn->query($sqlChart);
+
+       if ($resultChart->num_rows > 0) {
+      
+        echo "Total of Trees : ";
+              echo "$resultChart->num_rows";
+              
+       }  
+      $_SESSION['Daily'] = $_POST['daily'];
+      
+  }  
+  ?>
+
+<div class="chart">
+	
+	
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+			<script>
+                var xValues = ["<?php $date= $_POST['daily']; echo"$date"?>"];
+                var yValues = [<?php echo"$resultChart->num_rows"?>];
+			var barColors = "#57C7FF";
+
+        new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues,}]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+            display: true,
+            text: "Report | Total of Trees | Daily"
+            },
+                        scales: {
+                                yAxes: [{
+                                    display: true,
+                                    ticks: {
+                                        beginAtZero: true,
+                                    
+                                    }
+                                }]
+                            }
+        }
+        });
+
+			</script>
     </body>
 </html>

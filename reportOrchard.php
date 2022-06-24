@@ -50,6 +50,19 @@ GROUP BY
 //     }
 //   }  
 
+$sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orchard group by userID";
+	$resultChart = $conn->query($sqlChart);
+	$userID = array();
+	$totalOrchardC = array();
+
+
+	if ($resultChart->num_rows > 0) {
+		while($row = mysqli_fetch_array($resultChart)){
+			$userID[] = $row['userID'];
+			$totalOrchard[] = $row['totalOrchardC'];
+		}	
+    }
+
 
 ?>
 
@@ -63,6 +76,10 @@ GROUP BY
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Reports | Orchard of Tree | Tree Profiling Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 
 <body>
@@ -105,6 +122,42 @@ GROUP BY
       </tr>
       <?php display_orchard()?>
     </table>
+
+    <div class="chart">
+			<h4>Report Of Orchards Owned By Companies</h4>
+	
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+			<script>
+			var barColors = "#FFA4E0";
+
+        new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels:<?php echo json_encode($userID); ?>,
+            datasets: [{
+            backgroundColor: barColors,
+            data: <?php echo json_encode($totalOrchard); ?>
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+            display: true,
+            text: "Total Orchards of Companies"
+            },
+                        scales: {
+                                yAxes: [{
+                                    display: true,
+                                    ticks: {
+                                        beginAtZero: true,
+                                    
+                                    }
+                                }]
+                            }
+        }
+        });
+
+			</script>
 
     <!-- <br />
     <a href="reportD.php" target="_blank"><button class="generateBtn">Generate Transaction Report</button></a>

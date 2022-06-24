@@ -26,71 +26,6 @@ include "dbConnection.php";
 // 		$_SESSION['start'] = time();
 // 	}
 // } 
-
-function display_month()
-{
-  global $conn;
-
- 
-
-  if (isset($_POST['monthly_r']))
-  {
-    if($_SERVER["REQUEST_METHOD"]=="POST") 
-    {
-      if (!($_POST['monthly']))
-      {
-        echo "<tr>";
-        echo"<td>-------</td>";
-        echo"<td>-------</td>";
-        echo "<td>---- Please select the month.----</td>";
-        echo"<td>-------</td>";
-        echo"<td>-------</td>";
-        echo"<td>-------</td>";
-        echo "</tr>";
-      }
-      else
-      {
-        $mon = new DateTime($_POST['monthly']);    
-        $month = $mon->format('m');
-        $year = $mon->format('Y');  
-
-
-        $sql = "SELECT COUNT(treeID) AS totalTree FROM tree WHERE MONTH(plantDate)= $month AND YEAR(plantDate)=$year";
-        $result = $conn->query($sql) ;
-
-        $_SESSION['month_mon']= $month;
-        $_SESSION['year_mon']=$year;
-        
-        echo "MONTH : $month /  $year" ; 
-      
-        if ($result->num_rows > 0) 
-        {
-          while($row = $result->fetch_assoc())
-            {
-              echo"<tr>";
-              echo" <td>".$row['totalTree']."</td>";
-              echo"</tr>";
-            }
-        }
-        else
-        {
-          echo "<tr>";
-          echo"<td>-------</td>";
-          echo"<td>-------</td>";
-          echo "<td>---- No record available. ----</td>";
-          echo"<td>-------</td>";
-          echo"<td>-------</td>";
-          echo"<td>-------</td>";
-          echo "</tr>";
-        }
-      }  
-    }
-    
-    $_SESSION['Monthly'] = $_POST['monthly']; 
-
-  }  
-}
-
 ?>
 
 <html>
@@ -103,6 +38,10 @@ function display_month()
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Trees Reports | Monthly | Tree Profiling Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 
 <body>
@@ -118,7 +57,7 @@ function display_month()
   </header> -->
 
 
-  <div class="sidenav">
+  <!-- <div class="sidenav">
     <a href=""><span><img src="../Images/sidebar.png" alt="sidebar">Dashboard</span></a>
     <a href=""><span><img src="../Images/account.png" alt="account">Registered User Accounts</span></a>
     <a href=""><span><img src="../Images/product.png" alt="product">All Products</span></a>
@@ -127,7 +66,7 @@ function display_month()
     <div class="fixed">
 		<a href="../logout.php"><span><i class="fa fa-sign-out" style="font-size: 30px;"></i> Log Out </span></a>
 	</div>
-  </div>
+  </div> -->
 
 
   <div class="transaction">
@@ -144,11 +83,136 @@ function display_month()
     </form>
 
     <table style="width:100%">
-      <tr>
-        <th>Total Trees</th>
+    <?php 
+    if (isset($_POST['monthly_r']))
+  {
+    if($_SERVER["REQUEST_METHOD"]=="POST") 
+    {
+        ?>
+
+<tr>
+        <th>Planting Date</th>
+        <th>Tree ID</th>
+        <th>Spesies Name</th>
       </tr>
-      <h6><?php display_month()?></h6>
+      <?php 
+       if (!($_POST['monthly']))
+       {
+         echo "<tr>";
+         echo"<td>-------</td>";
+         echo "<td>---- Please select the month.----</td>";
+         echo"<td>-------</td>";
+         echo "</tr>";
+       }
+       else
+       {
+         $mon = new DateTime($_POST['monthly']);    
+         $month = $mon->format('m');
+         $year = $mon->format('Y');  
+ 
+ 
+         $sql = "SELECT * FROM tree WHERE MONTH(plantDate)= $month AND YEAR(plantDate)=$year";
+         $result = $conn->query($sql) ;
+ 
+         $_SESSION['month_mon']= $month;
+         $_SESSION['year_mon']=$year;
+         
+         echo "MONTH : $month /  $year" ; 
+       
+         if ($result->num_rows > 0) 
+         {
+           while($row = $result->fetch_assoc())
+             {
+                echo"<tr>";
+                echo" <td>" .$row['plantDate']." </td>";
+                echo" <td>".$row['TreeID']."</td>";
+                echo" <td>".$row['spesiesName']."</td>";
+                echo"</tr>";
+             }
+         }
+         else
+         {
+           echo "<tr>";
+           echo"<td>-------</td>";
+           echo "<td>---- No record available. ----</td>";
+           echo"<td>-------</td>";
+           echo "</tr>";
+         }
+       }  
+     }?>
+
     </table>
+     
+    <?php
+     $mon = new DateTime($_POST['monthly']);    
+     $month = $mon->format('m');
+     $year = $mon->format('Y');  
+
+     $sqlChart = "SELECT * FROM tree WHERE MONTH(plantDate)= $month AND YEAR(plantDate)=$year";
+     $resultChart = $conn->query($sqlChart);
+
+     if ($resultChart->num_rows > 0) {
+    
+      echo "Total of Trees : ";
+            echo "$resultChart->num_rows";
+            
+     } 
+
+     $sqlMonthly = "SELECT plantDate, COUNT(TreeID) AS 'totalTreeC'FROM tree
+         WHERE MONTH(plantDate)= $month AND YEAR(plantDate)=$year 
+         group by plantDate";
+     $resultMonthly = $conn->query($sqlMonthly) ;
+  
+     $plantDate = array();
+     $totalTree=array();
+  
+     if ($resultMonthly->num_rows > 0) {
+         while($row = mysqli_fetch_array($resultMonthly)){
+             $plantDate[] = $row['plantDate'];
+             $totalTree[] = $row['totalTreeC'];
+         }
+     }
+   
+     $_SESSION['Monthly'] = $_POST['monthly']; 
+ 
+   }  
+
+  
+   ?>
+
+<div class="chart">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+			<script>
+			var barColors = "#57C7FF";
+
+        new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels:<?php  echo json_encode($plantDate);?>,
+            datasets: [{
+            backgroundColor: barColors,
+            data:<?php  echo json_encode($totalTree);?>
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+            display: true,
+            text: "Report | Total of Trees | Monthly"
+            },
+                        scales: {
+                                yAxes: [{
+                                    display: true,
+                                    ticks: {
+                                        beginAtZero: true,
+                                    
+                                    }
+                                }]
+                            }
+        }
+        });
+
+			</script>
 
     </body>
 </html>

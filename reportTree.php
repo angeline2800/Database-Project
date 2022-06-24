@@ -53,6 +53,26 @@ GROUP BY
 
  
       }  
+      $sqlChart ="SELECT user.userID,
+      COUNT(tree.treeID) AS 'totalTreeC'
+  FROM
+      user
+  INNER JOIN orchard ON user.userID = orchard.userID
+  INNER JOIN block ON block.orchardID=orchard.orchardID
+  INNER JOIN tree ON tree.blockID=block.blockID
+  GROUP BY
+      userID";
+	$resultChart = $conn->query($sqlChart);
+	$userID = array();
+	$totalTreeC = array();
+
+
+	if ($resultChart->num_rows > 0) {
+		while($row = mysqli_fetch_array($resultChart)){
+			$userID[] = $row['userID'];
+			$totalTree[] = $row['totalTreeC'];
+		}	
+    }
 
 ?>
 
@@ -66,6 +86,10 @@ GROUP BY
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Reports | Trees | Tree Profiling Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 
 <body>
@@ -108,6 +132,42 @@ GROUP BY
       </tr>
       <?php display_tree()?>
     </table>
+
+    <div class="chart">
+			<h4>Report Of Trees Owned By Companies</h4>
+	
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+			<script>
+			var barColors = "#57C7FF";
+
+        new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels:<?php echo json_encode($userID); ?>,
+            datasets: [{
+            backgroundColor: barColors,
+            data: <?php echo json_encode($totalTree); ?>
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+            display: true,
+            text: "Total Trees Owned By Companies"
+            },
+                        scales: {
+                                yAxes: [{
+                                    display: true,
+                                    ticks: {
+                                        beginAtZero: true,
+                                    
+                                    }
+                                }]
+                            }
+        }
+        });
+
+			</script>
 
     <!-- <br />
     <a href="reportD.php" target="_blank"><button class="generateBtn">Generate Transaction Report</button></a>
