@@ -1,5 +1,5 @@
 <?php
-/*****error****/
+/*****error!!!****/
 
 	$servername = "localhost";
 	$username = "root";
