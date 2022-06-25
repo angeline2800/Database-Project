@@ -13,7 +13,8 @@ if(isset($_POST['Login'])){
 </script>";
   }else{
  //Checking Login Detail
- $result=mysqli_query($conn,"SELECT*FROM user WHERE userID='$userID' AND userPW='$userPW'");
+ $encryptedPW = SHA1($_POST['userPW']);
+ $result=mysqli_query($conn,"SELECT*FROM User WHERE userID='$userID' AND userPW='$encryptedPW'");
  $row=mysqli_fetch_assoc($result);
  $count=mysqli_num_rows($result);
  if($count==1){
