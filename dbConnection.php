@@ -239,7 +239,7 @@
 
 			UNION ALL
 			SELECT userID,userName,userAdd,userEmail,userPW,userPhone,userCountry,userType
-			FROM (SELECT 10011 AS userID, 'Amirah Aisyah Binti Karul' AS userName, 'No 18, Jalan Gani, 93050, Kuching, Sarawak' AS userAdd, 'amirah@gmail.com' AS userEmail, SHA1('Ami&40+') AS userPW,
+			FROM (SELECT 10011 AS userID, 'Amirah Aisyah Binti Karul' AS userName, 'No 18, Jalan Gani, 93050, Kuching, Sarawak' AS userAdd, 'amirah@gmail.com' AS userEmail, SHA1('A40mi&+') AS userPW,
 			'0125674598' AS userPhone, 'Malaysia' AS userCountry, 'client' AS userType  
 			) AS temp_11 WHERE NOT EXISTS (SELECT userID FROM User WHERE userID = 10011)
 
@@ -406,7 +406,7 @@
 	 $sqlClientData = "INSERT INTO Client(userID,client_photo)
 	 SELECT userID,client_photo
 		FROM (SELECT userID,client_photo
-		FROM (SELECT 10011 AS userID, 'woman.jpg' AS client_photo)
+		FROM (SELECT 10011 AS userID, 'photo/woman.jpg' AS client_photo)
 			AS temp_36 WHERE NOT EXISTS (SELECT userID FROM Client WHERE userID = 10011)
 		UNION ALL
 			SELECT userID,client_photo

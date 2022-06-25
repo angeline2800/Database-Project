@@ -1,11 +1,5 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "tmf2034_Group4_Project";
-					
-	//Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
+	include "dbConnection.php";
 	
 	$Price = "";
 	$orchardID = "";

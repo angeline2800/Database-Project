@@ -1,23 +1,24 @@
 <html>
 <head>
 	<title> Update User Data</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<style>
-	body{
-		background-color: whitesmoke;
-	}
-	input{
-		width: 40%;
-		height: 5%;
-		border: 1px;
-		border-radius: 05px;
-		padding: 8px 15px 8px 15px;
-		margin: 10px 0px 15px 0px;
-		box-shadow: 1px 1px 2px 1px grey;
-	}
-	</style>
+	<link rel="stylesheet" href="CSS/worker.css">
+	
 </head>
 <body>
+<header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+        </div>
+    </div>
+  </header>
+
 	<center>
 		<h1> Search data by Tree ID and Update the Tree data</h1>
 		<form action="" method="POST" style="background-color: lightblue">

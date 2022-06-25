@@ -14,23 +14,13 @@
 </head>
 
 <body>
-  <!-- <header class="header-border">
-    <div class="header-content">
-      <a href="index.php"><img src="https://le-cdn.hibuwebsites.com/767557674d6e4362acfa088c81c84a89/dms3rep/multi/opt/pennyjuice-logo-462w.png" class="logo" alt="PENNYJUICE OF AMERICA - Logo" height="60"></a>
-      <h1 class="slogan">It make cents</h1>
-        <div>
-          <p>Free Nationwide Shipping&nbsp;&nbsp;&nbsp;<span class="bold">563-386-1999</span>
-          <p class="bold">LEADER IN CHILDCARE JUICE
+<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
         </div>
     </div>
-  </header> -->
+  </header>
 
-
-  <div class="sidenav">
-    <a href=""><span><img src="../Images/sidebar.png" alt="sidebar">Dashboard</span></a>
-    <a href=""><span><img src="../Images/account.png" alt="account">Registered User Accounts</span></a>
-    <a href=""><span><img src="../Images/product.png" alt="product">All Products</span></a>
-    <a class="active" href="Report.php"><span><img src="../Images/transaction.png" alt="transaction">Reports</span></a>
 
     <div class="fixed">
 		<a href="../logout.php"><span><i class="fa fa-sign-out" style="font-size: 30px;"></i> Log Out </span></a>

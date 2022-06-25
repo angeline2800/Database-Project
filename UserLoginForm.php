@@ -7,7 +7,10 @@ if(isset($_POST['Login'])){
   $userID=mysqli_real_escape_string($conn,$_POST['userID']);
   $userPW=mysqli_real_escape_string($conn,$_POST['userPW']);
   if(empty($userID)&&empty($userPW)){
-  $error= 'Fileds are Mandatory';
+	echo"<script type=\"text/javascript\">
+	alert(\"Fields Are Mandatory...!\");
+	window.location = 'UserLoginForm.php';
+</script>";
   }else{
  //Checking Login Detail
  $result=mysqli_query($conn,"SELECT*FROM user WHERE userID='$userID' AND userPW='$userPW'");
@@ -23,20 +26,37 @@ if(isset($_POST['Login'])){
    //Redirecting User Based on Role
 	switch($userType){
   		case 'company':
-  		header('location:company.php');
+			echo"<script type=\"text/javascript\">
+			alert(\"Login Successfully...!\");
+			window.location = 'company.php';
+		</script>";
   		break;
   		case 'worker':
-  		header('location:worker.php');
+			echo"<script type=\"text/javascript\">
+			alert(\"Login Successfully...!\");
+			window.location = 'worker.php';
+		</script>";
   		break;
   		case 'client':
-  		header('location:client.php');
+			echo"<script type=\"text/javascript\">
+			alert(\"Login Successfully...!\");
+			window.location = 'client.php';
+		</script>";
   		break;
   		case 'admin':
-		header('location:admin.php');
+			echo"<script type=\"text/javascript\">
+			alert(\"Login Successfully...!\");
+			window.location = 'admin.php';
+		</script>";
 		break;
+
+		$_SESSION['userID'] = $userID;
  }
  }else{
- $error='Your UserID or Password is Wrong!';
+	echo"<script type=\"text/javascript\">
+	alert(\"Login Failed, UserID & Password Are Not Match...!\");
+	window.location = 'UserLoginForm.php';
+</script>";
  }
 }
 }
@@ -68,9 +88,6 @@ if(isset($_POST['Login'])){
 </div>
 
 <form method="post">
-	<div class = "error">
-    <center><?php if(isset($error)){ echo $error; }?></center>
-</div>
 
 	<div class="input-group">
 		<label>User ID:</label>

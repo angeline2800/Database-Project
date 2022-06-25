@@ -14,7 +14,7 @@
 	
 	<div class = "container my-5">
         <h2>List of Block</h2>
-		<a class="btn btn-primary" href="/tmf2034/project/adminAddBlock.php" role="button">Add - New Block</a>
+		<a class="btn btn-primary" href="adminAddBlock.php" role="button">Add - New Block</a>
         <br>
 		<table class="table">
 			<thead>
@@ -27,19 +27,7 @@
 			</thead>
 			<tbody>
 				<?php
-					$servername = "localhost";
-					$username = "root";
-					$password = "";
-					$dbname = "tmf2034_Group4_Project";
-					
-					//Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
-					
-					//Check connection
-					if($conn->connect_error)
-					{			
-						die("connection failed: ". $conn->connect_error);
-					}
+					include "dbConnection.php";
 					
 					//read all row from database table orchard
 					$sqlBlock= "SELECT * FROM block";
@@ -58,8 +46,8 @@
 							<td>$row[Price]</td>
 							<td>$row[orchardID]</td>
 							<td>
-								<a class='btn btn-primary btn-sm' href='/tmf2034/project/adminUpdateBlock.php?BlockID=$row[BlockID]'>Update</a>
-								<a class='btn btn-primary btn-sm' href='/tmf2034/project/adminDeleteBlock.php?BlockID=$row[BlockID]'>Delete</a>
+								<a class='btn btn-primary btn-sm' href='adminUpdateBlock.php?BlockID=$row[BlockID]'>Update</a>
+								<a class='btn btn-primary btn-sm' href='adminDeleteBlock.php?BlockID=$row[BlockID]'>Delete</a>
 							</td>	
 						</tr>
 						";

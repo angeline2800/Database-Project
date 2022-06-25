@@ -83,16 +83,13 @@ $sqlChart = "SELECT userID,  SUM(blockQty) AS 'totalBlkC' FROM block_client grou
 </head>
 
 <body>
-  <!-- <header class="header-border">
-    <div class="header-content">
-      <a href="index.php"><img src="https://le-cdn.hibuwebsites.com/767557674d6e4362acfa088c81c84a89/dms3rep/multi/opt/pennyjuice-logo-462w.png" class="logo" alt="PENNYJUICE OF AMERICA - Logo" height="60"></a>
-      <h1 class="slogan">It make cents</h1>
-        <div>
-          <p>Free Nationwide Shipping&nbsp;&nbsp;&nbsp;<span class="bold">563-386-1999</span>
-          <p class="bold">LEADER IN CHILDCARE JUICE
+<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
         </div>
     </div>
-  </header> -->
+  </header>
+
 
 
   <!-- <div class="sidenav">
