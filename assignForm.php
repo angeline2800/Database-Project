@@ -54,7 +54,7 @@
 			</form>
 			<p><a href="assign.php">Back</a></p>
 	<?php
-		include "dbConnection2.php";
+		include "dbConnection.php";
 		/* session_start();
 		if (isset($_SESSION['userID'] && ($_SESSION['userType'] == 'admin'))){ */
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
