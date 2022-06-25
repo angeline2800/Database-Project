@@ -118,9 +118,8 @@
   text-align: center;
   font: 20px cursive;
   cursor: pointer;
-  display: inline-block;
+  display:flexbox;
 }
-
 .admin button:hover
 {
   background-color: #9191FF;

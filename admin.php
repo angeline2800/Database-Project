@@ -38,6 +38,7 @@ if(isset($_POST['Logout']))
       <a href="adminBlock.php"><button>Blocks</button></a>
       <a href="adminOrchard.php"><button>Orchards</button></a>
       <a href="adminClient.php"><button>Clients</button></a>
+      <a href="adminCompany.php"><button>Company</button></a>
       <a href="adminWorker.php"><button>Workers</button></a>
       <a href="assign.php"><button>Transaction</button></a>
       <a href="Report.php"><button>Report</button></a>
