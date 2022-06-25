@@ -33,7 +33,7 @@
 			
 			$sucessMessage = "Block added successfully!";
 			
-			header("location: DisplayUser.php");
+			header("location: adminBlock.php");
 			exit;
 			
 		}while(false);
