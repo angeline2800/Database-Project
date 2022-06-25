@@ -8,6 +8,16 @@
 		
 	</head>
 	<body>
+	
+	<header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+        </div>
+    </div>
+  </header>
 		<div class="content">
 			<h1>Assignment Form</h1>
 			<h3>Block_Client</h3>

@@ -2,8 +2,36 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
-		<title>Assign Block Client Form</title>
+		<title>Assign Tree Worker Form | Administration | Tree Profiling Management System </title>
 		<style>
+			.slogan {
+			    font: bold 45px 'Comfortaa',cursive;
+			    color:#200062;
+			    padding-right: 180px;
+			}
+			.slogan img
+			{
+			    width: 120px;
+			    height: 100px;
+			    float: left;
+			    margin-left: 30px;
+			    padding-left: 120px;
+			}
+			.slogan2 {
+			    font-size: 30px;
+			    padding-right: 270px;
+			    font-family:'Courier New', Courier, monospace;
+			    color:#454545;
+			    padding-top: 3px;
+			    margin-top: 5px;
+			}
+			.header-border {
+			    background:#DCCCFF;
+			    padding: 30px;
+			    text-align: center;
+			    border: 1px,solid;
+			    padding-bottom: 19px;
+			}
 			.content{
 				display: flex;
 				justify-content: flex-start;
@@ -43,6 +71,15 @@
 		</style>
 	</head>
 	<body>
+	<header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+        </div>
+    </div>
+  </header>
 		<div class="content">
 			<h1>Assignment Form</h1>
 			<h3>Tree_Worker</h3>
@@ -54,7 +91,7 @@
 			</form>
 			<p><a href="assignTreeWorker.php">Back</a></p>
 	<?php
-		include "dbConnection2.php";
+		include "dbConnection.php";
 		/* session_start();
 		if (isset($_SESSION['userID'] && ($_SESSION['userType'] == 'admin'))){ */
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -100,7 +137,7 @@
 			
 	/* }
 	else{
-		header("Location: login.php");
+		header("Location: UserLoginForm.php");
 		exit();
 	} */
 ?>
