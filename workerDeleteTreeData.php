@@ -10,7 +10,8 @@
 		
 		if($query_run)
 		{
-			echo '<script type="text/javascript"> alert("Data Delete") </script>';
+			echo"<script type=\"text/javascript\"> alert(\"Data Delete...!\");
+			window.location = 'worker.php'; </script>";
 		}
 		else
 		{
@@ -46,10 +47,10 @@
 <div class="content">
 <center><h3> Please search the Tree ID to delete the tree data.</h3></center>
 <div class="searchTree">
-		<form action = "worker.php" method="POST">
+		<form action = "" method="POST">
 		<div class="searching">
 	<center>
-		<h1>Delete Tree Data </h1>
+
 		<form action = "worker.php" method="POST">
 			<input type="text" name="TreeID" placeholder="Enter Tree ID" /><br>
 			<input type="submit"class="delete" name="delete" value="Delete" />

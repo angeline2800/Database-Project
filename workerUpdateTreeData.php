@@ -50,11 +50,9 @@
 				<form action="" method="POST" enctype="multipart/form-data">
 				<div class="updateTree">
 					<input type="hidden" name="TreeID" value="<?php echo $row['TreeID'] ?>"/><br>
-<<<<<<< HEAD
-					<label>Spesies Name</label>
-=======
+					<label>Tree Image</label>
 					<input type="file" name="tree_Image" value="<?php echo $row['tree_Image'] ?>"><br>
->>>>>>> a07aa7357d7afee91fda612b0c41e04cddffd4f0
+					<label>Spesies Name</label>
 					<input type="text" name="spesiesName" value="<?php echo $row['spesiesName'] ?>"/><br>
 					<label>Plant Date</label>
 					<input type="text" name="plantDate" value="<?php echo $row['plantDate'] ?>"/><br>
@@ -109,7 +107,8 @@
 		
 		if($query_run)
 		{
-			echo '<script> alert("Data Updated") </script>';
+			echo"<script type=\"text/javascript\"> alert(\"Data Updated...!\");
+			window.location = 'worker.php'; </script>";
 		}
 		else
 		{
