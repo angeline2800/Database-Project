@@ -42,6 +42,7 @@ include "dbConnection.php";
   <link rel="stylesheet" href="CSS/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <link rel="shortcut icon" href="photo/tree.ico" />
 </head>
 
 <body>

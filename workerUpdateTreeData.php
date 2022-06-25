@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title> Update User Data</title>
+	<link rel="shortcut icon" href="photo/tree.ico" />
 	<style>
 	body{
 		background-color: whitesmoke;

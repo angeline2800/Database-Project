@@ -87,6 +87,7 @@ GROUP BY
   <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Reports | Trees | Tree Profiling Management System</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="photo/tree.ico" />
   <link rel="stylesheet" href="CSS/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>

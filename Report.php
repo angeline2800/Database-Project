@@ -9,6 +9,7 @@
   <link rel="icon" type="image/x-icon" href="https://static-res-cdn.websites.hibu.com/runtime/favicon_d1_res.ico"/> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
+  <link rel="shortcut icon" href="photo/tree.ico" />
   <title>Reports | Tree Profiling Management System</title>
 </head>
 

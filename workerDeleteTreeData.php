@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="shortcut icon" href="photo/tree.ico" />
 	<title>Delete Tree Data</title>
 	<style>
 		body{
