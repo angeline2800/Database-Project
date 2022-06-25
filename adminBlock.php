@@ -64,7 +64,7 @@
 							<td>$row[orchardID]</td>
 							
 							<td>
-								<a class='btn btn-primary btn-sm' href='adminAddBlock.php?BlockID=$row[BlockID]'>Update</a>
+								<a class='btn btn-primary btn-sm' href='adminUpdateBlock.php?BlockID=$row[BlockID]'>Update</a>
 								
 								<a class='btn btn-primary btn-sm' href='adminDeleteBlock.php?BlockID=$row[BlockID]'>Delete</a>
 							</td>	
