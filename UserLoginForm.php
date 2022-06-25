@@ -45,84 +45,37 @@ if(isset($_POST['Login'])){
 <html>
 <head>
     <meta charset="utf-8">
+	<link rel="stylesheet" href="CSS/login.css">
 	<title>User Login Form</title>
     
-    <style>
-        * { margin: 0px; padding: 0px; }
-body {
-	font-size: 120%;
-	background: #F8F8FF;
-}
-.header {
-	width: 40%;
-	margin: 50px auto 0px;
-	color: white;
-	background: #5F9EA0;
-	text-align: center;
-	border: 1px solid #B0C4DE;
-	border-bottom: none;
-	border-radius: 10px 10px 0px 0px;
-	padding: 20px;
-}
-form, .content {
-	width: 40%;
-	margin: 0px auto;
-	padding: 20px;
-	border: 1px solid #B0C4DE;
-	background: white;
-	border-radius: 0px 0px 10px 10px;
-}
-.input-group {
-	margin: 10px 0px 10px 0px;
-}
-.input-group label {
-	display: block;
-	text-align: left;
-	margin: 3px;
-}
-.input-group input {
-	height: 30px;
-	width: 93%;
-	padding: 5px 10px;
-	font-size: 16px;
-	border-radius: 5px;
-	border: 1px solid gray;
-}
-
-.btn {
-	padding: 10px;
-	font-size: 15px;
-	color: white;
-	background: #5F9EA0;
-	border: none;
-	border-radius: 5px;
-}
-.error {
-	width: 92%; 
-	margin: 0px auto; 
-	padding: 10px; 
-	border: 1px solid #a94442; 
-	color: #a94442; 
-	background: #f2dede; 
-	border-radius: 5px; 
-	text-align: left;
-}
-.container {
-        padding: 16px;
-}
-
-    </style>
+    
 </head>
 <body>
+
+ <header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+        </div>
+    </div>
+  </header>
+
 <div class="header">
 	<h2>User Login Form</h2>
 </div>
+
 <form method="post">
+	<div class = "error">
     <center><?php if(isset($error)){ echo $error; }?></center>
+</div>
+
 	<div class="input-group">
 		<label>User ID:</label>
 		<input type="text" name="userID">
 	</div>
+	
 	<div class="input-group">
 		<label>Password:</label>
 		<input type="password" name="userPW">
@@ -131,14 +84,13 @@ form, .content {
 	<div class="input-group">
 		<button type="submit" class="btn" name="Login">Login</button>
 	</div>
+</form>
 
-	<div class="container" style="background-color:#f1f1f1">
-         <p>
-		Please Inform Our Admin For Further Help
+<div class="container">
+         <p><u>
+		Any Problems, Please Inform Our Admin For Further Help.</u>
 		</p>   
     </div>
-	
-    
-</form>
+
 </body>
 </html>
