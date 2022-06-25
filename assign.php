@@ -83,9 +83,7 @@
 			button:hover{
 				background-color: #051094;
 			}
-			a{
-				
-			}
+			
 		</style>
 		</head>
 		<body>

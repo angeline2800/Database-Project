@@ -1,5 +1,5 @@
 <?php
-	include "dbConnection2.php";
+	include "dbConnection.php";
 	/* session_start();
 	if (isset($_SESSION['userID'] && ($_SESSION['userType'] == 'admin'))){ */
 	
@@ -83,9 +83,7 @@
 			button:hover{
 				background-color: #051094;
 			}
-			a{
-				
-			}
+			
 		</style>
 		</head>
 		<body>

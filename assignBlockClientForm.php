@@ -5,44 +5,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="CSS/assign.css">
 		<title>Assign Block Client Form | Administration | Tree Profiling Management System </title>
-		<style>
-			.content{
-				display: flex;
-				justify-content: flex-start;
-				flex-direction: column;
-				align-items: center;
-			}
-			form{
-				max-width: 400px;
-				width: 100%;
-				text-align: left;
-				background: white;
-				padding: 25px 30px;
-				border-radius: 5px;
-				display: block;
-				background-color: #ebedf9;
-			}
-			input[type=text], input[type=date] {
-				width: 100%;
-				padding: 12px 16px;
-				margin: 8px 0;
-				display: block;
-				border: 1px solid black;
-				box-sizing: border-box;
-				font-size: 14px;
-			}
-			button{
-				background-color: #1260cc;
-				margin-bottom: 20px;
-				padding: 10px 15px;
-				color: white;
-				border-radius: 5px;
-				border: none;
-				text-decoration: none;
-				cursor: pointer;
-				font-size: 15px;
-			}
-		</style>
+		
 	</head>
 	<body>
 		<div class="content">
@@ -57,7 +20,7 @@
 			</form>
 			<p><a href="assignBlockClient.php">Back</a></p>
 	<?php
-		include "dbConnection2.php";
+		include "dbConnection.php";
 		/* session_start();
 		if (isset($_SESSION['userID'] && ($_SESSION['userType'] == 'admin'))){ */
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
