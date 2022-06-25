@@ -77,35 +77,22 @@ $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orc
   <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Reports | Orchard of Tree | Tree Profiling Management System</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/login.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <link rel="shortcut icon" href="photo/tree.ico" />
 </head>
 
 <body>
-<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+<header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
         <div class="slogan2">
          <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
         </div>
     </div>
   </header>
-
-
-
-  <!-- <div class="sidenav">
-    <a href="index.php"><span><img src="../Images/sidebar.png" alt="sidebar">Dashboard</span></a>
-    <a href="userAcc.php"><span><img src="../Images/account.png" alt="account">Registered User Accounts</span></a>
-    <a href="product.php"><span><img src="../Images/product.png" alt="product">All Products</span></a>
-    <a class="active" href="transaction.php"><span><img src="../Images/transaction.png" alt="transaction">Transaction Records & Reports</span></a> -->
-
-
-    <div class="fixed">
-    <a href="Report.php"><span><i class="fa fa-sign-out" style="font-size: 30px;"></i> Back To Report Page </span></a>
-      <br>
-	  <a href=""><span><i class="fa fa-sign-out" style="font-size: 30px;"></i> Log Out </span></a>
-	</div>
-  <!-- </div> -->
 
   <div class="transaction">
     <div class="tranTitle"> 
@@ -168,6 +155,7 @@ $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orc
       <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
     </div>
   </div>
+  <button type="submit" class="btn" name="Logout">Logout</button>
 
 
   <!-- <footer>

@@ -36,19 +36,23 @@ include "dbConnection.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trees Reports | Weekly | Tree Profiling Management System</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/login.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <link rel="shortcut icon" href="photo/tree.ico" />
 </head>
 
 <body>
-<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+<header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
         <div class="slogan2">
          <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
         </div>
     </div>
   </header>
+
 
   <div class="transaction">
     <div class="tranTitle"> 
@@ -191,5 +195,6 @@ include "dbConnection.php";
         });
 
 			</script>
+              <button type="submit" class="btn" name="Logout">Logout</button>
     </body>
 </html>

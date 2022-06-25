@@ -33,7 +33,7 @@ if(isset($_POST['Logout']))
     <div class="header">
 	<h2>Welcome Back! Select An Option To Continue</h2>
 </div>
-  <form method="POST">
+  <!-- <form method="POST"> -->
   <div class="admin">
       <a href="adminBlock.php"><button>Blocks</button></a>
       <a href="adminOrchard.php"><button>Orchards</button></a>
@@ -46,6 +46,6 @@ if(isset($_POST['Logout']))
 
           <button type="submit" class="btn" name="Logout">Logout</button>
             </center>
-</form>
+<!-- </form> -->
 </body>
 </html>

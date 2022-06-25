@@ -15,7 +15,7 @@ if(isset($_POST['Logout']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="photo/tree.ico" />
     <link rel="stylesheet" href="CSS/worker.css">
-    <title>Worker | Management of Trees </title>
+    <title>Worker | Management of Trees |Tree Profiling Management System </title>
 </head>
 <body>
 

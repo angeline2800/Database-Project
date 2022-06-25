@@ -3,46 +3,21 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
-		<title>Assign Block Client Form</title>
-		<style>
-			.content{
-				display: flex;
-				justify-content: flex-start;
-				flex-direction: column;
-				align-items: center;
-			}
-			form{
-				max-width: 400px;
-				width: 100%;
-				text-align: left;
-				background: white;
-				padding: 25px 30px;
-				border-radius: 5px;
-				display: block;
-			}
-			input[type=text], input[type=date] {
-				width: 100%;
-				padding: 12px 16px;
-				margin: 8px 0;
-				display: block;
-				border: 1px solid black;
-				box-sizing: border-box;
-				font-size: 14px;
-			}
-			button{
-				background-color: #1260cc;
-				margin-bottom: 20px;
-				padding: 10px 15px;
-				color: white;
-				border-radius: 5px;
-				border: none;
-				text-decoration: none;
-				cursor: pointer;
-				font-size: 15px;
-			}
-		</style>
+		<link rel="stylesheet" href="CSS/assign.css">
+		<title>Assign Block Client Form | Administration | Tree Profiling Management System </title>
+		
 	</head>
 	<body>
+
+	<header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+        </div>
+    </div>
+  </header>
 		<div class="content">
 			<h1>Assignment Form</h1>
 			<form action="" method="post">

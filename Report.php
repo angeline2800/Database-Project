@@ -4,42 +4,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <meta name="keywords" content="100%  Fruit Juice Concentrate/ concentrated juice, 100 percent, blend, Apple, grape, white grape, orange  concentrated, flavors, Childcare, Preschool, Daycare, BASP, Extended Day, Before and After School, Head Start , JUICE, KID, CHILD, Natural, Brand, CACFP, USDA, No sugar added, no added sugar, Real fruit , organic, Best, leader, top, quality, exclusive, better , delicious, FREE DELIVERY"/>
-  <meta name="description" content="563-386-1999 - FREE shipping. Juice concentrates for kids. Different juice flavors in a case. Fruit juice concentrates for childcare centers."/>
-  <link rel="icon" type="image/x-icon" href="https://static-res-cdn.websites.hibu.com/runtime/favicon_d1_res.ico"/> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
+  <link rel="stylesheet" href="CSS/login.css">
   <link rel="shortcut icon" href="photo/tree.ico" />
-  <title>Reports | Tree Profiling Management System</title>
+  <title>Reports | Administration | Tree Profiling Management System</title>
 </head>
 
 <body>
-<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+
+<header class="header-border">
+    <div class="header-content">
+	
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
         <div class="slogan2">
          <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
         </div>
     </div>
   </header>
-
-
-    <div class="fixed">
-		<a href="../logout.php"><span><i class="fa fa-sign-out" style="font-size: 30px;"></i> Log Out </span></a>
-	</div>
-  </div>
-
-
-  <div class="transaction">
-    <div class="tranTitle"> 
+  
   	  <h3>Reports</h3>
     </div> <br>
 
-    <div class="viewOpt">
+    <div class="btn">
       <a href="reportBlock.php"><button>Blocks of tree</button></a>
       <a href="reportOrchard.php"><button>Orchard of tree</button></a>
       <a href="reportTree.php"><button>Trees</button></a>
       <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
     </div>
-  </div>
+
+
+  <button type="submit" class="btn" name="Logout">Logout</button>
 
  <!-- <footer>
     <div class="footer">
