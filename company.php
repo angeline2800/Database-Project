@@ -47,7 +47,7 @@ if(isset($_POST['Logout']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="photo/tree.ico" />
-    <link rel="stylesheet" href="CSS/client.css">
+    <link rel="stylesheet" href="CSS/Client.css">
     <title>Company | Tree Profiling Management System </title>
 </head>
 <body>
@@ -64,7 +64,7 @@ if(isset($_POST['Logout']))
 
   <center>    
     <div class="header">
-	<h2>Display Orchard Record</h2>
+	<h2>Welcome Back! Here Is Your Record</h2>
 </div>
   <form method="POST">
             <table>
@@ -74,7 +74,14 @@ if(isset($_POST['Logout']))
                     <th>Orchard Address</th>
                     <th>Orchard Locatiion</th>
                 </tr>
-                <br>
+             
+                <tr>
+                    <th>TRY</th>
+                    <th>TRY</th>
+                    <th>TRY</th>
+                    <th>TRY</th>
+
+                </tr>
                    <?php display_company();?>
             </table> 
           <button type="submit" class="btn" name="Logout">Logout</button>

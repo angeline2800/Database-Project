@@ -25,8 +25,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="photo/tree.ico" />
-    <link rel="stylesheet" href="CSS/worker.css">
-	<title>Delete Tree Data</title>
+    <link rel="stylesheet" href="CSS/tree.css">
+	<title>Delete Tree | Management of Trees |Tree Profiling Management System</title>
 
 </head>
 <body>
@@ -39,12 +39,21 @@
         </div>
     </div>
   </header>
-	<center>
-		<h1>Delete Tree Data </h1>
+
+  <div class="header">
+	<h2>Delete Tree Data</h2>
+</div>
+<div class="content">
+<center><h3> Please search the Tree ID to delete the tree data.</h3></center>
+<div class="searchTree">
 		<form action = "" method="POST">
+		<div class="searching">
 			<input type="text" name="TreeID" placeholder="Enter Tree ID" /><br>
-			<input type="submit" name="delete" value="Delete" /><br>
-	</center>
+			<input type="submit"class="delete" name="delete" value="Delete" />
+</div>
+</form>
+</div>
+</div>
 
 </body>
 </html>

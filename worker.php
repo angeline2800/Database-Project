@@ -33,16 +33,20 @@ if(isset($_POST['Logout']))
     <div class="header">
 	<h2>Welcome Back! What do you want to do ?</h2>
 </div>
-  <form method="POST">
-           
+
+ <div class="content">          
   <div class="workerTree">
       <a href="workerInsertTreeData.php"><button>Add Trees</button></a>
       <a href="workerUpdateTreeData.php"><button>Update Trees</button></a>
       <a href="workerDeleteTreeData.php"><button>Delete Trees</button></a>
 </div>
-          <button type="submit" class="btn" name="Logout">Logout</button>
+
+<button type="submit" class="btn" name="Logout">Logout</button>
+</div>
+
+       
             </center>
-</form>
+
             
             
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script> -->

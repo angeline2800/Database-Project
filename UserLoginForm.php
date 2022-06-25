@@ -64,7 +64,7 @@ if(isset($_POST['Login'])){
 <html>
 <head>
     <meta charset="utf-8">
-	<link rel="stylesheet" href="CSS/login.css">
+	<link rel="stylesheet" href="CSS/Login.css">
 	<link rel="shortcut icon" href="photo/tree.ico" />
 	<title>User Login Form | Tree Profiling Management System</title>
     

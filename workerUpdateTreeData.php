@@ -1,11 +1,11 @@
 <html>
 <head>
-	<title> Update User Data</title>
+	<title> Update Tree | Management of Trees |Tree Profiling Management System</title>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="CSS/worker.css">
+	<link rel="stylesheet" href="CSS/tree.css">
 	
 </head>
 <body>
@@ -19,12 +19,21 @@
     </div>
   </header>
 
-	<center>
-		<h1> Search data by Tree ID and Update the Tree data</h1>
-		<form action="" method="POST" style="background-color: lightblue">
+	
+	<div class="header">
+	<h2>Update A Tree</h2>
+</div>
+<div class="content">
+
+		<center><h3> Please search the Tree ID to update the tree data.</h3></center>
+		<div class="searchTree">
+		<form action="" method="POST" >
+			<div class="searching">
 			<input type="text" name="TreeID" placeholder="Enter Tree ID for Search"/><br/>
-			<input type="submit" name="search" value="Search Data"/>
+			<input type="submit"class="search" name="search" value="Search Data" />
+</div>
 		</form>
+		</div>
 		
 		<?php
 		include "dbConnection.php";
@@ -39,25 +48,34 @@
 				{
 				?>
 				<form action="" method="POST" enctype="multipart/form-data">
+				<div class="updateTree">
 					<input type="hidden" name="TreeID" value="<?php echo $row['TreeID'] ?>"/><br>
-					
+					<label>Spesies Name</label>
 					<input type="text" name="spesiesName" value="<?php echo $row['spesiesName'] ?>"/><br>
+					<label>Plant Date</label>
 					<input type="text" name="plantDate" value="<?php echo $row['plantDate'] ?>"/><br>
+					<label>Tree Height</label>
 					<input type="text" name="tree_height" value="<?php echo $row['tree_height'] ?>"/><br>
+					<label>Diameter</label>
 					<input type="text" name="diameter" value="<?php echo $row['diameter'] ?>"/><br>
+					<label>Status</label>
 					<input type="text" name="status" value="<?php echo $row['status'] ?>"/><br>
+					<label>GPS location</label>
 					<input type="text" name="GPS_location" value="<?php echo $row['GPS_location'] ?>"/><br>
+					<label>Tree Type</label>
 					<input type="text" name="tree_type" value="<?php echo $row['tree_type'] ?>"/><br>
+					<label>Block ID</label>
 					<input type="text" name="BlockID" value="<?php echo $row['BlockID'] ?>"/><br>
-					
-					<input type="submit" name="update" value="Update Data">
+
+					<input type="submit"class="updateBttn" name="updateBttn" value="Update Data" /><br>
+				</div>
 				</form>
 				<?php
 				}
 			}
 		?>
-	</center>
 
+		</div>
 </body>
 </html>
 

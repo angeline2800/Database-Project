@@ -5,11 +5,13 @@ session_start();
 function display_client()
 {
       global $conn;
+
+ 
             
           if($_SERVER["REQUEST_METHOD"]=="POST") 
           {
 
-      $query = "SELECT * FROM block_client WHERE userID= $userID ";
+      $query = "SELECT * FROM block_client WHERE userID=".$_SESSION['userID'];
       $result = mysqli_query($conn, $query);
 
       if($result-> num_rows > 0){
@@ -23,14 +25,7 @@ function display_client()
             echo "<td>" .$row['totalPrice']."</td>";
             echo"</tr>";
             }      
-      }
-
-      else
-      {
-       
-          echo "Error creating Table User: " . mysqli_error($conn);
-        
-      }
+          }
 
     }
   }
@@ -48,7 +43,7 @@ if(isset($_POST['Logout']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="photo/tree.ico" />
-    <link rel="stylesheet" href="CSS/client.css">
+    <link rel="stylesheet" href="CSS/Client.css">
     <title>Clients | Tree Profiling Management System </title>
 </head>
 <body>
@@ -65,7 +60,7 @@ if(isset($_POST['Logout']))
 
   <center>    
     <div class="header">
-	<h2>Display Client Block Record</h2>
+	<h2>Welcome Back! Here Is Your Record</h2>
 </div>
   <form method="POST">
             <table>
@@ -76,7 +71,14 @@ if(isset($_POST['Logout']))
                     <th>Block Quantity</th>
                     <th>Total Price</th>
                 </tr>
-                <br>
+          
+                <tr>
+                    <th>TRY</th>
+                    <th>TRY</th>
+                    <th>TRY</th>
+                    <th>TRY</th>
+                    <th>TRY</th>
+                </tr>
                    <?php display_client();?>
             </table> 
           <button type="submit" class="btn" name="Logout">Logout</button>

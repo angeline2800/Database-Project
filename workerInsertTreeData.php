@@ -1,7 +1,4 @@
-<?php
-	
-	
-	include"dbConnection.php";
+<?php include"dbConnection.php";
 	
 	if(isset($_POST['insert']))
 	{
@@ -38,9 +35,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Worker </title>
+	<title> Add New Tree | Management of Trees |Tree Profiling Management System </title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="CSS/worker.css">
+	<link rel="stylesheet" href="CSS/tree.css">
 </head>
 <body>
 <header class="header-border">
@@ -52,46 +49,55 @@
         </div>
     </div>
   </header>
-	<center>
-		<h1>Insert Tree Data</h1>
+	
+		<div class="header">
+	<h2>Add A New Tree</h2>
+</div>
+
+<div class ="content">
 		
 		<form action="" method="POST" enctype="multipart/form-data">
 		
-			<label>Choose a Tree Image </label><br>
+		<div class="input-group">
+			<label>Tree Image </label>
 			<input type="file" name="tree_Image" id="tree_Image" /><br>
 			
-			<label>Spesies Name</label><br>
+			<label>Spesies Name</label>
 			<input type="text" name="spesiesName" placeholder="Enter Species Name" /><br>
 			
-			<label>Plant Date</label><br>
+			<label>Plant Date</label>
 			<input type="text" name="plantDate" placeholder="Enter Plant Date yyyy-mm-dd" /><br>
 			
-			<label>Tree Height</label><br>
+			<label>Tree Height</label>
 			<input type="text" name="tree_height" placeholder="Enter Tree Height (m)" /><br>
 			
-			<label>Diameter</label><br>
+			<label>Diameter</label>
 			<input type="text" name="diameter" placeholder="Enter Diameter (cm)" /><br>
 			
-			<label>Status</label><br>
+			<label>Status</label>
 			<input type="text" name="status" placeholder="Enter Status" /><br>
 			
-			<label>GPS location</label><br>
+			<label>GPS location</label>
 			<input type="text" name="GPS_location" placeholder="Enter GPS_location" /><br>
 			
-			<label>Tree Type</label><br>
+			<label>Tree Type</label>
 			<input type="text" name="tree_type" placeholder="Enter Tree Type" /><br>
 			
-			<label>Block ID</label><br>
+			<label>Block ID</label>
 			<input type="text" name="BlockID" placeholder="Enter Block ID" /><br>
 		
-			<input type="submit" name="insert" value="Insert Image & Data" /><br>
+			<input type="submit"class="insert" name="insert" value="Insert Image & Data" /><br>
 			
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/workerUpdateTreeData.php" role="button">Update Tree Data</a>
-			<a class="btn btn-primary" href="/tmf2034/Database-Project/workerDeleteTreeData.php" role="button">Delete Tree Data</a>
+			
+</div>
+
 		</form>
-	</center>
-	
-	
+		<div class="workerTree">
+		<a href="workerUpdateTreeData.php"><button>Update Trees</button></a>
+		<a href="workerDeleteTreeData.php"><button>Delete Trees</button></a>
+</div>
+</div>
+		
 </body>
 </html>
 

@@ -1,0 +1,225 @@
+* { margin: 0px; padding: 0px; }
+body {
+    font-size: 120%;
+    background: #E8DDFF;
+}
+
+.slogan {
+    font: bold 45px 'Comfortaa',cursive;
+    color:#200062;
+    padding-right: 180px;
+}
+.slogan img
+{
+    width: 120px;
+    height: 100px;
+    float: left;
+    margin-left: 30px;
+    padding-left: 120px;
+}
+.slogan2 {
+    font-size: 30px;
+    padding-right: 270px;
+    font-family:'Courier New', Courier, monospace;
+    color:#454545;
+    padding-top: 3px;
+    margin-top: 5px;
+}
+.header-border {
+    background:#DCCCFF;
+    padding: 30px;
+    text-align: center;
+    border: 1px,solid;
+    padding-bottom: 19px;
+}
+
+.header {
+    width: 40%;
+    margin: 30px auto 0px;
+    color: white;
+    background: #5F9EA0;
+    text-align: center;
+    border: 1px solid #B0C4DE;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 25px;
+}
+
+ .content {
+    width: 40%;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    padding: 25px;
+    padding-bottom: 10px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.searchTree {
+    width: 60%;
+    margin: 8px 130px;
+    padding: 0px;
+    margin-right: 10px;
+    border: 1px,solid,black;
+    text-align: center;
+}
+
+.searchTree input {
+    height: 40px;
+    width: 80%;
+    padding: 5px 15px;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+
+.searching .search {
+  
+    color: white;
+    background: #5F9EA0;
+} 
+.search:hover {
+    background-color: #5353FF;
+}
+.searching .delete {
+  
+    color: white;
+    background: #5F9EA0;
+} 
+.delete:hover {
+    background-color: #5353FF;
+}
+
+form{
+    width: 100%;
+    margin: 0px 0px;
+   margin-bottom: 10px;
+    padding: 0px;
+    margin-right: 10px;
+    background: white;
+}
+
+.input-group {
+    margin: auto;
+    padding-top: 5px;
+    text-align:right ;
+    padding-right: 10px;
+}
+.input-group label {
+    text-align: left;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 18px;
+    margin-top: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.input-group input {
+    height: 40px;
+    width: 55%;
+    padding: 5px 15px;
+    margin-left: 80px;
+    margin-right: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.input-group .insert {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    color: white;
+    background: #5F9EA0;
+    border: none;
+    border-radius: 5px;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+} 
+.insert:hover {
+    background-color: #5353FF;
+}
+
+.workerTree button
+{
+  width: 35%;
+  padding: 10px 20px;
+  margin: 5px 150px;
+  margin-left: 60px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 8px;
+  background-color:#CBEDFF; 
+  color:#000040;
+  text-align: center;
+  font-size: 15px;
+}
+
+.workerTree button:hover
+{
+  background-color: #9191FF;
+}
+
+.updateTree {
+    margin: auto;
+    padding-top: 5px;
+    text-align:right ;
+    padding-right: 20px;
+}
+
+
+.updateTree label {
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 0px;
+    margin-top: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.updateTree input {
+    height: 40px;
+    width: 55%;
+    padding: 5px 25px;
+    margin-left: 80px;
+    margin-right: 0px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+ .updateTree .updateBttn {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    width: 40%;
+    font-size: 18px;
+    color: white;
+    background: #5F9EA0;
+    border: none;
+    border-radius: 5px;
+    margin-left: 150px;
+    margin-top: 50px;
+    margin-right: 140px;
+    margin-bottom: 20px;
+} 
+.updateBttn:hover {
+    background-color: #5353FF;
+}
+

@@ -4,17 +4,7 @@
             font-size: 120%;
             background: #E8DDFF;
         }
-        .header {
-            width: 60%;
-            margin: 30px auto 0px;
-            color: white;
-            background: #5F9EA0;
-            text-align: center;
-            border: 1px solid #B0C4DE;
-            border-bottom: none;
-            border-radius: 10px 10px 0px 0px;
-            padding: 25px;
-        }
+      
         .slogan {
             font: bold 45px 'Comfortaa',cursive;
             color:#200062;
@@ -43,8 +33,20 @@
             border: 1px,solid;
             padding-bottom: 19px;
         }
-        form, .content {
-            width: 60%;
+
+        .header {
+            width: 40%;
+            margin: 30px auto 0px;
+            color: white;
+            background: #5F9EA0;
+            text-align: center;
+            border: 1px solid #B0C4DE;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 25px;
+        }
+         .content {
+            width: 40%;
             margin: 0px auto;
             margin-bottom: 20px;
             padding: 25px;
@@ -68,20 +70,6 @@
           font: 18px 'Arvo', serif;
         }
 
-        .clientRecord
-        {
-            width: 60%;
-	margin: 0px auto;
-	margin-bottom: 20px;
-	padding: 25px;
-	padding-bottom: 50px;
-    padding-top: 10px;
-	border: 1px solid #B0C4DE;
-	background: white;
-	border-radius: 0px 0px 10px 10px;
-         
-        }
-
         h3 {
             font-size: 20px;
             padding-top: 30px;
@@ -93,26 +81,21 @@
 	padding-right: 50px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	font-size: 20px;
+	font-size: 15px;
 	color: white;
-	background: #5F9EA0;
+	background:#FF4646 ;
 	border: none;
 	border-radius: 5px;
 	margin-left: 0px;
-	margin-top: 10px;
-	margin-bottom: 5px;
+	margin-top: 50px;
+	margin-bottom: 15px;
 }
 
-        .error {
-            width: 92%; 
-            margin: 0px auto; 
-            padding: 10px; 
-            border: 1px solid #a94442; 
-            color: #a94442; 
-            background: #f2dede; 
-            border-radius: 5px; 
-            text-align: left;
-        }
+.btn:hover
+{
+  background-color: #FF8282;
+}
+
         .container {
             padding: 5px;
             text-align: center;
@@ -123,21 +106,23 @@
         
         
         
-.button {
-	border: none;
-  	border-radius: 8px;
-  	background-color: #f77a1f;
-  	padding: 14px 28px;
-  	color: #FFFFFB;
-  	text-align: center;
-  	font: 18px 'Montserrat', sans-serif;
-  	margin-right: auto;
-	margin-left: 120px;
-	margin-top: 20px;
-  	cursor: pointer;
-  	display: inline-block;
-}
-
-.button:hover {
-	background-color: #ff531a;
-}
+        .workerTree button
+        {
+          width: 40%;
+          padding: 10px 10px;
+          margin: 15px 40px;
+          border: 1px #000040 solid;
+          border-radius: 8px;
+          background-color:#CBEDFF; 
+          color:#000040;
+          text-align: center;
+          font: 20px cursive;
+          cursor: pointer;
+          display: inline-block;
+        }
+        
+        .workerTree button:hover
+        {
+          background-color: #9191FF;
+        }
+        

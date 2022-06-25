@@ -4,17 +4,7 @@
             font-size: 120%;
             background: #E8DDFF;
         }
-        .header {
-            width: 60%;
-            margin: 35px auto 0px;
-            color: white;
-            background: #5F9EA0;
-            text-align: center;
-            border: 1px solid #B0C4DE;
-            border-bottom: none;
-            border-radius: 10px 10px 0px 0px;
-            padding: 25px;
-        }
+      
         .slogan {
             font: bold 45px 'Comfortaa',cursive;
             color:#200062;
@@ -43,8 +33,20 @@
             border: 1px,solid;
             padding-bottom: 19px;
         }
-        form, .content {
-            width: 60%;
+
+        .header {
+            width: 40%;
+            margin: 30px auto 0px;
+            color: white;
+            background: #5F9EA0;
+            text-align: center;
+            border: 1px solid #B0C4DE;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 25px;
+        }
+         .content {
+            width: 40%;
             margin: 0px auto;
             margin-bottom: 20px;
             padding: 25px;
@@ -53,7 +55,6 @@
             background: white;
             border-radius: 0px 0px 10px 10px;
         }
-        
 
         table th,td
         {
@@ -63,32 +64,67 @@
           padding-right: 40px;
           margin-left: 5px;
           margin-right: 5px;
-          margin-top: 15px;
+          margin-top: 10px;
           margin-bottom: 30px;
           text-align: center;
           border-radius: 3px;
           font: 18px 'Arvo', serif;
         }
-        .btn {
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            font-size: 15px;
-            color: white;
-            background:#FF4646 ;
-            border: none;
-            border-radius: 5px;
-            margin-left: 0px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        
-        .btn:hover
-        {
-          background-color: #FF8282;
-        }
+
         h3 {
             font-size: 20px;
             padding-top: 30px;
         }
+        
+        
+.btn {
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 30%;
+	font-size: 15px;
+	color: white;
+	background:#FF4646 ;
+	border: none;
+	border-radius: 5px;
+	margin-left: 200px;
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+
+.btn:hover
+{
+  background-color: #FF8282;
+}
+
+.container {
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #E8DDFF;
+}
+
+.admin button
+{
+  width: 40%;
+  padding: 10px 10px;
+  margin: 15px 20px;
+  border: 1px #000040 solid;
+  border-radius: 8px;
+  background-color:#CBEDFF; 
+  color:#000040;
+  text-align: center;
+  font: 20px cursive;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.admin button:hover
+{
+  background-color: #9191FF;
+}
+
+   
+        
