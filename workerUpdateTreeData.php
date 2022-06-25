@@ -50,7 +50,11 @@
 				<form action="" method="POST" enctype="multipart/form-data">
 				<div class="updateTree">
 					<input type="hidden" name="TreeID" value="<?php echo $row['TreeID'] ?>"/><br>
+<<<<<<< HEAD
 					<label>Spesies Name</label>
+=======
+					<input type="file" name="tree_Image" value="<?php echo $row['tree_Image'] ?>"><br>
+>>>>>>> a07aa7357d7afee91fda612b0c41e04cddffd4f0
 					<input type="text" name="spesiesName" value="<?php echo $row['spesiesName'] ?>"/><br>
 					<label>Plant Date</label>
 					<input type="text" name="plantDate" value="<?php echo $row['plantDate'] ?>"/><br>
@@ -79,24 +83,28 @@
 </body>
 </html>
 
+</body>
+</html>
+
 <?php
 	include "dbConnection.php";
 
-/*fail updated等下改*/
+
 	if(isset($_POST['update']))
 	{
-		//$file = addslashes(file_get_contents($_FILES["tree_Image"]["tmp_name"]));
-		$spesiesName = $_POST["spesiesName"];
-		$plantDate = $_POST["plantDate"];
-		$tree_height = $_POST["tree_height"];
-		$diameter = $_POST["diameter"];
-		$status = $_POST["status"];
-		$GPS_location = $_POST["GPS_location"];
-		$tree_type = $_POST["tree_type"];
-		$BlockID = $_POST["BlockID"];
+		$tree_Image = $_FILES["tree_Image"]['tmp_name'];
+		$TreeID =$_POST['TreeID'];
+		$spesiesName = $_POST['spesiesName'];
+		$plantDate = $_POST['plantDate'];
+		$tree_height = $_POST['tree_height'];
+		$diameter = $_POST['diameter'];
+		$status = $_POST['status'];
+		$GPS_location = $_POST['GPS_location'];
+		$tree_type = $_POST['tree_type'];
+		$BlockID = $_POST['BlockID'];
 		
-		$query = "UPDATE `tree` SET spesiesName = '$_POST[spesiesName]', plantDate = '$_POST[plantDate]', tree_height = '$_POST[tree_height]',
-				diameter = '$_POST[diameter]', status = '$_POST[status]', GPS_location = '$_POST[GPS_location]', tree_type = '$_POST[tree_type]', BlockID = '$_POST[BlockID] where TreeID='$_POST[TreeID]'";
+		$query = "UPDATE tree SET tree_Image= '$tree_Image', spesiesName = '$spesiesName', plantDate = '$plantDate', tree_height = '$tree_height',
+				diameter = '$diameter', status = '$status', GPS_location = '$GPS_location', tree_type = '$tree_type', BlockID = '$BlockID' where TreeID='$TreeID'";
 		$query_run = mysqli_query($conn, $query);
 		
 		if($query_run)
