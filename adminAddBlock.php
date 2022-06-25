@@ -33,8 +33,8 @@
 			
 			$sucessMessage = "Block added successfully!";
 			
-			//header("location: /tmf2034/DisplayUser.php");
-			//exit;
+			header("location: DisplayUser.php");
+			exit;
 			
 		}while(false);
 	}
@@ -102,7 +102,7 @@
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
 			<div class="col-sm-3 d-grid">
-				<a class="btn btn-outline-primary" href="/tmf2034/project/adminBlock.php" role="button">Cancel/Back</a>
+				<a class="btn btn-outline-primary" href="adminBlock.php" role="button">Cancel/Back</a>
 			</div>
 		</div>
 		
