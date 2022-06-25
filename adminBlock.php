@@ -27,8 +27,11 @@
 	
 	<div class = "container my-5">
         <h2>List of Block</h2>
+		<br>
 		<a class="btn btn-primary" href="adminAddBlock.php" role="button">Add - New Block</a>
         <br>
+		<br>
+		<center>
 		<table class="table">
 			<thead>
 				<tr>
@@ -38,6 +41,7 @@
 					<th>Action</th>
 				<tr>
 			</thead>
+		</center>
 			<tbody>
 				<?php
 					include "dbConnection.php";
@@ -58,8 +62,10 @@
 							<td>$row[BlockID]</td>
 							<td>$row[Price]</td>
 							<td>$row[orchardID]</td>
+							
 							<td>
 								<a class='btn btn-primary btn-sm' href='adminUpdateBlock.php?BlockID=$row[BlockID]'>Update</a>
+								
 								<a class='btn btn-primary btn-sm' href='adminDeleteBlock.php?BlockID=$row[BlockID]'>Delete</a>
 							</td>	
 						</tr>
