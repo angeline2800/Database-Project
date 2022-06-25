@@ -22,35 +22,34 @@ if(isset($_POST['Login'])){
    'userPW'=>$row['userPW'],
    'userType'=>$row['userType']
    );
-   $userType=$_SESSION['user']['userType'];
-   //Redirecting User Based on Role
-	switch($userType){
-  		case 'company':
-			echo"<script type=\"text/javascript\">
-			alert(\"Login Successfully...!\");
-			window.location = 'company.php';
-		</script>";
-  		break;
-  		case 'worker':
-			echo"<script type=\"text/javascript\">
-			alert(\"Login Successfully...!\");
-			window.location = 'worker.php';
-		</script>";
-  		break;
-  		case 'client':
-			echo"<script type=\"text/javascript\">
-			alert(\"Login Successfully...!\");
-			window.location = 'client.php';
-		</script>";
-  		break;
-  		case 'admin':
-			echo"<script type=\"text/javascript\">
-			alert(\"Login Successfully...!\");
-			window.location = 'admin.php';
-		</script>";
-		break;
-
-		$_SESSION['userID'] = $userID;
+   if ($_SESSION['user']['userID'] && $_SESSION['user']['userType'] == 'admin') {
+     	echo "
+    		<script type=\"text/javascript\">
+            alert(\"Login Successfully...!\");
+    			window.location = 'admin.php';
+    		</script>
+    	";
+ }else if ($_SESSION['user']['userID'] && $_SESSION['user']['userType'] == 'worker') {
+        echo "
+           <script type=\"text/javascript\">
+           alert(\"Login Successfully...!\");
+               window.location = 'worker.php';
+           </script>
+       ";
+}else if ($_SESSION['user']['userID'] && $_SESSION['user']['userType'] == 'client') {
+    echo "
+       <script type=\"text/javascript\">
+       alert(\"Login Successfully...!\");
+           window.location = 'client.php';
+       </script>
+   ";
+}else if ($_SESSION['user']['userID'] && $_SESSION['user']['userType'] == 'company') {
+    echo "
+       <script type=\"text/javascript\">
+       alert(\"Login Successfully...!\");
+           window.location = 'company.php';
+       </script>
+   ";
  }
  }else{
 	echo"<script type=\"text/javascript\">
