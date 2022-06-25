@@ -41,7 +41,7 @@
   </header>
 	<center>
 		<h1>Delete Tree Data </h1>
-		<form action = "" method="POST">
+		<form action = "worker.php" method="POST">
 			<input type="text" name="TreeID" placeholder="Enter Tree ID" /><br>
 			<input type="submit" name="delete" value="Delete" /><br>
 	</center>
