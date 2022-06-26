@@ -19,36 +19,32 @@ if(isset($_POST['Logout']))
 </head>
 <body>
 
-<header class="header-border">
-    <div class="header-content">
-	
-      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-        <div class="slogan2">
-         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-        </div>
-    </div>
-  </header>
+	<header class="header-border">
+	    <div class="header-content">
 
-  <center>    
-    <div class="header">
-	<h2>Welcome Back! What do you want to do ?</h2>
-</div>
+	      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+		<div class="slogan2">
+			<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+		</div>
+	    </div>
+	</header>
 
- <div class="content">          
-  <div class="workerTree">
-      <a href="workerInsertTreeData.php"><button>Add Trees</button></a>
-      <a href="workerUpdateTreeData.php"><button>Update Trees</button></a>
-      <a href="workerDeleteTreeData.php"><button>Delete Trees</button></a>
-</div>
+	<center>    
+		<div class="header">
+			<h2>Welcome Back! What do you want to do ?</h2>
+		</div>
 
-<button type="submit" class="btn" name="Logout">Logout</button>
-</div>
+		 <div class="content">          
+		  <div class="workerTree">
+		      <a href="workerInsertTreeData.php"><button>Add Trees</button></a>
+		      <a href="workerUpdateTreeData.php"><button>Update Trees</button></a>
+		      <a href="workerDeleteTreeData.php"><button>Delete Trees</button></a>
+		</div>
 
+		<button type="submit" class="btn" name="Logout">Logout</button>
+		</div>
+	</center>
        
-            </center>
-
-            
-            
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html>
