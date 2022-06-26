@@ -4,6 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="CSS/assign.css">
+		<link rel="shortcut icon" href="photo/tree.ico" />
 		<title>Assign Block Client Form | Administration | Tree Profiling Management System </title>
 		
 	</head>
@@ -82,7 +83,7 @@
 			
 	/* }
 	else{
-		header("Location: login.php");
+		header("Location: UserLoginForm.php");
 		exit();
 	} */
 ?>
