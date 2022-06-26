@@ -7,6 +7,7 @@
 		$userAdd = $_POST['userAdd'];
 		$userEmail = $_POST['userEmail'];
 		$userPW = $_POST['userPW'];
+		$encrypted_pwd = md5($userPW);
 		$userPhone = $_POST['userPhone'];
 		$userCountry = $_POST['userCountry'];
 		$userType = $_POST['userType'];
@@ -14,7 +15,7 @@
 		$client_photo = $_POST['client_photo'];
 		
 		$sql = "INSERT INTO `user`(`userID`, `userName`, `userAdd`, `userEmail`, `userPW`, `userPhone`, `userCountry`, `userType`)
-				VALUES (NULL, '$userName', '$userAdd', '$userEmail', '$userPW', '$userPhone', '$userCountry', '$userType')";
+				VALUES (NULL, '$userName', '$userAdd', '$userEmail', '$encrypted_pwd', '$userPhone', '$userCountry', '$userType')";
 				
 		$result = mysqli_query($conn, $sql);
 		
@@ -35,7 +36,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Clients | Administration | Tree Profiling Management System</title>
+	<title>Admins | Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
 	<link rel="stylesheet" href="CSS/worker.css">
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link> -->
@@ -62,57 +63,53 @@
 			<h3>Add New User</h3>
 			<p class="text-muted">Complete the form below to add a new User</p>
 		</div>
+	
 		
 		<div class="container d-flex justify-content-center">
 			<form action="" method="post" style="width:50vw; min-width:300px;">
 				<div class="row mb-3">
 					<div class="mb-3">
 						<label class="form-label">User Name</label>
-						<input type = "text" class="form-control" name="userName" placeholder="enter name">
+						<input type = "text" class="form-control" name="userName" placeholder="enter name" required>
 					</div>
 					
 					<div class="mb-3">
 						<label class="form-label">User Address</label>
-						<input type = "text" class="form-control" name="userAdd" placeholder="enter address">
+						<input type = "text" class="form-control" name="userAdd" placeholder="enter address" required>
 					</div>
 					
 					<div class="mb-3">
 						<label class="form-label">User Email</label>
-						<input type = "email" class="form-control" name="userEmail" placeholder="name@example.com">
+						<input type = "email" class="form-control" name="userEmail" placeholder="name@example.com" required>
 					</div>
 					
 					<div class="mb-3">
 						<label class="form-label">User Password</label>
-						<input type = "password" class="form-control" name="userPW" placeholder="enter password">
+						<input type = "password" class="form-control" name="userPW" placeholder="enter password" required>
 					</div>
 					
 					<div class="mb-3">
 						<label class="form-label">User Phone</label>
-						<input type = "text" class="form-control" name="userPhone" placeholder="enter phone">
+						<input type = "text" class="form-control" name="userPhone" placeholder="enter phone" required>
 					</div>
 					
 					<div class="mb-3">
 						<label class="form-label">User Country</label>
-						<input type = "text" class="form-control" name="userCountry" placeholder="enter country">
+						<input type = "text" class="form-control" name="userCountry" placeholder="enter country"required>
 					</div>
 					
 					<div class="mb-5">
 						<label>User Type </label>
-						<input type = "radio" class="form-check-input" name="userType" id="client" value="client">
+						<input type = "radio" class="form-check-input" name="userType" id="client" value="client" required>
 						<label for="client" class="form-input-label">Client</label>
 						
-						<input type = "radio" class="form-check-input" name="userType" id="company" value="company">
+						<input type = "radio" class="form-check-input" name="userType" id="company" value="company" required>
 						<label for="client" class="form-input-label">Company</label>
 						
-						<input type = "radio" class="form-check-input" name="userType" id="worker" value="worker">
+						<input type = "radio" class="form-check-input" name="userType" id="worker" value="worker" required>
 						<label for="client" class="form-input-label">Worker</label>
 					</div>
 					
-					<div class="mb-3">
-						<label class="form-label">User Country</label>
-						<input type = "text" class="form-control" name="userCountry" placeholder="enter country">
-					</div>
-			
 					<div>
 						<button type="submit" class="btn btn-success" name="insert">Save</button>
 						<a href="admin.php" class="btn btn-danger">Cancel</a>
@@ -125,3 +122,6 @@
 		
 	<!--Boostrap-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
