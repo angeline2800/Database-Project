@@ -61,7 +61,7 @@
 						
 						if(!$result){
 							die("Invalid query: " . $conn->error);
-						}
+						} 
 						
 						//read data of each row
 						while ($row = mysqli_fetch_assoc($result)){
