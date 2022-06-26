@@ -40,7 +40,7 @@ if(isset($_POST['Logout']))
 		      <a href="workerUpdateTreeData.php"><button>Update Trees</button></a>
 		      <a href="workerDeleteTreeData.php"><button>Delete Trees</button></a>
 		</div>
-
+		<form method="POST">
 		<button type="submit" class="btn" name="Logout">Logout</button>
 		</div>
 	</center>
