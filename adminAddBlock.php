@@ -86,14 +86,14 @@
 				<div class="row mb-3">
 					<label class="col-sm-3 col-form-label">Price</label>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" name="Price" placeholder="enter Price RMxxxx"  value="<?php echo $Price; ?>">
+							<input type="text" class="form-control" name="Price" placeholder="enter Price RMxxxx" required value="<?php echo $Price;?>">
 						</div>
 				</div>
 				
 				<div class="row mb-3">
 					<label class="col-sm-3 col-form-label">Orchard ID</label>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" name="orchardID" placeholder="enter orchard ID" value="<?php echo $orchardID; ?>">
+							<input type="text" class="form-control" name="orchardID" placeholder="enter orchard ID" required value="<?php echo $orchardID; ?>">
 						</div>
 				</div>
 			
