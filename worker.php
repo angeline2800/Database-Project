@@ -42,6 +42,7 @@ if(isset($_POST['Logout']))
 		</div>
 		<form method="POST">
 		<button type="submit" class="btn" name="Logout">Logout</button>
+		</form>
 		</div>
 	</center>
        
