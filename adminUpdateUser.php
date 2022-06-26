@@ -3,7 +3,7 @@
 	
 	$userID = $_GET['userID'];
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if(isset($_POST['update'])){
+	if(isset($_POST['insert'])){
 		
 		$userName = $_POST['userName'];
 		$userAdd = $_POST['userAdd'];
@@ -36,7 +36,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,19 +48,18 @@
 </head>
 <body>
 
-<header class="header-border">
-    <div class="header-content">
-	
-      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-        <div class="slogan2">
-         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-        </div>
-    </div>
-  </header>
+	<header class="header-border">
+		<div class="header-content">
+		<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+			<div class="slogan2">
+				<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+			</div>
+		</div>
+	</header>
 
-  <div class="header">
-	<h2>Update User Information</h2>
-</div>
+	<div class="header">
+		<h2>Update User Information</h2>
+	</div>
 
 	<div class="content">
 		<center><h3>Click update after changing any information</h3></center>
@@ -76,21 +75,21 @@
 		<form action="" method="post">
 			<div class="editUser">
 				<label>User Name</label>
-				<input type = "text" name="userName" value="<?php echo $row['userName']?>">
+				<input type = "text" name="userName" value="<?php echo $row['userName']?>"><br>
 					<label>User Address</label>
-					<input type = "text" name="userAdd" value="<?php echo $row['userAdd']?>">
+					<input type = "text" name="userAdd" value="<?php echo $row['userAdd']?>"><br>
 					<label>User Email</label>
-					<input type = "email" name="userEmail" value="<?php echo $row['userEmail']?>">
+					<input type = "email" name="userEmail" value="<?php echo $row['userEmail']?>"><br>
 					<label>User Password</label>
-					<input type = "password" name="userPW" value="<?php echo $row['userPW']?>">
+					<input type = "password" name="userPW" value="<?php echo $row['userPW']?>"><br>
 					<label>User Phone</label>
-					<input type = "text" name="userPhone" value="<?php echo $row['userPhone']?>">
+					<input type = "text" name="userPhone" value="<?php echo $row['userPhone']?>"><br>
 					<label>User Country</label>
-					<input type = "text" name="userCountry" value="<?php echo $row['userCountry']?>">
+					<input type = "text" name="userCountry" value="<?php echo $row['userCountry']?>"><br>
 
 					<div class="usertype">
 
-					<label>User Type </label>
+					<label>User Type </label><br>
 					<input type = "radio" name="userType" id="client" value="client" <?php echo ($row['userType']=='client')? "checked":""; ?>>
 					<label for="client">Client</label>
 					
@@ -107,5 +106,7 @@
 			</form>
 		</div>	
 	</div>
+	<!--Boostrap-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
-</html>	
+</html>
