@@ -6,7 +6,7 @@
 	$Price="";
 	$orchardID="";
 	
-	$result=mysqli_query($conn, "select * from block where BlockId=$BlockID");
+	$result=mysqli_query($conn, "select * from block where BlockID=$BlockID");
 	while($row = mysqli_fetch_array($result))
 	{
 		$Price = $row["Price"];
