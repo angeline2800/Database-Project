@@ -25,7 +25,7 @@
 	
 	<div class = "container my-5">
         <h2>List of orchard</h2>
-		<a class="btn btn-primary" href="/tmf2034/project/adminAddOrchard.php" role="button">Add - New Orchard</a>
+		<a class="btn btn-primary" href="adminAddOrchard.php" role="button">Add - New Orchard</a>
         <br>
 		<table class="table">
 			<thead>
@@ -72,8 +72,8 @@
 							<td>$row[userID]</td>
 							
 							<td>
-								<a class='btn btn-primary btn-sm' href='/tmf2034/project/adminUpdateOrchard.php?orchardID=$row[orchardID]'>Update</a>
-								<a class='btn btn-primary btn-sm' href='/tmf2034/project/adminDeleteOrchard.php?orchardID=$row[orchardID]'>Delete</a>
+								<a class='btn btn-primary btn-sm' href='adminUpdateOrchard.php?orchardID=$row[orchardID]'>Update</a>
+								<a class='btn btn-primary btn-sm' href='adminDeleteOrchard.php?orchardID=$row[orchardID]'>Delete</a>
 							</td>	
 						</tr>
 						";
