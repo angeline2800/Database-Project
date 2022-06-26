@@ -43,7 +43,6 @@
 			<table>
 				<thead>
 					<tr>
-						hello
 						<th>Client ID</th>
 						<th>Client Name</th>
 						<th>Client Address</th>

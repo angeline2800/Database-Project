@@ -107,30 +107,6 @@
     background-color: #E8DDFF;
 }
 
-.addOrchard button
-{
-    padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-    width: 30%;
-	font-size: 13px;
-    margin-left: 10px;
-    margin-right: 0px;
-	margin-top: 10px;
-	margin-bottom: 20px;
-  border: 1px #000040 solid;
-  border-radius: 8px;
-  color: white;
-  background:#FF4646 ;
-  cursor: pointer;
-  display:inline-block;
-}
-.addOrchard button:hover
-{
-    background-color: #FF8282;
-}
-
    
 form{
     width: 100%;
@@ -140,38 +116,6 @@ form{
     margin-right: 10px;
     background: white;
     margin-left: 10px;
-}
-
-.addBlock {
-    width: 90%;
-    margin: 8px 70px;
-    padding: 0px;
-    margin-right: 0px;
-    border: 1px,solid,black;
-    text-align: center;
-}
-.addBlock button
-{
-    padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-    width: 40%;
-	font-size: 18px;
-    margin-left: 0px;
-    margin-right: 0px;
-	margin-top: 0px;
-	margin-bottom: 20px;
-  border: 1px #000040 solid;
-  border-radius: 8px;
-  color: white;
-  background:#FF4646 ;
-  cursor: pointer;
-  display:inline-block;
-}
-.addBlock button:hover
-{
-    background-color: #FF8282;
 }
 
 .insertUser {
@@ -296,6 +240,92 @@ form{
   
 }
 .insertUser button:hover
+{
+    background: #5F9EA0;
+}
+.updateUser {
+    width: 100%;
+    margin: 8px 10px;
+    padding: 0px;
+    margin-right: 40px;
+    border: 1px,solid,black;
+    text-align: center;
+
+}
+
+.editUser {
+    margin: auto;
+    padding-top: 5px;
+    text-align:right ;
+    padding-right: 10px;
+}
+.editUser label {
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 30px;
+    margin-right:70px;
+    margin-top: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+
+}
+.editUser input {
+    height: 20px;
+    width: 35%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 70px;
+    margin-top: 20px;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.editUser .addSubmit
+{
+    padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 25px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background:#FF4646 ;
+  cursor: pointer;
+  
+}
+.editUser .addSubmit:hover
+{
+    background-color: #FF8282;
+}
+
+
+.editUser button
+{
+    padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 60px;
+    margin-right: 30px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #5353FF;
+  cursor: pointer;
+  
+}
+.editUser button:hover
 {
     background: #5F9EA0;
 }
