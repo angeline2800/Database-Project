@@ -406,7 +406,7 @@
 	 $sqlClientData = "INSERT INTO Client(userID,client_photo)
 	 SELECT userID,client_photo
 		FROM (SELECT userID,client_photo
-		FROM (SELECT 10011 AS userID, 'photo/woman.jpg' AS client_photo)
+		FROM (SELECT 10011 AS userID, 'woman.jpg' AS client_photo)
 			AS temp_36 WHERE NOT EXISTS (SELECT userID FROM Client WHERE userID = 10011)
 		UNION ALL
 			SELECT userID,client_photo
