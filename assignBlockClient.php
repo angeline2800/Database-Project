@@ -8,9 +8,16 @@
 		<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
+		<link rel="shortcut icon" href="photo/tree.ico" />
 		<title>Assignment Block Client | Administration | Tree Profiling Management System</title>
 		
 		<style>
+		* { margin: 0px; padding: 0px; }
+		
+		body {
+            font-size: 120%;
+            background: #E8DDFF;
+        }
 		 .slogan {
             font: bold 45px 'Comfortaa',cursive;
             color:#200062;
@@ -40,6 +47,8 @@
             padding-bottom: 19px;
         }
 			.content{
+				margin-top: 50px;
+				margin-bottom: 50px;
 				display: flex;
 				justify-content: flex-start;
 				flex-direction: column;
