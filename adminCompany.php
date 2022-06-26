@@ -73,8 +73,8 @@
 							<td><?php echo $row['userCountry'] ?></td>
 							<td><?php echo $row['userType'] ?></td>
 							<td>
-							<a class='btn btn-primary btn-sm' href='adminUpdateUser.php?orchardID=$row[userID]'>Update</a>
-							<a class='btn btn-primary btn-sm' href='adminDeleteUser.php?orchardID=$row[userID]'>Delete</a>
+							<a class='btn btn-primary btn-sm' href="adminUpdateUser.php?userID=<?php echo $row['userID'] ?>">Update</a>
+							<a class='btn btn-primary btn-sm' href="adminDeleteUser.php?userID=<?php echo $row['userID'] ?>">Delete</a>
 							</td>
 						</tr>
 						<?php
