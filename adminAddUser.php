@@ -66,28 +66,29 @@
 			<form action="" method="post">
 			<div class="insertUser">
 				<label>User Name</label>
-				<input type = "text" name="userName" placeholder="enter name">
+				<input type = "text" name="userName" placeholder="enter name" required><br>
 					
 				<label>User Address</label>
-				<input type = "text" name="userAdd" placeholder="enter address">
+				<input type = "text" name="userAdd" placeholder="enter address"required><br>
 					
 				<label>User Email</label>
-				<input type = "email" name="userEmail" placeholder="name@example.com">
+				<input type = "email" name="userEmail" placeholder="name@example.com"required><br>
 				<label>User Password</label>
-				<input type = "password" name="userPW" placeholder="enter password">
+				<input type = "password" name="userPW" placeholder="enter password"required><br>
 				<label>User Phone</label>
-				<input type = "text" name="userPhone" placeholder="enter phone">
+				<input type = "text" name="userPhone" placeholder="enter phone"required><br>
 				<label>User Country</label>
-				<input type = "text" name="userCountry" placeholder="enter country">
+				<input type = "text" name="userCountry" placeholder="enter country"required><br>
+				
 				<div class="usertype">
 				<label>User Type </label><br>
-				<input type = "radio" class="form-check-input" name="userType" id="client" value="client">
+				<input type = "radio" class="form-check-input" name="userType" id="client" value="client"required>
 				<label for="client">Client</label>
 				
-				<input type = "radio" class="form-check-input" name="userType" id="company" value="company">
+				<input type = "radio" class="form-check-input" name="userType" id="company" value="company"required>
 				<label for="client">Company</label>
 				
-				<input type = "radio" class="form-check-input" name="userType" id="worker" value="worker">
+				<input type = "radio" class="form-check-input" name="userType" id="worker" value="worker"required>
 				<label for="client">Worker</label>
 				</div>
 
@@ -97,15 +98,10 @@
 			</form>
 		</div>	
 	</div>		
-<<<<<<< HEAD
-</body>
-</html>
-=======
-					
-		
-	<!--Boostrap-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
 </html>
->>>>>>> d7d8e3d68365e8613d7072fda3b9ce521d0ef738
+
+					
+		
+	
