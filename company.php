@@ -39,7 +39,7 @@ if(isset($_POST['Logout']))
                     <th>User ID</th>
                     <th>Orchard ID</th>
                     <th>Orchard Address</th>
-                    <th>Orchard Locatiion</th>
+                    <th>Orchard Location</th>
                 </tr>
              
                 <?php 
