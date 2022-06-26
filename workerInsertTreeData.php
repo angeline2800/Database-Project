@@ -56,35 +56,36 @@
 
 <div class ="content">
 		
-		<form action="" method="POST" enctype="multipart/form-data">
+		<form action="" method="POST" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 		
 		<div class="input-group">
+			
 			<label>Tree Image </label>
-			<input type="file" name="tree_Image" id="tree_Image" /><br>
+			<input type="file" name="tree_Image" id="tree_Image" /required><br>
 			
 			<label>Spesies Name</label>
-			<input type="text" name="spesiesName" placeholder="Enter Species Name" /><br>
+			<input type="text" name="spesiesName" placeholder="Enter Species Name"/required><br>
 			
 			<label>Plant Date</label>
-			<input type="text" name="plantDate" placeholder="Enter Plant Date yyyy-mm-dd" /><br>
+			<input type="text" name="plantDate" placeholder="Enter Plant Date yyyy-mm-dd" /required><br>
 			
 			<label>Tree Height</label>
-			<input type="text" name="tree_height" placeholder="Enter Tree Height (m)" /><br>
+			<input type="text" name="tree_height" placeholder="Enter Tree Height (m)" /required><br>
 			
 			<label>Diameter</label>
-			<input type="text" name="diameter" placeholder="Enter Diameter (cm)" /><br>
+			<input type="text" name="diameter" placeholder="Enter Diameter (cm)" /required><br>
 			
 			<label>Status</label>
-			<input type="text" name="status" placeholder="Enter Status" /><br>
+			<input type="text" name="status" placeholder="Enter Status" /required><br>
 			
 			<label>GPS location</label>
-			<input type="text" name="GPS_location" placeholder="Enter GPS_location" /><br>
+			<input type="text" name="GPS_location" placeholder="Enter GPS_location" /required><br>
 			
 			<label>Tree Type</label>
-			<input type="text" name="tree_type" placeholder="Enter Tree Type" /><br>
+			<input type="text" name="tree_type" placeholder="Enter Tree Type" /required><br>
 			
 			<label>Block ID</label>
-			<input type="text" name="BlockID" placeholder="Enter Block ID" /><br>
+			<input type="text" name="BlockID" placeholder="Enter Block ID" /required><br>
 		
 			<input type="submit"class="insert" name="insert" value="Insert Image & Data" /><br>
 			
@@ -100,4 +101,3 @@
 		
 </body>
 </html>
-
