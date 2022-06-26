@@ -50,8 +50,7 @@
 				<form action="" method="POST" enctype="multipart/form-data">
 				<div class="updateTree">
 					<input type="hidden" name="TreeID" value="<?php echo $row['TreeID'] ?>"/><br>
-					<label>Tree Image</label>
-					<input type="file" name="tree_Image" value="<?php echo $row['tree_Image'] ?>"><br>
+					
 					<label>Spesies Name</label>
 					<input type="text" name="spesiesName" value="<?php echo $row['spesiesName'] ?>"/><br>
 					<label>Plant Date</label>
@@ -88,9 +87,9 @@
 	include "dbConnection.php";
 
 
-	if(isset($_POST['update']))
+	if(isset($_POST['updateBttn']))
 	{
-		$tree_Image = $_FILES["tree_Image"]['tmp_name'];
+		//$tree_Image = $_FILES["tree_Image"]['tmp_name'];
 		$TreeID =$_POST['TreeID'];
 		$spesiesName = $_POST['spesiesName'];
 		$plantDate = $_POST['plantDate'];
@@ -101,7 +100,7 @@
 		$tree_type = $_POST['tree_type'];
 		$BlockID = $_POST['BlockID'];
 		
-		$query = "UPDATE tree SET tree_Image= '$tree_Image', spesiesName = '$spesiesName', plantDate = '$plantDate', tree_height = '$tree_height',
+		$query = "UPDATE tree SET spesiesName = '$spesiesName', plantDate = '$plantDate', tree_height = '$tree_height',
 				diameter = '$diameter', status = '$status', GPS_location = '$GPS_location', tree_type = '$tree_type', BlockID = '$BlockID' where TreeID='$TreeID'";
 		$query_run = mysqli_query($conn, $query);
 		
