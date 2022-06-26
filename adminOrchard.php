@@ -15,18 +15,22 @@
 <header class="header-border">
     <div class="header-content">
 	
-      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-        <div class="slogan2">
-         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-        </div>
-    </div>
-  </header>
-    <center><h1>Orchard</h1></center>
+		<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+			<div class="slogan2">
+				<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+			</div>
+	</div>
+ </header>
+ 
+    <center>
+		<h1>Orchard</h1>
+		<a class="btn btn-primary" href="adminAddOrchard.php" role="button">Add - New Orchard</a>
+	</center>
 	
 	<div class = "container my-5">
+		<br>
         <h2>List of orchard</h2>
-		<a class="btn btn-primary" href="adminAddOrchard.php" role="button">Add - New Orchard</a>
-        <br>
+		<br>
 		<table class="table">
 			<thead>
 				<tr>
@@ -34,9 +38,12 @@
 					<th>Orchard Address</th>
 					<th>Orchard Location</th>
 					<th>User ID</th>
+					<th>Update</th>
+					<th>Delete</th>
 					
 				<tr>
 			</thead>
+		
 			<tbody>
 				<?php
 					$servername = "localhost";
@@ -73,14 +80,18 @@
 							
 							<td>
 								<a class='btn btn-primary btn-sm' href='adminUpdateOrchard.php?orchardID=$row[orchardID]'>Update</a>
-								<a class='btn btn-primary btn-sm' href='adminDeleteOrchard.php?orchardID=$row[orchardID]'>Delete</a>
 							</td>	
+							
+							<td>
+								<a class='btn btn-primary btn-sm' href='adminDeleteOrchard.php?orchardID=$row[orchardID]'>Delete</a>
+							</td>
 						</tr>
 						";
 					}
 				?>				
 				
 			</tbody>
+		</table>
 
 </body>
 </html>
