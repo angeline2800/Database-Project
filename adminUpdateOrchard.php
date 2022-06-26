@@ -1,6 +1,4 @@
 <?php
-//updated fail!!
-
 	include "dbConnection.php";
 	
 	$orchardID = $_GET['orchardID'];
@@ -9,7 +7,7 @@
 	$orchard_location="";
 	$userID="";
 	
-	$result=mysqli_query($conn, "select * from orchard where orchardId=$orchardID");
+	$result=mysqli_query($conn, "select * from orchard where orchardID=$orchardID");
 	while($row = mysqli_fetch_array($result))
 	{
 		$orchard_add = $row["orchard_add"];
@@ -38,16 +36,17 @@
 </head>
 <body>
 
-<header class="header-border">
-    <div class="header-content">
+	<header class="header-border">
+		<div class="header-content">
 	
-      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-        <div class="slogan2">
-         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-        </div>
-    </div>
-  </header>
-  <div class = "container">
+			<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+			<div class="slogan2">
+				<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+			</div>
+		</div>
+	</header>
+	
+	<div class = "container">
 		<div class="text-center mb-4">
 			<h3>Edit/Update Orchard Information</h3>
 			<p class="text-muted">Click update after changing any information</p>
@@ -67,6 +66,10 @@
 						<input type = "text" class="form-control" name="orchard_location" id="orchard_location" value="<?php echo $orchard_location; ?>">
 					</div>
 					
+					<div class="mb-3">
+						<label class="form-label">User ID</label>
+						<input type = "text" class="form-control" name="userID" id="userID" value="<?php echo $userID; ?>">
+					</div>
 			
 					<div>
 						<button type="submit" class="btn btn-success" name="update">Update</button>
@@ -88,7 +91,6 @@
 		mysqli_query($conn, "UPDATE orchard SET orchard_add='$_POST[orchard_add]', orchard_location='$_POST[orchard_location]', userID='$_POST[userID]' where orchardID=$orchardID");
 	
 		?><script type="text/javascript">window.location="adminOrchard.php"</script><?php
-	
 	}
 	
 	?>
