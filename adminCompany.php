@@ -55,7 +55,8 @@
 					<th scope="col">Company Phone</th>
 					<th scope="col">Company Country</th>
 					<th scope="col">Company Type</th>
-					<th scope="col">Action</th>
+					<th scope="col">Edit</th>
+					<th scope="col">Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -83,6 +84,8 @@
 							<td><?php echo $row['userType'] ?></td>
 							<td>
 								<a href="adminUpdateUser.php?userID=<?php echo $row['userID'] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-3"></i></a>
+							</td>
+							<td>
 								<a href="adminDeleteUser.php?userID=<?php echo $row['userID'] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5 me-3"></i></a>
 							</td>
 						</tr>
