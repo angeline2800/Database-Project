@@ -62,7 +62,7 @@
 
 	<?php
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		if(isset($_POST["update"]))
+		if(isset($_POST["edit"]))
 	{
 		mysqli_query($conn, "UPDATE block SET Price='$_POST[Price]', orchardID='$_POST[orchardID]' where BlockID=$BlockID");
 	
