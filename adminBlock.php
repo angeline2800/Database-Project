@@ -29,6 +29,7 @@
 	
 <div class="content">
 		<div class="addBlock">
+		<center><a href="admin.php"><button>Admin Home Page</button></a></center>
 		<center><a href="adminAddBlock.php"><button>Add - New Block</button></a></center>
 </div>
 		<center>
@@ -38,7 +39,8 @@
 					<th>Block ID</th>
 					<th>Price</th>
 					<th>Orchard ID</th>
-					<th>Action</th>
+					<th>Update</th>
+					<th>Delete</th>
 				<tr>
 			</thead>
 		</center>
@@ -65,7 +67,9 @@
 							
 							<td>
 								<a class='btn btn-primary btn-sm' href='adminUpdateBlock.php?BlockID=$row[BlockID]'>Update</a>
-								
+							</td>
+							
+							<td>
 								<a class='btn btn-primary btn-sm' href='adminDeleteBlock.php?BlockID=$row[BlockID]'>Delete</a>
 							</td>	
 						</tr>

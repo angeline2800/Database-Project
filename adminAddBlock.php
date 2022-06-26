@@ -97,10 +97,10 @@
 			
 				<div class="insertBlock">
 					<label>Price</label>
-					<input type="text" name="Price" placeholder="Enter Price RMxxxx" value="<?php echo $Price; ?>"><br/>
+					<input type="text" name="Price" placeholder="Enter Price RMxxxx" required value="<?php echo $Price; ?>"><br/>
 		
 					<label>Orchard ID</label>
-					<input type="text" name="orchardID" placeholder="Enter Orchard ID" value="<?php echo $orchardID; ?>"><br/>
+					<input type="text" name="orchardID" placeholder="Enter Orchard ID" required value="<?php echo $orchardID; ?>"><br/>
 				<?php
 					if(!empty($sucessMessage)){
 					echo "

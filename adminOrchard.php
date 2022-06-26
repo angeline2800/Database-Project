@@ -29,6 +29,7 @@
 
 	<div class="content">
 		<div class="addOrchard">
+			<center><a href="admin.php"><button>Admin Home Page</button></a></center>
 			<center><a href="adminAddOrchard.php"><button>Add - New Orchard</button></a></center>
 		</div>
 

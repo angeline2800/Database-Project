@@ -1,24 +1,45 @@
 <?php
 	include "dbConnection.php";
+	
+	$orchard_add = "";
+	$orchard_location= "";
+	$userID= "";
+	
+	$errorMessage="";
+	$sucessMessage="";
+	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if(isset($_POST['insert'])){
+		$orchard_add = $_POST["orchard_add"];
+		$orchard_location = $_POST["orchard_location"];
+		$userID = $_POST["userID"];
 		
-		$orchard_add = $_POST['orchard_add'];
-		$orchard_location = $_POST['orchard_location'];
-		$userID = $_POST['userID'];
-		
-		$sql = $sql = "INSERT INTO `orchard`(`orchardID`, `orchard_add`, `orchard_location`, `userID`)
-				VALUES (NULL, '$orchard_add', '$orchard_location', '$userID')";
-				
-		$result = mysqli_query($conn, $sql);
-		
-		if($result){
-				header("Location: adminOrchard.php?msg=New record created successfully");
-		}
-		else
-		{
-			echo "Failed: " . mysqli_error($conn);
-		}
+		do {
+			if ( empty($orchard_add) || empty($orchard_location) || empty($userID) )
+			{
+				$errorMessage = "All the fields are required";
+				break;
+			}
+			
+			// add new orchard to database
+			$sql = "INSERT INTO orchard (orchard_add, orchard_location, userID)"
+			. "VALUES ('$orchard_add', '$orchard_location', '$userID')";
+			$result = $conn->query($sql);
+			
+			if (!$result) {
+				$errorMessage = "Invalid query: " . $conn->error;
+				break;
+			}
+			
+			$orchard_add = "";
+			$orchard_location= "";
+			$userID= "";
+			
+			$sucessMessage = "Orchard added successfully!";
+			
+			header("location: adminOrchard.php ");
+			exit;
+			
+		}while(false);
 	}
 	else
 	{
@@ -33,7 +54,6 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<title>Orchard | Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
 	<link rel="stylesheet" href="CSS/block.css">

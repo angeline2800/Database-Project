@@ -2,35 +2,6 @@
 
 session_start();
 
-function display_client()
-{
-      global $conn;
-
- 
-            
-          if($_SERVER["REQUEST_METHOD"]=="POST") 
-          {
-
-      $query = "SELECT * FROM block_client WHERE userID=".$_SESSION['userID'];
-      $result = mysqli_query($conn, $query);
-
-      if($result-> num_rows > 0){
-          while($row = mysqli_fetch_array($result))
-          {
-            echo"<tr>";
-            echo "<td>" .$row['userID']."</td>";
-            echo "<td>" .$row['BlockID']."</td>";
-            echo "<td>" .$row['purchaseDate']."</td>";
-            echo "<td>" .$row['blockQty']."</td>";
-            echo "<td>" .$row['totalPrice']."</td>";
-            echo"</tr>";
-            }      
-          }
-
-    }
-  }
- 
-
 if(isset($_POST['Logout']))
 {
   header('location:UserLogout.php');
@@ -71,15 +42,32 @@ if(isset($_POST['Logout']))
                     <th>Block Quantity</th>
                     <th>Total Price</th>
                 </tr>
-          
-                <tr>
-                    <th>TRY</th>
-                    <th>TRY</th>
-                    <th>TRY</th>
-                    <th>TRY</th>
-                    <th>TRY</th>
-                </tr>
-                   <?php display_client();?>
+
+                <?php
+                  if(isset($_SESSION['user']['userID'])) 
+                  {
+                   $userid = $_SESSION['user']['userID'];
+                   $query = "SELECT * FROM Block_Client WHERE userID = $userid";
+                   $result = mysqli_query($conn, $query);
+           
+                   if(mysqli_num_rows($result) > 0){
+                     while($row = mysqli_fetch_array($result))
+                     {
+                       
+                       echo"<tr>";
+                       echo "<td>" .$row['userID']."</td>";
+                       echo "<td>" .$row['BlockID']."</td>";
+                       echo "<td>" .$row['purchaseDate']."</td>";
+                       echo "<td>" .$row['blockQty']."</td>";
+                       echo "<td>" .$row['totalPrice']."</td>";
+                       echo"</tr>";
+                       }      
+                   }
+                   else{
+                       echo "<h2>No Records Found!</h2>";
+                   }
+                 }
+                ?>
             </table> 
           <button type="submit" class="btn" name="Logout">Logout</button>
             </center>

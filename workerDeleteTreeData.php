@@ -52,7 +52,7 @@
 	<center>
 
 		<form action = "worker.php" method="POST">
-			<input type="text" name="TreeID" placeholder="Enter Tree ID" /><br>
+			<input type="text" name="TreeID" placeholder="Enter Tree ID" /required><br>
 			<input type="submit"class="delete" name="delete" value="Delete" />
 </div>
 </form>

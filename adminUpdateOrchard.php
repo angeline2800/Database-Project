@@ -1,6 +1,4 @@
 <?php
-//updated fail!!
-
 	include "dbConnection.php";
 	
 	$orchardID = $_GET['orchardID'];
@@ -9,7 +7,7 @@
 	$orchard_location="";
 	$userID="";
 	
-	$result=mysqli_query($conn, "select * from orchard where orchardId=$orchardID");
+	$result=mysqli_query($conn, "select * from orchard where orchardID=$orchardID");
 	while($row = mysqli_fetch_array($result))
 	{
 		$orchard_add = $row["orchard_add"];
@@ -32,8 +30,8 @@
 </head>
 <body>
 
-<header class="header-border">
-    <div class="header-content">
+	<header class="header-border">
+		<div class="header-content">
 	
       <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
         <div class="slogan2">
@@ -69,7 +67,6 @@
 		mysqli_query($conn, "UPDATE orchard SET orchard_add='$_POST[orchard_add]', orchard_location='$_POST[orchard_location]', userID='$_POST[userID]' where orchardID=$orchardID");
 	
 		?><script type="text/javascript">window.location="adminOrchard.php"</script><?php
-	
 	}
 	else
 	{

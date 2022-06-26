@@ -29,7 +29,7 @@
 		<div class="searchTree">
 		<form action="" method="POST" >
 			<div class="searching">
-			<input type="text" name="TreeID" placeholder="Enter Tree ID for Search"/><br/>
+			<input type="text" name="TreeID" placeholder="Enter Tree ID for Search"/required><br/>
 			<input type="submit"class="search" name="search" value="Search Data" />
 </div>
 		</form>

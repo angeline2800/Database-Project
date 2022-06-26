@@ -44,9 +44,9 @@ if(isset($_POST['Logout']))
       <a href="Report.php"><button>Report</button></a>
 
 </div>
-
+<form method="POST">
     <button type="submit" class="btn" name="Logout">Logout</button>
-
+</form>
 </div>
 
 
