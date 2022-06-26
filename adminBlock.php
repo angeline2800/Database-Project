@@ -7,7 +7,7 @@
 
 	<title>Blocks | Administration | Tree Profiling Management System </title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="CSS/worker.css">
+	<link rel="stylesheet" href="CSS/block.css">
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link> -->
 </head>
 <body>
@@ -23,14 +23,14 @@
     </div>
   </header>
 
-    <center><h1>Block</h1></center>
+  <div class="header">
+	<h2>List of Blocks</h2>
+</div>
 	
-	<div class = "container my-5">
-        <h2>List of Block</h2>
-		<br>
-		<a class="btn btn-primary" href="adminAddBlock.php" role="button">Add - New Block</a>
-        <br>
-		<br>
+<div class="content">
+		<div class="addBlock">
+		<center><a href="adminAddBlock.php"><button>Add - New Block</button></a></center>
+</div>
 		<center>
 		<table class="table">
 			<thead>
@@ -74,6 +74,6 @@
 				?>				
 				
 			</tbody>
-
+				</div>
 </body>
 </html>

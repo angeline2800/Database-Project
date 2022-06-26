@@ -7,17 +7,9 @@
 
 	<title>Workers | Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="CSS/worker.css">
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link> -->
-	<!--Boostrap -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	
-	<!--Font Awesome-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="CSS/clientAdmin.css">
 </head>
 <body>
-
-
 <header class="header-border">
     <div class="header-content">
 	
@@ -28,14 +20,15 @@
     </div>
   </header>
 
-    <center><h1>Worker</h1></center>
-	<div class = "container my-5">
-		<a class="btn btn-primary" href="adminAddBlock.php" role="button">Add - New Block</a> 
-		<a class="btn btn-primary" href="adminAddUser.php" role="button">Add - New User - Client, Company, Worker</a> 
-	
-		<h2>List of Worker</h2>
-		
-	
+  <div class="header">
+	<h2>List of Clients</h2>
+</div>
+<div class="content">
+		<div class="addBlock">
+            <center><a href="adminAddBlock.php"><button>Add - New Block</button></a></center>
+            <center><a href="adminAddUser.php"><button>Add - New User - Client, Company, Worker</button></a></center>
+        </div>
+
 			<?php
 				if (isset($GET['msg'])){
 					$msg = $_GET['msg'];
@@ -45,23 +38,18 @@
 					</div>';
 				}
 			?>
-		
-		
-			
-			<table class="table table-hover text-center">
-				<thead class="table-dark">
+				
+			<table>
+				<thead>
 					<tr>
-						<th scope="col">Worker ID</th>
-						<th scope="col">Worker Name</th>
-						<th scope="col">Worker Address</th>
-						<th scope="col">Worker Email</th>
-						<th scope="col">Worker Password</th>
-						<th scope="col">Worker Phone</th>
-						<th scope="col">Worker Country</th>
-						<th scope="col">User Type</th>
-						<th scope="col">Edit</th>
-						<th scope="col">Delete</th>
-					
+						<th>Worker ID</th>
+						<th>Worker Name</th>
+						<th>Worker Address</th>
+						<th>Worker Email</th>
+						<th>Worker Phone</th>
+						<th>Worker Country</th>
+						<th>User Type</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -83,15 +71,12 @@
 								<td><?php echo $row['userName'] ?></td>
 								<td><?php echo $row['userAdd'] ?></td>
 								<td><?php echo $row['userEmail'] ?></td>
-								<td><?php echo $row['userPW'] ?></td>
 								<td><?php echo $row['userPhone'] ?></td>
 								<td><?php echo $row['userCountry'] ?></td>
 								<td><?php echo $row['userType'] ?></td>
 								<td>
-									<a href="adminUpdateUser.php?userID=<?php echo $row['userID'] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 me-2"></i></a>
-								</td>
-								<td>
-									<a href="adminDeleteUser.php?userID=<?php echo $row['userID'] ?>" class="link-dark"><i class="fa-solid fa-trash fs-5 me-2"></i></a>
+								    <a class='btn btn-primary btn-sm' href='adminUpdateUser.php?orchardID=$row[userID]'>Update</a>
+							        <a class='btn btn-primary btn-sm' href='adminDeleteUser.php?orchardID=$row[userID]'>Delete</a>
 								</td>
 							</tr>
 					<?php

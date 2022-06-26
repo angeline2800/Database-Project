@@ -1,0 +1,481 @@
+
+        * { margin: 0px; padding: 0px; }
+        body {
+            font-size: 120%;
+            background: #E8DDFF;
+        }
+      
+        .slogan {
+            font: bold 45px 'Comfortaa',cursive;
+            color:#200062;
+            padding-right: 180px;
+        }
+        .slogan img
+        {
+            width: 120px;
+            height: 100px;
+            float: left;
+            margin-left: 30px;
+            padding-left: 120px;
+        }
+        .slogan2 {
+            font-size: 30px;
+            padding-right: 270px;
+            font-family:'Courier New', Courier, monospace;
+            color:#454545;
+            padding-top: 3px;
+            margin-top: 5px;
+        }
+        .header-border {
+            background:#DCCCFF;
+            padding: 30px;
+            text-align: center;
+            border: 1px,solid;
+            padding-bottom: 19px;
+        }
+
+        .header {
+            width: 50%;
+            margin: 30px auto 0px;
+            color: white;
+            background: #5F9EA0;
+            text-align: center;
+            border: 1px solid #B0C4DE;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 25px;
+        }
+         .content {
+            width: 50%;
+            margin: 0px auto;
+            margin-bottom: 20px;
+            padding: 25px;
+            padding-bottom: 50px;
+            border: 1px solid #B0C4DE;
+            background: white;
+            border-radius: 0px 0px 10px 10px;
+        }
+        table th,td
+        {
+          border:3px solid black;
+          padding:20px;
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-top: 10px;
+          margin-bottom: 30px;
+          text-align: center;
+          border-radius: 3px;
+          font: 18px 'Arvo', serif;
+        }
+
+        h3 {
+            font-size: 20px;
+            padding-top: 30px;
+        }
+        
+        
+.btn {
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 30%;
+	font-size: 15px;
+	background-color: #59FF59; 
+  color: #000000;
+	border: none;
+	border-radius: 5px;
+	margin-left: 10px;
+    margin-right: 0px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+    display: inline;
+}
+
+.btn:hover
+{
+    background-color: #8CFF8C;
+}
+
+.container {
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #E8DDFF;
+}
+
+.addBlock button
+{
+    padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 30%;
+	font-size: 18px;
+    margin-left: 10px;
+    margin-right: 0px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 8px;
+  color: white;
+  background:#FF4646 ;
+  cursor: pointer;
+  display:inline-block;
+}
+.addBlock button:hover
+{
+    background-color: #FF8282;
+}
+
+   
+form{
+    width: 100%;
+    margin: 0px 0px;
+   margin-bottom: 10px;
+    padding: 0px;
+    margin-right: 10px;
+    background: white;
+    margin-left: 20px;
+}
+
+.insertBlock {
+    margin: auto;
+    padding-top: 5px;
+    text-align:right ;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.insertBlock label {
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.insertBlock input {
+    height: 30px;
+    width: 50%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.addNewBlock {
+    width: 60%;
+    margin: 8px 125px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: center;
+}
+.insertBlock .addSubmit
+{
+    padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 25px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background:#FF4646 ;
+  cursor: pointer;
+  
+}
+.insertBlock .addSubmit:hover
+{
+    background-color: #FF8282;
+}
+
+
+.insertBlock button
+{
+    padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 40px;
+    margin-right: 10px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #5353FF;
+  cursor: pointer;
+  
+}
+.insertBlock button:hover
+{
+    background: #5F9EA0;
+}
+
+.updateBlock {
+    width: 60%;
+    margin: 8px 125px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: right;
+}
+
+.updateBlock label {
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.updateBlock input {
+    height: 30px;
+    width: 50%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.updateBlock .updateSubmit
+{
+    padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 25px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background:#FF4646 ;
+  cursor: pointer;
+  
+}
+.updateBlock .updateSubmit:hover
+{
+    background-color: #FF8282;
+}
+
+
+.updateBlock button
+{
+    padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 40px;
+    margin-right: 10px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #5353FF;
+  cursor: pointer;
+  
+}
+.updateBlock button:hover
+{
+    background: #5F9EA0;
+}
+
+.addNewOrchard {
+    width: 80%;
+    margin: 8px 50px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: center;
+}
+
+.insertOrchard {
+    margin: auto;
+    padding-top: 5px;
+    text-align:right ;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+.insertOrchard label {
+    text-align: right;
+    margin: 5px;
+    padding: 5px 15px;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.insertOrchard input {
+    height: 30px;
+    width: 50%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.insertOrchard .addSubmit
+{
+    padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 25px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background:#FF4646 ;
+  cursor: pointer;
+  
+}
+.insertOrchard .addSubmit:hover
+{
+    background-color: #FF8282;
+}
+
+
+.insertOrchard button
+{
+    padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 60px;
+    margin-right: 30px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #5353FF;
+  cursor: pointer;
+  
+}
+.insertOrchard button:hover
+{
+    background: #5F9EA0;
+}
+
+.editOrchard {
+    width: 80%;
+    margin: 8px 50px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: right;
+   
+}
+
+.editOrchard label {
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.editOrchard input {
+    height: 30px;
+    width: 50%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.editOrchard .updateSubmit
+{
+    padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 25px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background:#FF4646 ;
+  cursor: pointer;
+  
+}
+.editOrchard .updateSubmit:hover
+{
+    background-color: #FF8282;
+}
+
+
+.updateOrchard button
+{
+    padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 40%;
+	font-size: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+  border: 1px #000040 solid;
+  border-radius: 5px;
+  color: white;
+  background-color: #5353FF;
+  cursor: pointer;
+  
+}
+.updateOrchard button:hover
+{
+    background: #5F9EA0;
+}

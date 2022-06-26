@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Orchards | Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="CSS/worker.css">
+	<link rel="stylesheet" href="CSS/orchard.css">
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link> -->
 </head>
 <body>
@@ -22,28 +22,28 @@
 	</div>
  </header>
  
-    <center>
-		<h1>Orchard</h1>
-		<a class="btn btn-primary" href="adminAddOrchard.php" role="button">Add - New Orchard</a>
-	</center>
-	
-	<div class = "container my-5">
-		<br>
-        <h2>List of orchard</h2>
-		<br>
-		<table class="table">
+ 
+ <div class="header">
+	<h2>List of Orchards</h2>
+</div>
+
+	<div class="content">
+		<div class="addOrchard">
+			<center><a href="adminAddOrchard.php"><button>Add - New Orchard</button></a></center>
+		</div>
+
+		<center>
+		<table>
 			<thead>
 				<tr>
 					<th>Orchard ID</th>
 					<th>Orchard Address</th>
 					<th>Orchard Location</th>
 					<th>User ID</th>
-					<th>Update</th>
-					<th>Delete</th>
-					
+					<th>Action</th>				
 				<tr>
 			</thead>
-		
+		</center>
 			<tbody>
 				<?php
 					$servername = "localhost";
@@ -80,9 +80,6 @@
 							
 							<td>
 								<a class='btn btn-primary btn-sm' href='adminUpdateOrchard.php?orchardID=$row[orchardID]'>Update</a>
-							</td>	
-							
-							<td>
 								<a class='btn btn-primary btn-sm' href='adminDeleteOrchard.php?orchardID=$row[orchardID]'>Delete</a>
 							</td>
 						</tr>
@@ -92,6 +89,6 @@
 				
 			</tbody>
 		</table>
-
+				</div>
 </body>
 </html>

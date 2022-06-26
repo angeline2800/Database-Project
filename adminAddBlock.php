@@ -8,8 +8,10 @@
 	$sucessMessage="";
 	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		$Price = $_POST["Price"];
-		$orchardID = $_POST["orchardID"];
+		if(isset($_POST['submit']))
+		{
+			$Price = $_POST["Price"];
+			$orchardID = $_POST["orchardID"];
 		
 		do {
 			if ( empty($Price) || empty($orchardID) )
@@ -38,6 +40,11 @@
 			
 		}while(false);
 	}
+	else
+	{
+		header("location: adminBlock.php");
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,13 +53,13 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Orchard | Administration | Tree Profiling Management System</title>
+	<title>Add New Block | Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="CSS/worker.css">
+	<link rel="stylesheet" href="CSS/block.css">
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link> -->
 	
 	<!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link>-->
-	<script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- <script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script> -->
 </head>
 <body>
 	<header class="header-border">
@@ -65,12 +72,17 @@
 		</div>
 	</header>
 	
-		<center><h1>Block</h1></center>
+	
+    <div class="header">
+	<h2>Add A New Block</h2>
+</div>
 		
-		<div class = "container my-5">
-			<h2>New Block</h2>
-			
-			<?php
+
+<div class="content">
+<center><h3> Please Insert The Info To Add A New Block.</h3></center>
+	
+	<div class="addNewBlock">
+		<?php
 				if(!empty($errorMessage)){
 					echo "
 					<div class='alert alert-warning alert-dismissible fade show' role='alert'>
@@ -83,20 +95,12 @@
 			
 			<form method="post">
 			
-				<div class="row mb-3">
-					<label class="col-sm-3 col-form-label">Price</label>
-						<div class="col-sm-6">
-							<input type="text" class="form-control" name="Price" placeholder="enter Price RMxxxx"  value="<?php echo $Price; ?>">
-						</div>
-				</div>
-				
-				<div class="row mb-3">
-					<label class="col-sm-3 col-form-label">Orchard ID</label>
-						<div class="col-sm-6">
-							<input type="text" class="form-control" name="orchardID" placeholder="enter orchard ID" value="<?php echo $orchardID; ?>">
-						</div>
-				</div>
-			
+				<div class="insertBlock">
+					<label>Price</label>
+					<input type="text" name="Price" placeholder="Enter Price RMxxxx" value="<?php echo $Price; ?>"><br/>
+		
+					<label>Orchard ID</label>
+					<input type="text" name="orchardID" placeholder="Enter Orchard ID" value="<?php echo $orchardID; ?>"><br/>
 				<?php
 					if(!empty($sucessMessage)){
 					echo "
@@ -112,12 +116,9 @@
 					}
 				?>
 			
-				<div class="row mb-3">
-					<div class="offset-sm-3 col-sm-3 d-grid">
-						<button type="submit" class="btn btn-primary">Submit</button>
 				
-						<a class="btn btn-outline-primary" href="adminBlock.php" role="button">Cancel/Back</a>
-					</div>
+						<input type="submit"class="addSubmit" name="submit" value="Submit" />
+						<a href="adminBlock.php"><button>Back to Block List</button></a>
 				</div>
 			</form>
 		</div>
