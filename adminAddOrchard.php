@@ -41,11 +41,8 @@
 			
 		}while(false);
 	}
-	else
-	{
-		header("location: adminOrchard.php");
-	}
-}
+	
+
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +80,7 @@
 				<label>Orchard Address</label>
 				<input type = "text" name="orchard_add" placeholder="Enter address">
 				<label>Orchard Location</label>
-				<input type = "text" name="orchard_location" placeholder="Enter orchard location">
+				<input type = "text" name="orchard_location" placeholder="Enter orchard location"><br/>
 				<label>User ID</label>
 				<input type = "text" name="userID" placeholder="Enter user ID">
 
