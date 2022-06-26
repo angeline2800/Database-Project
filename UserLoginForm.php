@@ -91,12 +91,12 @@ if(isset($_POST['Login'])){
 
 	<div class="input-group">
 		<label>User ID:</label>
-		<input type="text" name="userID">
+		<input type="text" name="userID" required>
 	</div>
 	
 	<div class="input-group">
 		<label>Password:</label>
-		<input type="password" name="userPW">
+		<input type="password" name="userPW" required>
 	</div>
     
 	<div class="input-group">
