@@ -1,27 +1,20 @@
 <?php
-//error!!!!!!!!!
+//updated fail!!
+
 	include "dbConnection.php";
 	
 	$orchardID = $_GET['orchardID'];
-
-	if(isset($_POST['update'])){
-		
-		$orchard_add = $_POST['orchard_add'];
-		$orchard_location = $_POST['orchard_location'];
-		$userID = $_POST['userID'];
-		
-		$sql = "UPDATE `orchard` SET `orchard_add`='$orchard_add',`orchard_location`='$orchard_location,`userID`='$userID'
-			 WHERE orchardID =$orchardID";
-				
-		$result = mysqli_query($conn, $sql);
-		
-		if($result){
-				header("Location: adminOrchard.php?msg=Data updated successfully");
-		}
-		else
-		{
-			echo "Failed: " . mysqli_error($conn);
-		}
+	
+	$orchard_add="";
+	$orchard_location="";
+	$userID="";
+	
+	$result=mysqli_query($conn, "select * from orchard where orchardId=$orchardID");
+	while($row = mysqli_fetch_array($result))
+	{
+		$orchard_add = $row["orchard_add"];
+		$orchard_location = $row["orchard_location"];
+		$userID = $row["userID"];
 	}
 ?>
 
@@ -59,30 +52,19 @@
 			<h3>Edit/Update Orchard Information</h3>
 			<p class="text-muted">Click update after changing any information</p>
 		</div>
-		
-		<?php
-			
-			$sql = "SELECT * FROM `orchard` WHERE orchardID = $orchardID LIMIT 1";
-			$result = mysqli_query($conn, $sql);
-			$row = mysqli_fetch_assoc($result);
-		?>
+	
 		
 		<div class="container d-flex justify-content-center">
 			<form action="" method="post" style="width:50vw; min-width:300px;">
 				<div class="row mb-3">
 					<div class="mb-3">
 						<label class="form-label">Orchard Address</label>
-						<input type = "text" class="form-control" name="orchard_add" value="<?php echo $row['orchard_add']?>">
+						<input type = "text" class="form-control" name="orchard_add" id="orchard_add" value="<?php echo $orchard_add; ?>">
 					</div>
 					
 					<div class="mb-3">
 						<label class="form-label">Orchard Location</label>
-						<input type = "text" class="form-control" name="orchard_location" value="<?php echo $row['orchard_location']?>">
-					</div>
-					
-					<div class="mb-3">
-						<label class="form-label">User ID</label>
-						<input type = "text" class="form-control" name="userID" value="<?php echo $row['userID']?>">
+						<input type = "text" class="form-control" name="orchard_location" id="orchard_location" value="<?php echo $orchard_location; ?>">
 					</div>
 					
 			
@@ -98,3 +80,18 @@
 		
 	<!--Boostrap-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+	<?php
+		if(isset($_POST["update"]))
+	{
+		mysqli_query($conn, "UPDATE orchard SET orchard_add='$_POST[orchard_add]', orchard_location='$_POST[orchard_location]', userID='$_POST[userID]' where orchardID=$orchardID");
+	
+		?><script type="text/javascript">window.location="adminOrchard.php"</script><?php
+	
+	}
+	
+	?>
+	
+
+</html>
