@@ -34,14 +34,37 @@
 			    border: 1px,solid;
 			    padding-bottom: 19px;
 			}
-			.content{
-				margin-top: 50px;
-				margin-bottom: 50px;
-				display: flex;
-				justify-content: flex-start;
-				flex-direction: column;
-				align-items: center;
-			}
+				
+			.header {
+            width: 40%;
+            margin: 30px auto 0px;
+            color: white;
+            background: #5F9EA0;
+            text-align: center;
+            border: 1px solid #B0C4DE;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 25px;
+        }
+         .content {
+            width: 40%;
+            margin: 0px auto;
+            margin-bottom: 20px;
+            padding: 25px;
+            padding-bottom: 50px;
+            border: 1px solid #B0C4DE;
+            background: white;
+            border-radius: 0px 0px 10px 10px;
+        }
+		
+		.assignTreeWorker {
+			width: 90%;
+			margin: 8px 70px;
+			padding: 0px;
+			margin-right: 0px;
+			border: 1px,solid,black;
+		}
+
 			form{
 				max-width: 400px;
 				width: 100%;
@@ -50,7 +73,7 @@
 				padding: 25px 30px;
 				border-radius: 5px;
 				display: block;
-				background-color: #fff2e6;
+				/* background-color: #fff2e6; */
 			}
 			input[type=text], input[type=date] {
 				width: 100%;
@@ -64,14 +87,39 @@
 			button{
 				background-color: #1260cc;
 				margin-bottom: 20px;
-				padding: 10px 15px;
+				padding: 10px 30px;
 				color: white;
 				border-radius: 5px;
 				border: none;
 				text-decoration: none;
 				cursor: pointer;
 				font-size: 15px;
+				margin-left:130px;
+				margin-top:20px;
+				display: inline;
 			}
+			.assignTreeWorker button
+			{
+				padding-left: 50px;
+				padding-right: 50px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				font-size: 20px;
+				color: white;
+				background: #5F9EA0;
+				border: none;
+				border-radius: 5px;
+				margin-left: 18px;
+				margin-top: 30px;
+				margin-bottom: 5px;
+				cursor: pointer;
+				display:inline-block;
+			}
+			.assignTreeWorker button:hover
+			{
+				background-color: #5353FF;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -84,16 +132,24 @@
         </div>
     </div>
   </header>
+  <div class="header">
+		<h2>Assignment Form </h2>
+	</div>
+
 		<div class="content">
-			<h1>Assignment Form</h1>
-			<h3>Tree_Worker</h3>
+			
+			<center><h3>Tree_Worker</h3></center>
 			<form action="" method="post">
+			<div class="assignTreeWorker">
 			<p>Enter TreeID: <input type="text" name="treeId"></p>
 			<p>Enter worker's userID: <input type="text" name="userId"></p>
 			<p>Enter date of responsibility: <input type="date" name="startDate"></p>
 			<button type="submit" name="assign"> Assign </button>
+			<!-- <button type="submit" class="back" name="back">Back</button> -->
+			<a href="assignTreeWorker.php"><button>Back</button></a>
+		</div>
 			</form>
-			<p><a href="assignTreeWorker.php">Back</a></p>
+			
 	<?php
 		include "dbConnection.php";
 		/* session_start();
@@ -138,7 +194,6 @@
 					}
 				}
 			}
-			
 	/* }
 	else{
 		header("Location: UserLoginForm.php");

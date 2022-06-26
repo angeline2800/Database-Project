@@ -45,41 +45,58 @@
             border: 1px,solid;
             padding-bottom: 19px;
         }
-			.content{
-				margin-top: 50px;
-				margin-bottom: 50px;
-				display: flex;
-				justify-content: flex-start;
-				flex-direction: column;
-				align-items: center;
-			}
+			
+        .header {
+            width: 60%;
+            margin: 30px auto 0px;
+            color: white;
+            background: #5F9EA0;
+            text-align: center;
+            border: 1px solid #B0C4DE;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 25px;
+        }
+         .content {
+            width: 60%;
+            margin: 0px auto;
+            margin-bottom: 50px;
+            padding: 25px;
+            padding-bottom: 30px;
+            border: 1px solid #B0C4DE;
+            background: white;
+            border-radius: 0px 0px 10px 10px;
+        }
 			table{
-				width: 50%;
+				width: 100%;
 				background: white;
 				font-family: verdana;
+				border:1px solid black;
 			}
 			table th{
 				padding-top: 12px;
 				padding-bottom: 12px;
-				background-color: #ffa557;
-				color: white;
+				background-color:#FFC1C1;
+				color: black;
 				text-align: center;
-				font: 16px verdana;
+				font: 15px verdana;
+				border:1px solid black;
 			}
 			table td{
 				text-align: center;
-				padding: 5px;
+				padding: 0px;
 				font-size: 12px;
+				border:1px solid black;
 			}
 			table tr:nth-child(even){
-				background-color: #ffd7b3;
+				background-color:#D7C4FF;
 			}
 			table tr:nth-child(odd){
 				background-color: #fff2e6;
 			}
 			button {
 				background-color: #1260cc;
-				margin-top: 20px;
+				margin-top: 40px;
 				padding: 10px 15px;
 				color: white;
 				border-radius: 5px;
@@ -87,6 +104,7 @@
 				text-decoration: none;
 				cursor: pointer;
 				font-size: 15px;
+				margin-left:360px;
 			}
 			button:hover{
 				background-color: #051094;
@@ -104,9 +122,10 @@
         </div>
     </div>
   </header>
-			
-		<div class="content">
-			<h1>Assignment of Tree and Worker</h1>
+  <div class="header">
+		<h2>Assignment of Tree and Worker</h2>
+	</div>
+			<div class="content">
 			<table>
 			<tr>
 				<th>TreeID</th>

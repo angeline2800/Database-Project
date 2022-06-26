@@ -46,18 +46,32 @@
             border: 1px,solid;
             padding-bottom: 19px;
         }
-			.content{
-				margin-top: 50px;
-				margin-bottom: 50px;
-				display: flex;
-				justify-content: flex-start;
-				flex-direction: column;
-				align-items: center;
-			}
+		.header {
+            width: 50%;
+            margin: 30px auto 0px;
+            color: white;
+            background: #5F9EA0;
+            text-align: center;
+            border: 1px solid #B0C4DE;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 25px;
+        }
+         .content {
+            width: 50%;
+            margin: 0px auto;
+            margin-bottom: 50px;
+            padding: 25px;
+            padding-bottom: 30px;
+            border: 1px solid #B0C4DE;
+            background: white;
+            border-radius: 0px 0px 10px 10px;
+        }
 			table{
-				width: 50%;
+				width: 90%;
 				background: white;
 				font-family: verdana;
+				margin-left:45px;
 			}
 			table th{
 				padding-top: 12px;
@@ -66,11 +80,13 @@
 				color: white;
 				text-align: center;
 				font: 16px verdana;
+				padding:5px 8px;
 			}
 			table td{
 				text-align: center;
 				padding: 5px;
 				font-size: 14px;
+				padding:5px 8px;
 			}
 			table tr:nth-child(even){
 				background-color: #c4caed;
@@ -80,7 +96,7 @@
 			}
 			button {
 				background-color: #1260cc;
-				margin-top: 20px;
+				margin-top: 30px;
 				padding: 10px 15px;
 				color: white;
 				border-radius: 5px;
@@ -88,6 +104,7 @@
 				text-decoration: none;
 				cursor: pointer;
 				font-size: 15px;
+				margin-left:300px;
 			}
 			button:hover{
 				background-color: #051094;
@@ -105,9 +122,12 @@
         </div>
     </div>
   </header>
-  
+
+  <div class="header">
+		<h2>Assignment of Block and Client </h2>
+	</div>
+
 		<div class="content">
-			<h1>Assignment of Block and Client</h1>
 			<table>
 			<tr>
 				<th>BlockID</th>
