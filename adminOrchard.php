@@ -24,6 +24,7 @@
  
     <center>
 		<h1>Orchard</h1>
+	   	<a class="btn btn-primary" href="admin.php" role="button">Admin Home Page</a>
 		<a class="btn btn-primary" href="adminAddOrchard.php" role="button">Add - New Orchard</a>
 	</center>
 	
