@@ -1,85 +1,27 @@
 <?php
-/*****error!!!****/
-
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "tmf2034_Group4_Project";
-					
-	//Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-					
-	//Check connection
-	if($conn->connect_error)
-	{			
-		die("connection failed: ". $conn->connect_error);
-	}
+//error!!!!!!!!!
+	include "dbConnection.php";
 	
-	$orchardID = "";
-	$orchard_add = "";
-	$orchard_location = "";
-	$userID = "";
+	$orchardID = $_GET['orchardID'];
 
-	$errorMessage="";
-	$sucessMessage="";
-	
-	if( $_SERVER['REQUEST_METHOD'] == 'GET'){
-		//get method to show the date of orchard
-		if (!isset($_GET["orchardID"])){
-			header("location: /tmf2034/project/adminOrchard.php");
-			exit;
+	if(isset($_POST['update'])){
+		
+		$orchard_add = $_POST['orchard_add'];
+		$orchard_location = $_POST['orchard_location'];
+		$userID = $_POST['userID'];
+		
+		$sql = "UPDATE `orchard` SET `orchard_add`='$orchard_add',`orchard_location`='$orchard_location,`userID`='$userID'
+			 WHERE orchardID =$orchardID";
+				
+		$result = mysqli_query($conn, $sql);
+		
+		if($result){
+				header("Location: adminOrchard.php?msg=Data updated successfully");
 		}
-		
-		$orchardID = $_GET["orchardID"];
-		
-		//read the row of the selected orchard from database table
-		$sql = "SELECT * FROM orchard WHERE orchardID=$orchardID";
-		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
-		
-		if (!$row){
-			header("location: /tmf2034/project/adminOrchard.php");
-			exit;
+		else
+		{
+			echo "Failed: " . mysqli_error($conn);
 		}
-		
-		$orchard_add = $row["orchard_add"];
-		$orchard_location = $row["orchard_location"];
-		$userID = $row["userID"];
-	}
-	else {
-		//post method to update the data of orchard
-		
-		$orchardID = $_POST["orchardID"];
-		$orchard_add = $_POST["orchard_add"];
-		$orchard_location = $_POST["orchard_location"];
-		$userID = $_POST["userID"];
-		
-		do {
-			if ( empty($orchardID) || empty($orchard_add) || empty($orchard_location) || empty($userID) )
-			{
-				$errorMessage = "All the fields are required";
-				break;
-			}
-			$sql = "UPDATE orchard" . 
-					"SET orchard_add = '$orchard_add', orchard_location = '$orchard_location', userID = '$userID'" .
-					"WHERE orchardID = $orchardID";
-						
-			$result = $conn->query($sql);
-			
-			if (!$result) {
-				$errorMessage = "Invalid query: " . $conn->error;
-				break;
-			}
-			
-			$sucessMessage = "Orchard updated successfully!";
-			
-			header("location: /tmf2034/project/adminOrchard.php");
-			exit;
-			
-		}while(true);
-		
-		
-		
 	}
 ?>
 
@@ -89,76 +31,70 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin Update Orchard</title>
+
+	<title>Orchard | Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link>
-	<script src ="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="CSS/worker.css">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link> -->
+	
+	<!--Boostrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	
+	<!--Font Awesome-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <center><h1>Orchard</h1></center>
+
+<header class="header-border">
+    <div class="header-content">
 	
-	<div class = "container my-5">
-        <h2>Update Orchard</h2>
+      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+        <div class="slogan2">
+         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+        </div>
+    </div>
+  </header>
+  <div class = "container">
+		<div class="text-center mb-4">
+			<h3>Edit/Update Orchard Information</h3>
+			<p class="text-muted">Click update after changing any information</p>
+		</div>
 		
 		<?php
-		if(!empty($errorMessage)){
-			echo "
-			<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-				<strong>$errorMessage</strong>
-				<button type='button' class='btn-close' data-bs-dismiss='alert' atia-label='Close' </button>
-			</div>
-			";
-		}
+			
+			$sql = "SELECT * FROM `orchard` WHERE orchardID = $orchardID LIMIT 1";
+			$result = mysqli_query($conn, $sql);
+			$row = mysqli_fetch_assoc($result);
 		?>
 		
-		<form method="post">
-		<input type = "hidden" name="orchardID" value="<?php echo $orchardID; ?>">
-		
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">Orchard Address</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="orchard_add" placeholder="enter orchard address"  value="<?php echo $orchard_add; ?>">
-				</div>
-		</div>
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">Orchard Location</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="orchard_location" placeholder="enter orchard location" value="<?php echo $orchard_location; ?>">
-				</div>
-		</div>
-		<div class="row mb-3">
-			<label class="col-sm-3 col-form-label">User ID</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" name="userID" placeholder="enter user ID" value="<?php echo $userID; ?>">
-				</div>
-		</div>
-		
-		
-		<?php
-			if(!empty($sucessMessage)){
-			echo "
-			<div class='row mb-3'>
-				<div class='offset -sm3 col-sm-6'>
-					<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-						<strong>$sucessMessage</strong>
-						<button type='button' class='btn-close' data-bs-dismiss='alert' atia-label='Close' </button>
+		<div class="container d-flex justify-content-center">
+			<form action="" method="post" style="width:50vw; min-width:300px;">
+				<div class="row mb-3">
+					<div class="mb-3">
+						<label class="form-label">Orchard Address</label>
+						<input type = "text" class="form-control" name="orchard_add" value="<?php echo $row['orchard_add']?>">
+					</div>
+					
+					<div class="mb-3">
+						<label class="form-label">Orchard Location</label>
+						<input type = "text" class="form-control" name="orchard_location" value="<?php echo $row['orchard_location']?>">
+					</div>
+					
+					<div class="mb-3">
+						<label class="form-label">User ID</label>
+						<input type = "text" class="form-control" name="userID" value="<?php echo $row['userID']?>">
+					</div>
+					
+			
+					<div>
+						<button type="submit" class="btn btn-success" name="update">Update</button>
+						<a href="adminOrchard.php" class="btn btn-danger">Cancel/Back</a>
 					</div>
 				</div>
-			</div>
-			";
-			}
-		?>
+			</form>
+		</div>	
+	</div>		
+					
 		
-		<div class="row mb-3">
-			<div class="offset-sm-3 col-sm-3 d-grid">
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</div>
-			<div class="col-sm-3 d-grid">
-				<a class="btn btn-outline-primary" href="/tmf2034/project/adminOrchard.php" role="button">Cancel/Back</a>
-			</div>
-		</div>
-		
-	</div>
-			
-</body>
-</html>
+	<!--Boostrap-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
