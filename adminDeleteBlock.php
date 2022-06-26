@@ -1,28 +1,15 @@
+
 <?php
 
-	if( isset($_GET["BlockID"]))
-	{
-		$BlockID = $_GET["BlockID"];
-		
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "tmf2034_Group4_Project";
-					
-		//Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
+	include "dbConnection.php";
+	$BlockID = $_GET['BlockID'];
+	$sql = "DELETE FROM `block` WHERE BlockID = $BlockID";
+	$result = mysqli_query($conn, $sql);
 	
-		// Check connection
-		if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-}
-		$sql = "DELETE FROM block WHERE BlockID = $BlockID";
-		$conn->query($sql);
-		
+	if($result){
+			header("Location: adminBlock.php?msg=Record deleted successfully");
 	}
-	
-	
-header("location: /tmf2034/project/adminBlock.php");
-exit;
-
+	else{
+		echo "Failed: " . mysqli_error($conn);
+	}
 ?>
