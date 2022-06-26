@@ -6,6 +6,10 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Company| Administration | Tree Profiling Management System</title>
+	<link rel="shortcut icon" href="photo/tree.ico" />
+	<link rel="stylesheet" href="CSS/worker.css">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></link> -->
 	
 	<!--Boostrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -17,7 +21,15 @@
 	
 </head>
 <body>
-	<nav class="navbar navbar-light justify-content-center fs-3 mb-5" style = "background-color: #00ff5573;"> Admin </nav>
+	<header class="header-border">
+		<div class="header-content">
+	
+			<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+			<div class="slogan2">
+				<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+			</div>
+		</div>
+	</header>
 	
 	<div class = "container">
 		<?php
