@@ -1,4 +1,60 @@
-<?php include"dbConnection.php";
+<?php
+	include "dbConnection.php";
+	
+	$tree_Image = "";
+	$spesiesName = "";
+	$plantDate = "";
+	$tree_height = "";
+	$diameter = "";
+	$status = "";
+	$GPS_location = "";
+	$tree_type = "";
+	$BlockID = "";
+	
+	$errorMessage="";
+	$sucessMessage="";
+	
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		
+		$file = addslashes(file_get_contents($_FILES["tree_Image"]["tmp_name"]));
+		$spesiesName = $_POST["spesiesName"];
+		$plantDate = $_POST["plantDate"];
+		$tree_height = $_POST["tree_height"];
+		$diameter = $_POST["diameter"];
+		$status = $_POST["status"];
+		$GPS_location = $_POST["GPS_location"];
+		$tree_type = $_POST["tree_type"];
+		$BlockID = $_POST["BlockID"];
+		
+		
+		do {
+			if ( empty($tree_Image) || empty($spesiesName) || empty($plantDate) || empty($tree_height) || empty($diameter) || empty($status) 
+				|| empty($GPS_location) || empty($tree_type) || empty($BlockID))
+			{
+				$errorMessage = "All the fields are required";
+				break;
+			}
+			
+			// add new block to database
+			$sql = "INSERT INTO tree (tree_Image, spesiesName, plantDate, tree_height, diameter, status, GPS_location, tree_type, BlockID)"
+			. "VALUES ('$tree_Image', '$spesiesName', '$plantDate', '$tree_height', '$diameter', '$status', '$GPS_location', '$tree_type', '$BlockID')";
+			$result = $conn->query($sql);
+			
+			if (!$result) {
+				$errorMessage = "Invalid query: " . $conn->error;
+				break;
+			}
+			
+			$Price = "";
+			$orchardID = "";
+			
+			$sucessMessage = "Tree added successfully!";
+			
+			header("location: worker.php");
+			exit;
+			
+		}while(false);
+	}
 	
 	if(isset($_POST['insert']))
 	{
