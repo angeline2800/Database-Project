@@ -32,7 +32,7 @@
     <center><h1>Client</h1></center>
 	
 	<div class = "container my-5">
-        	<a class="btn btn-primary" href="admin.php" role="button">Admin Home Page</a>
+        	
 		<a class="btn btn-primary" href="adminAddBlock.php" role="button">Add - New Block</a> 
 		<a class="btn btn-primary" href="adminAddUser.php" role="button">Add - New User - Client, Company, Worker</a> 
 	
