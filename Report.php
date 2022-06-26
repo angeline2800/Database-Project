@@ -1,10 +1,16 @@
-<?php include "dbConnection.php"; ?>
-
+<?php include "dbConnection.php"; 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if(isset($_POST['back']))
+{
+  header('location:admin.php');
+}
+}
+?>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="CSS/worker.css">
+  <link rel="stylesheet" href="CSS/admin.css">
   <link rel="shortcut icon" href="photo/tree.ico" />
   <title>Reports | Administration | Tree Profiling Management System</title>
 </head>
@@ -24,15 +30,18 @@
 	<h2>Reports</h2>
 </div>
 <div class="content">
-    <div class="btn">
+
+  <div class="admin">
+   
       <a href="reportBlock.php"><button>Blocks of tree</button></a>
       <a href="reportOrchard.php"><button>Orchard of tree</button></a>
       <a href="reportTree.php"><button>Trees</button></a>
       <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
     </div>
 
-
-  <button type="submit" class="btn" name="Logout">Logout</button>
+    <form action="" method="post">
+  <button type="submit" class="btn" name="back">Back to Admin Page</button>
+  </form>
 </div>
 </body>
 </html>

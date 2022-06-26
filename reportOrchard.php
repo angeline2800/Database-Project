@@ -4,12 +4,6 @@ include "dbConnection.php";
 function display_orchard()
 {
   global $conn;
-
-//   if (isset($_POST['daily_r'])) 
-//   {
-      
-//     if($_SERVER["REQUEST_METHOD"]=="POST") 
-//     {
         
     $sql = "SELECT
     user.userID,
@@ -22,9 +16,6 @@ GROUP BY
     userID";
 
     $result = $conn->query($sql) ;
-    
-    
-    echo "Report - Orchard";
   
     if ($result->num_rows > 0) 
     {
@@ -47,8 +38,6 @@ GROUP BY
           echo "</tr>";
         }
       }  
-//     }
-//   }  
 
 $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orchard group by userID";
 	$resultChart = $conn->query($sqlChart);
@@ -63,6 +52,12 @@ $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orc
 		}	
     }
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if(isset($_POST['back']))
+        {
+          header('location:admin.php');
+        }
+        }
 
 ?>
 
@@ -70,16 +65,9 @@ $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orc
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <meta name="keywords" content="100%  Fruit Juice Concentrate/ concentrated juice, 100 percent, blend, Apple, grape, white grape, orange  concentrated, flavors, Childcare, Preschool, Daycare, BASP, Extended Day, Before and After School, Head Start , JUICE, KID, CHILD, Natural, Brand, CACFP, USDA, No sugar added, no added sugar, Real fruit , organic, Best, leader, top, quality, exclusive, better , delicious, FREE DELIVERY"/>
-  <meta name="description" content="563-386-1999 - FREE shipping. Juice concentrates for kids. Different juice flavors in a case. Fruit juice concentrates for childcare centers."/>
-  <link rel="icon" type="image/x-icon" href="https://static-res-cdn.websites.hibu.com/runtime/favicon_d1_res.ico"/> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Reports | Orchard of Tree | Tree Profiling Management System</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="CSS/login.css">
+  <link rel="stylesheet" href="CSS/report.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <link rel="shortcut icon" href="photo/tree.ico" />
 </head>
 
@@ -94,10 +82,11 @@ $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orc
     </div>
   </header>
 
-  <div class="transaction">
-    <div class="tranTitle"> 
-      <h3>Record - Orchard of Trees</h3>
-    </div> <br>
+  <div class="header">
+	<h2>Record - Orchard of Trees</h2>
+</div>
+
+<div class="content">
 
     <table style="width:100%">
       <tr>
@@ -109,7 +98,7 @@ $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orc
     </table>
 
     <div class="chart">
-			<h4>Report Of Orchards Owned By Companies</h4>
+			<center><h4>Report Of Orchards Owned By Companies</h4></center>
 	
             <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 			<script>
@@ -143,46 +132,19 @@ $sqlChart = "SELECT userID, COUNT(orchard.orchardID) AS 'totalOrchardC' FROM orc
         });
 
 			</script>
-
-    <!-- <br />
-    <a href="reportD.php" target="_blank"><button class="generateBtn">Generate Transaction Report</button></a>
-
-    <br /> -->
-    <div class="viewOpt">
-      <a href="reportBlock.php"><button>Blocks of tree</button></a>
-      <a href="reportOrchard.php"><button>Orchard of tree</button></a>
-      <a href="reportTree.php"><button>Trees</button></a>
-      <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
-    </div>
-  </div>
-  <button type="submit" class="btn" name="Logout">Logout</button>
-
-
-  <!-- <footer>
-    <div class="footer">
-      <h2>Contact Us</h2> 
-      <hr size="2" width="30%" color=black>
-      <p class="bold">Penny Juice of America
-      <p><i class="fa fa-location-arrow"></i> Address: 915 40th Ave Bettendorf, IA 52722
-      <p><i class="fa fa-envelope"></i> Email: <u>pennyjuice@hotmail.com</u>
-      <p><i class="fa fa-phone"></i> Phone: 563-386-1999
-      <i class="fa fa-fax"></i> Fax:563-386-6200 
-      <br /> <br />
-      <img src="../Images/PaymentOpts.png" alt="payment method" height="35">
-    <div> <br />
-
-    <div class="policy"> 
-      <a href="https://b.link/privacy-policy" target="_blank">Privacy Policy</a>  |
-      <a href="https://b.link/cookie-policy" target="_blank">Cookie Policy</a>  |
-      <a href="https://b.link/conditions" target="_blank">Conditions of Use</a>  |
-      <a href="https://b.link/infringement" target="_blank">Notice and Take Down Policy</a>  |
-      <a href="https://b.link/website-accessibility-ae" target="_blank">Website AccessibilityPolicy</a> 
-    </div> 
-
-    <div class="policy">
-      <p> &copy; 2021 The content on this website is owned by us and our licensors. Do not copy any content (including images) without our consent.
-    </div> 
-  </footer> -->
+</div>
+  
+<div class="admin">
+   
+   <a href="reportBlock.php"><button>Blocks of tree</button></a>
+   <a href="reportOrchard.php"><button>Orchard of tree</button></a>
+   <a href="reportTree.php"><button>Trees</button></a>
+   <a href="reportTreePlantDate.php"><button>PlantingDate</button></a>
+ </div>
+ <form action="" method="post">
+  <button type="submit" class="btn" name="back">Back to Admin Page</button>
+  </form>
+</div>
 
 </body>
 </html>

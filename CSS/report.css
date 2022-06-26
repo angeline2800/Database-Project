@@ -35,7 +35,7 @@
         }
 
         .header {
-            width: 40%;
+            width: 50%;
             margin: 30px auto 0px;
             color: white;
             background: #5F9EA0;
@@ -46,9 +46,9 @@
             padding: 25px;
         }
          .content {
-            width: 40%;
+            width: 50%;
             margin: 0px auto;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             padding: 25px;
             padding-bottom: 10px;
             border: 1px solid #B0C4DE;
@@ -75,20 +75,30 @@
             font-size: 20px;
             padding-top: 30px;
         }
+
+        h4{
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .chart
+        {
+            margin-left: 20px;
+        }
 .btn {
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-top: 10px;
 	padding-bottom: 10px;
     width: 30%;
-	font-size: 15px;
+	font-size: 18px;
 	color: white;
 	background:#FF4646 ;
 	border: none;
 	border-radius: 5px;
-	margin-left: 200px;
-	margin-top: 50px;
-	margin-bottom: 15px;
+	margin-left: 250px;
+	margin-top: 15px;
+	margin-bottom: 30px;
 }
 
 .btn:hover
@@ -108,7 +118,7 @@
 {
   width: 40%;
   padding: 10px 10px;
-  margin: 15px 20px;
+  margin: 15px 35px;
   border: 1px #000040 solid;
   border-radius: 8px;
   background-color:#CBEDFF; 
@@ -123,5 +133,9 @@
   background-color: #9191FF;
 }
 
+.selectDaily input
+{
+    height: 20px;
+}
    
         

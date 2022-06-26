@@ -1,33 +1,12 @@
 <?php 
 include "dbConnection.php";
 
-// if ($_SESSION['adminID'] == "") {
-// 	echo "
-// 		<script type=\"text/javascript\">
-// 			alert(\"You must login to view this page!\");
-// 			window.location = '../login.html';
-// 		</script>
-// 	";
-// } else if ($_SESSION['adminID'] != "") {
-// 	if ((time() - $_SESSION['start']) > (30*60))
-// 	{
-// 		session_unset(); 
-//     	session_destroy();
-    		
-//     	echo "
-// 			<script type=\"text/javascript\">
-// 				alert(\"Session expired! Please login again!\");
-// 				window.location = '../Index.php';
-// 			</script>
-// 		";
-// 	}
-// 	else
-// 	{
-// 		$_SESSION['start'] = time();
-// 	}
-// } 
-
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if(isset($_POST['back']))
+    {
+      header('location:admin.php');
+    }
+    }
 ?>
 
 <html>
@@ -36,7 +15,7 @@ include "dbConnection.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trees Reports | Weekly | Tree Profiling Management System</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="CSS/login.css">
+  <link rel="stylesheet" href="CSS/reportDWM.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <link rel="shortcut icon" href="photo/tree.ico" />
@@ -54,16 +33,15 @@ include "dbConnection.php";
   </header>
 
 
-  <div class="transaction">
-    <div class="tranTitle"> 
-  	  <h3>Trees Weekly Reports</h3>
-    </div> <br>
-
+  <div class="header">
+	<h2>Record Of Trees - Weekly</h2>
+</div>
+    <div class = "content">
     <form name="form"  method="POST">
       <div class="selectWeek">
         <h6><label for="weekly">Select week:</label>
         <input type="week"  name="weekly">
-        <input type="submit" name="weekly_r"></h6>
+        <button type="submit" class="btn" name="weekly_r">Submit</button></h6>
       </div>
     </form>
 
@@ -163,6 +141,7 @@ include "dbConnection.php";
   ?>
 
   <div class="chart">
+  <center><h4>Report Of Tress | Planting Date | Weekly</h4></center>
             <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 			<script>
 			var barColors = "#57C7FF";
@@ -195,6 +174,12 @@ include "dbConnection.php";
         });
 
 			</script>
-              <button type="submit" class="btn" name="Logout">Logout</button>
+                <div class="admin">
+      <a href="reportDaily.php"><button>Trees Planted Daily</button></a>
+      <a href="reportMonthly.php"><button>Trees Planted Monthly</button></a>
+    </div>
+  <form action="" method="post">
+  <button type="submit" class="back" name="back">Back to Admin Page</button>
+  </form>
     </body>
 </html>

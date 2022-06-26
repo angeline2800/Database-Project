@@ -1,0 +1,266 @@
+
+        * { margin: 0px; padding: 0px; }
+        body {
+            font-size: 120%;
+            background: #E8DDFF;
+        }
+      
+        .slogan {
+            font: bold 45px 'Comfortaa',cursive;
+            color:#200062;
+            padding-right: 180px;
+        }
+        .slogan img
+        {
+            width: 120px;
+            height: 100px;
+            float: left;
+            margin-left: 30px;
+            padding-left: 120px;
+        }
+        .slogan2 {
+            font-size: 30px;
+            padding-right: 270px;
+            font-family:'Courier New', Courier, monospace;
+            color:#454545;
+            padding-top: 3px;
+            margin-top: 5px;
+        }
+        .header-border {
+            background:#DCCCFF;
+            padding: 30px;
+            text-align: center;
+            border: 1px,solid;
+            padding-bottom: 19px;
+        }
+
+        .header {
+            width: 50%;
+            margin: 30px auto 0px;
+            color: white;
+            background: #5F9EA0;
+            text-align: center;
+            border: 1px solid #B0C4DE;
+            border-bottom: none;
+            border-radius: 10px 10px 0px 0px;
+            padding: 25px;
+        }
+         .content {
+            width: 50%;
+            margin: 0px auto;
+            margin-bottom: 40px;
+            padding: 25px;
+            padding-bottom: 10px;
+            border: 1px solid #B0C4DE;
+            background: white;
+            border-radius: 0px 0px 10px 10px;
+        }
+
+        table th,td
+        {
+          border:3px solid black;
+          padding:5px;
+          padding-left: 40px;
+          padding-right: 40px;
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-top: 10px;
+          margin-bottom: 30px;
+          text-align: center;
+          border-radius: 3px;
+          font: 18px 'Arvo', serif;
+        }
+
+        h3 {
+            font-size: 20px;
+            padding-top: 30px;
+        }
+
+        h4{
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .chart
+        {
+            margin-left: 20px;
+        }
+.btn {
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 28%;
+	font-size: 15px;
+	color: white;
+	background:#FF4646 ;
+	border: none;
+	border-radius: 5px;
+	margin-left:0px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.btn:hover
+{
+  background-color: #FF8282;
+}
+.back {
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 28%;
+	font-size: 15px;
+	color: white;
+	background:#FF4646 ;
+	border: none;
+	border-radius: 5px;
+	margin-left:270px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.back:hover
+{
+  background-color: #FF8282;
+}
+
+.container {
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #E8DDFF;
+}
+
+.admin button
+{
+  width: 40%;
+  padding: 10px 10px;
+  margin: 15px 35px;
+  border: 1px #000040 solid;
+  border-radius: 8px;
+  background-color:#CBEDFF; 
+  color:#000040;
+  text-align: center;
+  font: 20px cursive;
+  cursor: pointer;
+  display:flexbox;
+}
+.admin button:hover
+{
+  background-color: #9191FF;
+}
+
+.selectDaily
+{
+    width: 80%;
+    margin: 8px 80px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: center;
+    margin-bottom: 20px;
+    background:white;
+}
+.selectDaily label
+{
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+
+}
+   
+
+.selectDaily input
+{
+    height: 40px;
+    width: 30%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.selectWeek
+{
+    width: 80%;
+    margin: 8px 80px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: center;
+    margin-bottom: 20px;
+    background:white;
+}
+.selectWeek label
+{
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+
+}
+
+.selectWeek input
+{
+    height: 40px;
+    width: 30%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.selectMonth
+{
+    width: 80%;
+    margin: 8px 80px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: center;
+    margin-bottom: 20px;
+    background:white;
+}
+.selectMonth label
+{
+    text-align: right;
+    margin: 5px;
+    padding: 5px 10px;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+
+}
+
+.selectMonth input
+{
+    height: 40px;
+    width: 30%;
+    padding: 5px 15px;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+}

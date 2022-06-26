@@ -1,47 +1,21 @@
 <?php 
 include "dbConnection.php";
 
-// if ($_SESSION['adminID'] == "") {
-// 	echo "
-// 		<script type=\"text/javascript\">
-// 			alert(\"You must login to view this page!\");
-// 			window.location = '../login.html';
-// 		</script>
-// 	";
-// } else if ($_SESSION['adminID'] != "") {
-// 	if ((time() - $_SESSION['start']) > (30*60))
-// 	{
-// 		session_unset(); 
-//     	session_destroy();
-    		
-//     	echo "
-// 			<script type=\"text/javascript\">
-// 				alert(\"Session expired! Please login again!\");
-// 				window.location = '../Index.php';
-// 			</script>
-// 		";
-// 	}
-// 	else
-// 	{
-// 		$_SESSION['start'] = time();
-// 	}
-// } 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if(isset($_POST['back']))
+    {
+      header('location:admin.php');
+    }
+    }
 ?>
 
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <meta name="keywords" content="100%  Fruit Juice Concentrate/ concentrated juice, 100 percent, blend, Apple, grape, white grape, orange  concentrated, flavors, Childcare, Preschool, Daycare, BASP, Extended Day, Before and After School, Head Start , JUICE, KID, CHILD, Natural, Brand, CACFP, USDA, No sugar added, no added sugar, Real fruit , organic, Best, leader, top, quality, exclusive, better , delicious, FREE DELIVERY"/>
-  <meta name="description" content="563-386-1999 - FREE shipping. Juice concentrates for kids. Different juice flavors in a case. Fruit juice concentrates for childcare centers."/>
-  <link rel="icon" type="image/x-icon" href="https://static-res-cdn.websites.hibu.com/runtime/favicon_d1_res.ico"/> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../CSS/adminStyle.css"> -->
   <title>Trees Reports | Monthly | Tree Profiling Management System</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="CSS/login.css">
+  <link rel="stylesheet" href="CSS/reportDWM.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
   <link rel="shortcut icon" href="photo/tree.ico" />
 </head>
 
@@ -57,16 +31,16 @@ include "dbConnection.php";
   </header>
 
 
-  <div class="transaction">
-    <div class="tranTitle"> 
-  	  <h3>Trees Monthly Reports</h3>
-    </div> <br>
+  <div class="header">
+	<h2>Record Of Trees - Monthly</h2>
+</div>
 
+<div class = "content">
     <form name="form"  method="POST">
       <div class="selectMonth">
         <h6><label for="monthly">Select month:</label>
         <input type="month"  name="monthly">
-        <input type="submit" name="monthly_r"></h6>
+        <button type="submit" class="btn" name="monthly_r">Submit</button></h6>
       </div>
     </form>
 
@@ -169,6 +143,7 @@ include "dbConnection.php";
    ?>
 
 <div class="chart">
+<center><h4>Report Of Tress | Planting Date | Monthly</h4></center>
             <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 			<script>
 			var barColors = "#57C7FF";
@@ -201,7 +176,13 @@ include "dbConnection.php";
         });
 
 			</script>
-              <button type="submit" class="btn" name="Logout">Logout</button>
-
+               <div class="admin">
+      <a href="reportDaily.php"><button>Trees Planted Daily</button></a>
+      <a href="reportWeekly.php"><button>Trees Planted Weekly</button></a>
+    </div>
+  <form action="" method="post">
+  <button type="submit" class="back" name="back">Back to Admin Page</button>
+  </form>
+    </div>
     </body>
 </html>
