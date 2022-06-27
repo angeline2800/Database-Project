@@ -21,7 +21,7 @@
   </header>
 
   <div class="header">
-	<h2>List of Clients</h2>
+	<h2>List of Workers</h2>
 </div>
 <div class="content">
 		<div class="addBlock">
