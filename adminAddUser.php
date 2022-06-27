@@ -8,7 +8,7 @@
 		$userAdd = $_POST['userAdd'];
 		$userEmail = $_POST['userEmail'];
 		$userPW = $_POST['userPW'];
-		$encrypted_pwd = md5($userPW);
+		$encrypted_pwd = SHA1($userPW);
 		$userPhone = $_POST['userPhone'];
 		$userCountry = $_POST['userCountry'];
 		$userType = $_POST['userType'];
