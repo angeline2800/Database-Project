@@ -61,8 +61,12 @@
 	<h2>Add A New User</h2>
 </div>
 <div class="content">
-<center><h3>Complete The Form Below To Add A New User.</h3></center>
-	<div class="addNewUser">
+	<div class="addBlock">
+            <center><a href="admin.php"><button>Admin Home Page</button></a></center>
+        </div>
+	
+	<center><h3>Complete The Form Below To Add A New User.</h3></center>
+		<div class="addNewUser">
 			<form action="" method="post">
 			<div class="insertUser">
 				<label>User Name</label>
@@ -93,7 +97,7 @@
 				</div>
 
 				<input type="submit"class="addSubmit" name="insert" value="Save" />
-				<a href="admin.php"><button>Cancel</button></a>
+				
 				</div>
 			</form>
 		</div>	
