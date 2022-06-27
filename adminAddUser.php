@@ -13,15 +13,96 @@
 		$userCountry = $_POST['userCountry'];
 		$userType = $_POST['userType'];
 		
-		$client_photo = $_POST['client_photo'];
-		
 		$sql = "INSERT INTO `user`(`userID`, `userName`, `userAdd`, `userEmail`, `userPW`, `userPhone`, `userCountry`, `userType`)
 				VALUES (NULL, '$userName', '$userAdd', '$userEmail', '$encrypted_pwd', '$userPhone', '$userCountry', '$userType')";
 				
 		$result = mysqli_query($conn, $sql);
 		
 		if($result){
-				header("Location: admin.php?msg=New record created successfully");
+			if($userType == 'client'){
+				$sqlUserID = "SELECT userID FROM User WHERE userName = '$userName' AND userEmail = '$userEmail'";
+				$result = mysqli_query($conn, $sqlUserID);
+				if (mysqli_num_rows($result) > 0){
+					$row = mysqli_fetch_assoc($result);
+					$userid = $row['userID'];
+				}
+					$file = $_FILES['client_photo']["name"];
+					$target_dir = "upload/";
+					$target_file = $target_dir.basename($_FILES['client_photo']["name"]);
+					$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+					$extensions_arr = array("jpg","jpeg","png","gif");
+					if( in_array($imageFileType,$extensions_arr) ){
+						if(move_uploaded_file($_FILES['client_photo']['tmp_name'],$target_dir.$file)){
+							$sql = "INSERT INTO Client(userID, client_photo) VALUES('$userid', '".$file."')";
+							$query_run = mysqli_query($conn, $sql);
+				
+							if($query_run)
+							{
+								echo '<script type="text/javascript">alert("Client Data Uploaded") </script>';
+							}
+							else
+							{
+								echo '<script type="text/javascript">alert("Client Data Fail Uploaded") </script>';
+							}
+						}
+					}
+					
+			}
+			else if($userType == 'company'){
+				$sqlUserID = "SELECT userID FROM User WHERE userName = '$userName' AND userEmail = '$userEmail'";
+				$result = mysqli_query($conn, $sqlUserID);
+				if (mysqli_num_rows($result) > 0){
+					$row = mysqli_fetch_assoc($result);
+					$userid = $row['userID'];
+				}
+				$compDesc = $_POST['compDesc'];
+					$file = $_FILES['company_photo']["name"];
+					$target_dir = "upload/";
+					$target_file = $target_dir.basename($_FILES['company_photo']["name"]);
+					$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+					$extensions_arr = array("jpg","jpeg","png","gif");
+					if( in_array($imageFileType,$extensions_arr) ){
+						if(move_uploaded_file($_FILES['company_photo']['tmp_name'],$target_dir.$file)){
+							$sql = "INSERT INTO Company(userID, companyDesc,companyPhoto) VALUES('$userid', '$compDesc','".$file."')";
+							$query_run = mysqli_query($conn, $sql);
+				
+							if($query_run)
+							{
+								echo '<script type="text/javascript">alert("Company Data Uploaded") </script>';
+							}
+							else
+							{
+								echo '<script type="text/javascript">alert("Company Data Fail Uploaded") </script>';
+							}
+						}
+					}
+					
+			}
+			else if($userType == 'worker'){
+				$sqlUserID = "SELECT userID FROM User WHERE userName = '$userName' AND userEmail = '$userEmail'";
+				$result = mysqli_query($conn, $sqlUserID);
+				if (mysqli_num_rows($result) > 0){
+					$row = mysqli_fetch_assoc($result);
+					$userid = $row['userID'];
+				}
+				$worker_position = $_POST['worker_position'];
+				$worker_department = $_POST['worker_department'];
+				$workerDOB = $_POST['workerDOB'];
+				$sql = "INSERT INTO Worker(userID, worker_position, worker_department, workerDOB) VALUES('$userid', '$worker_position','$worker_department', '$workerDOB')";
+				$query_run = mysqli_query($conn, $sql);
+				
+				if($query_run)
+				{
+					echo '<script type="text/javascript">alert("Worker Data Uploaded") </script>';
+				}
+				else
+				{
+					echo '<script type="text/javascript">alert("Worker Data Fail Uploaded") </script>';
+				}
+						
+					
+			}
+				//header("Location: admin.php?msg=New record created successfully");
 		}
 		else
 		{
@@ -45,6 +126,23 @@
 	<title>Admins | Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
 	<link rel="stylesheet" href="CSS/adminAddUser.css">
+	<style type="text/css">
+        .box {
+            display: none;
+        }
+    </style>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input[type="radio"]').click(function(){
+				var val = $(this).attr("value");
+				var target = $("." + val);
+				$(".box").not(target).hide();
+				$(target).show();
+			});
+			
+      	});
+	</script>
 </head>
 <body>
 
@@ -67,7 +165,7 @@
 	
 	<center><h3>Complete The Form Below To Add A New User.</h3></center>
 		<div class="addNewUser">
-			<form action="" method="post">
+			<form action="" method="POST" enctype="multipart/form-data">
 			<div class="insertUser">
 				<label>User Name</label>
 				<input type = "text" name="userName" placeholder="enter name" required><br>
@@ -94,6 +192,27 @@
 				
 				<input type = "radio" class="form-check-input" name="userType" id="worker" value="worker"required>
 				<label for="client">Worker</label>
+				</div>
+
+				<div class="client box">
+				<label>Client's photo</label>
+				<input type = "file" name="client_photo" id="client_photo"><br>
+				</div>
+
+				<div class="company box">
+				<label>Company's photo</label>
+				<input type = "file" name="company_photo" id="companyPhoto"><br>
+				<label>Company's Description</label>
+				<input type = "text" name="compDesc" placeholder="enter company's description"><br>
+				</div>
+
+				<div class="worker box">
+				<label>Worker's Position</label>
+				<input type = "text" name="worker_position" placeholder="enter worker's position"><br>
+				<label>Worker's Department</label>
+				<input type = "text" name="worker_department" placeholder="enter worker's department"><br>
+				<label>Worker's Date of Birth</label>
+				<input type = "text" name="workerDOB" placeholder="1990-09-09"><br>
 				</div>
 
 				<input type="submit"class="addSubmit" name="insert" value="Save" />
