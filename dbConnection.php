@@ -51,7 +51,7 @@
 			worker_department VARCHAR(100) NOT NULL,
 			workerDOB DATE NOT NULL,
 			PRIMARY KEY(userID),
-			FOREIGN KEY(userID) REFERENCES User(userID) ON DELETE CASCADE
+			FOREIGN KEY(userID) REFERENCES User(userID)
 			)";
 
 	if (mysqli_query($conn, $sqlWorker)) 
@@ -66,7 +66,7 @@
 				userID INT(5) NOT NULL,
 				client_photo BLOB NOT NULL, 
 				PRIMARY KEY(userID),
-				FOREIGN KEY(userID) REFERENCES User(userID) ON DELETE CASCADE
+				FOREIGN KEY(userID) REFERENCES User(userID)
 			)";
 
 	if (mysqli_query($conn, $sqlClient))
@@ -82,7 +82,7 @@
 				companyDesc VARCHAR(200) NOT NULL,
 				companyPhoto BLOB NOT NULL,
 				PRIMARY KEY(userID),
-				FOREIGN KEY(userID) REFERENCES User(userID) ON DELETE CASCADE
+				FOREIGN KEY(userID) REFERENCES User(userID)
 			)";
 
 	if (mysqli_query($conn, $sqlCompany))
@@ -99,7 +99,7 @@
 				orchard_location VARCHAR(100) NOT NULL,
 				userID INT(5) NOT NULL,
 				PRIMARY KEY(orchardID),
-				FOREIGN KEY(userID) REFERENCES User(userID) ON DELETE CASCADE
+				FOREIGN KEY(userID) REFERENCES User(userID)
 			)";
 
 	if (mysqli_query($conn, $sqlOrchard))
@@ -115,7 +115,7 @@
 				Price VARCHAR(50) NOT NULL,
 				orchardID INT(5) NOT NULL,
 				PRIMARY KEY(BlockID),
-				FOREIGN KEY(orchardID) REFERENCES Orchard(orchardID) ON DELETE CASCADE
+				FOREIGN KEY(orchardID) REFERENCES Orchard(orchardID)
 			)";
 
 	if (mysqli_query($conn, $sqlBlock))
@@ -173,8 +173,8 @@
 					TreeID INT(5) NOT NULL, 
 					Worker_startDate DATE NOT NULL,
 					PRIMARY KEY(userID, TreeID),
-					FOREIGN KEY(userID) REFERENCES user(userID) ON DELETE CASCADE,
-					FOREIGN KEY(TreeID) REFERENCES Tree(TreeID) ON DELETE CASCADE
+					FOREIGN KEY(userID) REFERENCES user(userID),
+					FOREIGN KEY(TreeID) REFERENCES Tree(TreeID)
 				)";
 	if (mysqli_query($conn, $sqlTreeWrkr)) 
 	{
