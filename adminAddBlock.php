@@ -26,7 +26,7 @@
 			$result = $conn->query($sql);
 			
 			if (!$result) {
-				$errorMessage = "Invalid query: " . $conn->error;
+				$errorMessage = "Invalid Orchard ID, Please input the valid Orchard ID!";
 				break;
 			}
 			
