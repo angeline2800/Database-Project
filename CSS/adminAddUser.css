@@ -118,6 +118,38 @@ form{
     margin-left: 10px;
 }
 
+.addBlock {
+    width: 90%;
+    margin: 8px 70px;
+    padding: 0px;
+    margin-right: 0px;
+    border: 1px,solid,black;
+    text-align: center;
+}
+.addBlock button
+{
+    padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    width: 40%;
+	font-size: 18px;
+    margin-left: 0px;
+    margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+    border: 1px #000040 solid;
+    border-radius: 8px;
+    color: white;
+    background:#FF4646 ;
+    cursor: pointer;
+    display:inline-block;
+}
+.addBlock button:hover
+{
+    background-color: #FF8282;
+}
+
 .insertUser {
     margin: auto;
     padding-top: 5px;
