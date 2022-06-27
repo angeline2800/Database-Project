@@ -34,6 +34,7 @@
 		?>
 	<div class="content">
 		<div class="addBlock">
+			<center><a href="admin.php"><button>Admin Home Page</button></a></center>
 			<center><a href="adminAddUser.php"><button>Add New User - Client, Company, Worker</button></a></center>
 		</div>
 			
