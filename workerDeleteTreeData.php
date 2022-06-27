@@ -3,10 +3,15 @@
 	
 	if(isset($_POST['delete']))
 	{
+		$workerID = $_SESSION['user']['userID'];
 		$TreeID = $_POST['TreeID'];
 
-		$querySearch = "SELECT * FROM tree where TreeID='$TreeID' ";
-		$querySearch = mysqli_query($conn, $querySearch);
+		$query = "SELECT * FROM Tree 
+				INNER JOIN Tree_Worker ON Tree.TreeID = Tree_Worker.TreeID
+				INNER JOIN Worker ON Worker.userID = Tree_Worker.userID
+				where Tree.TreeID='$TreeID' and Worker.userID = '$workerID'";
+
+		$querySearch = mysqli_query($conn, $query);
 				
 		if($row = mysqli_fetch_array($querySearch))
 		{
