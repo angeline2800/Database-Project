@@ -9,6 +9,8 @@
 	$sucessMessage="";
 	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+		if(isset($_POST['submit']))
+		{
 		$orchard_add = $_POST["orchard_add"];
 		$orchard_location = $_POST["orchard_location"];
 		$userID = $_POST["userID"];
@@ -41,6 +43,14 @@
 			
 		}while(false);
 	}
+		else
+		{
+			header("location: adminOrchard.php");
+		}
+
+	}
+
+	
 	
 
 ?>
