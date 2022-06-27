@@ -9,7 +9,7 @@
 	$sucessMessage="";
 	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		if(isset($_POST['submit']))
+		if(isset($_POST['insert']))
 		{
 		$orchard_add = $_POST["orchard_add"];
 		$orchard_location = $_POST["orchard_location"];
@@ -28,7 +28,7 @@
 			$result = $conn->query($sql);
 			
 			if (!$result) {
-				$errorMessage = "Invalid query: " . $conn->error;
+				$errorMessage = "Invalid user ID, Please input the valid user ID!";
 				break;
 			}
 			
@@ -50,8 +50,6 @@
 
 	}
 
-	
-	
 
 ?>
 
@@ -85,6 +83,16 @@
 <div class="content">
 <center><h3>Complete The Form Below To Add A New Orchard.</h3></center>
 	<div class="addNewOrchard">
+		<?php
+				if(!empty($errorMessage)){
+					echo "
+					<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+						<strong>$errorMessage</strong>
+						<button type='button' class='btn-close' data-bs-dismiss='alert' atia-label='Close' </button>
+					</div>
+					";
+				}
+			?>
 			<form action="" method="post">
 			<div class="insertOrchard">
 				<label>Orchard Address</label>
@@ -93,6 +101,21 @@
 				<input type = "text" name="orchard_location" placeholder="Enter orchard location"><br/>
 				<label>User ID</label>
 				<input type = "text" name="userID" placeholder="Enter user ID">
+
+				<?php
+					if(!empty($sucessMessage)){
+					echo "
+					<div class='row mb-3'>
+						<div class='offset -sm3 col-sm-6'>
+							<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+								<strong>$sucessMessage</strong>
+								<button type='button' class='btn-close' data-bs-dismiss='alert' atia-label='Close' </button>
+							</div>
+						</div>
+					</div>
+					";
+					}
+				?>
 
 				<input type="submit"class="addSubmit" name="insert" value="Add" />
 				<a href="adminOrchard.php"><button>Back to Orchard List</button></a>
