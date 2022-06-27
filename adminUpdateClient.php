@@ -8,13 +8,12 @@
 		$userName = $_POST['userName'];
 		$userAdd = $_POST['userAdd'];
 		$userEmail = $_POST['userEmail'];
-		$userPW = $_POST['userPW'];
 		$userPhone = $_POST['userPhone'];
 		$userCountry = $_POST['userCountry'];
 		
 		
 		$sql = "UPDATE `user` SET `userName`='$userName',`userAdd`='$userAdd',`userEmail`='$userEmail',
-			`userPW`= SHA1('$userPW'),`userPhone`='$userPhone',`userCountry`='$userCountry' WHERE userID =$userID";
+			`userPhone`='$userPhone',`userCountry`='$userCountry' WHERE userID =$userID";
 				
 		$result = mysqli_query($conn, $sql);
 		
@@ -78,8 +77,6 @@
 					<input type = "text" name="userAdd" value="<?php echo $row['userAdd']?>"><br>
 					<label>Client Email</label>
 					<input type = "email" name="userEmail" value="<?php echo $row['userEmail']?>"><br>
-					<label>Client Password</label>
-					<input type = "password" name="userPW" value="<?php echo $row['userPW']?>"><br>
 					<label>Client Phone</label>
 					<input type = "text" name="userPhone" value="<?php echo $row['userPhone']?>"><br>
 					<label>Client Country</label>
