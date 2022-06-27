@@ -13,9 +13,7 @@
 		$userCountry = $_POST['userCountry'];
 		$userType = $_POST['userType'];
 		
-		$client_photo = $_POST['client_photo'];
-		
-		$sql = "UPDATE `user` SET `userName`='$userName',`userAdd`='$userAdd]',`userEmail`='$userEmail',
+		$sql = "UPDATE `user` SET `userName`='$userName',`userAdd`='$userAdd',`userEmail`='$userEmail',
 			`userPW`='$userPW',`userPhone`='$userPhone',`userCountry`='$userCountry',`userType`='$userType' WHERE userID =$userID";
 				
 		$result = mysqli_query($conn, $sql);
@@ -90,14 +88,17 @@
 					<div class="usertype">
 
 					<label>User Type </label><br>
+					
+					
 					<input type = "radio" name="userType" id="client" value="client" <?php echo ($row['userType']=='client')? "checked":""; ?>>
 					<label for="client">Client</label>
 					
-					<input type = "radio" name="userType" id="company"value="company" <?php echo ($row['userType']=='company')? "checked":""; ?>>
+					<input type = "radio" name="userType" id="company" value="company" <?php echo ($row['userType']=='company')? "checked":""; ?>>
 					<label for="client">Company</label>
 					
-					<input type = "radio" name="userType" id="worker"value="worker" <?php echo ($row['userType']=='worker')? "checked":""; ?>>
+					<input type = "radio" name="userType" id="worker" value="worker" <?php echo ($row['userType']=='worker')? "checked":""; ?>>
 					<label for="client">Worker</label>
+					
 					
 					<input type="submit"class="addSubmit" name="insert" value="Save" />
 					<a href="admin.php"><button>Cancel</button></a>
