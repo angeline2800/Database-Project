@@ -161,6 +161,8 @@
 			</table>
 			<a href="assignTreeWorkerForm.php">
 			<button> Assign tree to worker </button></a>
+			<a href="admin.php">
+			<button> Back to Admin Page </button></a>
 		<?php
 		} //if
 		else{

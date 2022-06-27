@@ -4,6 +4,12 @@
 	if(isset($_POST['delete']))
 	{
 		$TreeID = $_POST['TreeID'];
+
+		$querySearch = "SELECT * FROM tree where TreeID='$TreeID' ";
+		$querySearch = mysqli_query($conn, $querySearch);
+				
+		if($row = mysqli_fetch_array($querySearch))
+		{
 		
 		$query = "DELETE FROM `tree` WHERE TreeID='$TreeID' ";
 		$query_run = mysqli_query($conn, $query);
@@ -13,11 +19,18 @@
 			echo"<script type=\"text/javascript\"> alert(\"Data Delete...!\");
 			window.location = 'worker.php'; </script>";
 		}
+		
 		else
 		{
-			echo '<script type="text/javascript"> alert("Data Not Delete") </script>';
+			echo '<script type="text/javascript"> alert("Data Not") </script>';
 		}
-	}	
+		}
+		else
+		{
+			echo '<script type="text/javascript"> alert("Invalid Tree ID...! Please Enter A Valid Tree ID.") </script>';
+		}
+	}
+	
 ?>
 
 <html>

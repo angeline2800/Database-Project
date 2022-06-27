@@ -158,25 +158,23 @@
 				$treeid= $_POST["treeId"];
 				$userid= $_POST["userId"];
 				$date = $_POST["startDate"];
-					
-				if (empty($treeid)){
-					echo "<p style='color:red; font-weight: bold;'>TreeID is required!</p>"; 
-					exit();
-				}
-				else if (empty($userid)){
-					echo "<p style='color:red; font-weight: bold;'>userID is required!</p>"; 
-					exit();
-				}
-				else if (empty($date)){
-					echo "<p style='color:red; font-weight: bold;'>Date of responsibility is required!</p>"; 
-					exit();
-				}
-					
-				else{
+				
 					if(isset($_POST["assign"])){
 						$treeid = $_POST["treeId"];
 						$userid = $_POST["userId"];
 						$date = $_POST["startDate"];
+						if (empty($treeid)){
+							echo "<p style='color:red; font-weight: bold;'>TreeID is required!</p>"; 
+							exit();
+						}
+						else if (empty($userid)){
+							echo "<p style='color:red; font-weight: bold;'>userID is required!</p>"; 
+							exit();
+						}
+						else if (empty($date)){
+							echo "<p style='color:red; font-weight: bold;'>Date of responsibility is required!</p>"; 
+							exit();
+						}
 							
 						$sql = "SELECT * FROM Tree t, Worker w WHERE t.TreeID='$treeid' AND w.userID='$userid'"; 
 						$result = mysqli_query($conn, $sql);
@@ -192,8 +190,11 @@
 						}
 							
 					}
+					else{
+						header("Location: assignTreeWorker.php");
+					}	
 				}
-			}
+			
 	/* }
 	else{
 		header("Location: UserLoginForm.php");

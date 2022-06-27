@@ -163,29 +163,29 @@
 				$date = $_POST["purchaseDate"];
 				$price = $_POST["totalPrice"];
 					
-				if (empty($blockid)){
-					echo "<p style='color:red; font-weight: bold;'>BlockID is required!</p>"; 
-					exit();
-				}
-				else if (empty($userid)){
-					echo "<p style='color:red; font-weight: bold;'>userID is required!</p>"; 
-					exit();
-				}
-				else if (empty($date)){
-					echo "<p style='color:red; font-weight: bold;'>Purchase date is required!</p>"; 
-					exit();
-				}
-				else if (empty($price)){
-					echo "<p style='color:red; font-weight: bold;'>Total price is required!</p>"; 
-					exit();
-				}
-					
-				else{
 					if(isset($_POST["assign"])){
 						$blockid = $_POST["blockId"];
 						$userid = $_POST["userId"];
 						$date = $_POST["purchaseDate"];
 						$price = "RM".$_POST["totalPrice"];
+
+						if (empty($blockid)){
+							echo "<p style='color:red; font-weight: bold;'>BlockID is required!</p>"; 
+							exit();
+							
+						}
+						else if (empty($userid)){
+							echo "<p style='color:red; font-weight: bold;'>userID is required!</p>"; 
+							exit();
+						}
+						else if (empty($date)){
+							echo "<p style='color:red; font-weight: bold;'>Purchase date is required!</p>"; 
+							exit();
+						}
+						else if (empty($price)){
+							echo "<p style='color:red; font-weight: bold;'>Total price is required!</p>"; 
+							exit();
+						}
 							
 						$sql = "SELECT * FROM Block b, Client c WHERE b.BlockID='$blockid' AND c.userID='$userid'"; 
 						$result = mysqli_query($conn, $sql);
@@ -196,19 +196,17 @@
 							mysqli_query($conn, $sql);
 							echo "<h2 style='margin-bottom:50px;'>Assign successfully!</h2>";
 						} //if
-						else{
+						else
+						{
 							echo "<h2 style='margin-bottom:50px;'>The BlockID or userID is incorrect! Please check again!</h2>";
 						}
 							
 					}
+					else{
+						header("Location: assignBlockClient.php");
+					}	
 				}
-			}
-			
-	/* }
-	else{
-		header("Location: UserLoginForm.php");
-		exit();
-	} */
+
 ?>
 
 		</div>

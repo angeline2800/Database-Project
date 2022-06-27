@@ -163,17 +163,13 @@
 			</table>
 			<a href="assignBlockClientForm.php">
 			<button> Assign block to client </button></a>
+			<a href="admin.php">
+			<button> Back to Admin Page </button></a>
 		<?php
 		} //if
 		else{
 			echo "<h2>No Records Found!</h2>";
 		}
-		
-	/* }
-	else{
-		header("Location: UserLoginForm.php");
-		exit();
-	} */
 ?>
 </div>
 </body>

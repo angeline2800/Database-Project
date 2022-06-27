@@ -44,7 +44,7 @@
 				$query = "SELECT * FROM tree where TreeID='$TreeID' ";
 				$query_run = mysqli_query($conn, $query);
 				
-				while($row = mysqli_fetch_array($query_run))
+				if($row = mysqli_fetch_array($query_run))
 				{
 				?>
 				<form action="" method="POST" enctype="multipart/form-data">
@@ -72,6 +72,10 @@
 				</div>
 				</form>
 				<?php
+				}
+				else
+				{
+					echo '<script type="text/javascript"> alert("Invalid Tree ID...! Please Enter A Valid Tree ID.") </script>';
 				}
 			}
 		?>
