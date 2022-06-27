@@ -14,7 +14,7 @@
 		
 		
 		$sql = "UPDATE `user` SET `userName`='$userName',`userAdd`='$userAdd',`userEmail`='$userEmail',
-			`userPW`='$userPW',`userPhone`='$userPhone',`userCountry`='$userCountry' WHERE userID =$userID";
+			`userPW`=SHA1('$userPW'),`userPhone`='$userPhone',`userCountry`='$userCountry' WHERE userID =$userID";
 				
 		$result = mysqli_query($conn, $sql);
 		
