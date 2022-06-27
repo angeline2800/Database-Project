@@ -22,24 +22,36 @@
 				break;
 			}
 			
-			// add new orchard to database
-			$sql = "INSERT INTO orchard (orchard_add, orchard_location, userID)"
-			. "VALUES ('$orchard_add', '$orchard_location', '$userID')";
-			$result = $conn->query($sql);
-			
-			if (!$result) {
-				$errorMessage = "Invalid user ID, Please input the valid user ID!";
-				break;
+			// search user type
+			$sql = "SELECT userType FROM User WHERE userID='$userID'";
+			$result = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($result) > 0){
+				$row = mysqli_fetch_assoc($result);
+				$userType = $row['userType'];
 			}
-			
-			$orchard_add = "";
-			$orchard_location= "";
-			$userID= "";
-			
-			$sucessMessage = "Orchard added successfully!";
-			
-			header("location: adminOrchard.php ");
-			exit;
+
+			if ($userType == 'company'){
+				// add new orchard to database
+				$sql = "INSERT INTO orchard (orchard_add, orchard_location, userID)"
+				. "VALUES ('$orchard_add', '$orchard_location', '$userID')";
+				$result = $conn->query($sql);
+				if (!$result) {
+					$errorMessage = "Invalid user ID, Please input the valid user ID!";
+					break;
+				}
+				$orchard_add = "";
+				$orchard_location= "";
+				$userID= "";
+				
+				$sucessMessage = "Orchard added successfully!";
+				
+				header("location: adminOrchard.php ");
+				exit;
+			}
+			else{
+				$errorMessage = "This is not the userID for 'company' user type!";
+				
+			}
 			
 		}while(false);
 	}
