@@ -80,7 +80,7 @@
 					<input type = "email" name="userEmail" value="<?php echo $row['userEmail']?>"><br>
 					<label>Company Password</label>
 					<input type = "password" name="userPW" value="<?php echo $row['userPW']?>"><br>
-					<label>CompanyPhone</label>
+					<label>Company Phone</label>
 					<input type = "text" name="userPhone" value="<?php echo $row['userPhone']?>"><br>
 					<label>Company Country</label>
 					<input type = "text" name="userCountry" value="<?php echo $row['userCountry']?>"><br>
