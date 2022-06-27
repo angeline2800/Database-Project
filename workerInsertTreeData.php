@@ -58,28 +58,35 @@
 	
 	if(isset($_POST['insert']))
 	{
-		$file = addslashes(file_get_contents($_FILES["tree_Image"]["tmp_name"]));
-		
-		$spesiesName = $_POST['spesiesName'];
-		$plantDate = $_POST['plantDate'];
-		$tree_height = $_POST['tree_height'];
-		$diameter = $_POST['diameter'];
-		$status = $_POST['status'];
-		$GPS_location = $_POST['GPS_location'];
-		$tree_type = $_POST['tree_type'];
-		$BlockID = $_POST['BlockID'];
-		
-		$query = "INSERT INTO `tree`(`tree_Image`, `spesiesName`, `plantDate`, `tree_height`, `diameter`, `status`, `GPS_location`, `tree_type`, `BlockID`) 
-				VALUES ('$file', '$spesiesName', '$plantDate', '$tree_height', '$diameter', '$status', '$GPS_location', '$tree_type', '$BlockID')";
-		$query_run = mysqli_query($conn, $query);
-		
-		if($query_run)
-		{
-			echo '<script type="text/javascript">alert("Tree Data Uploaded") </script>';
-		}
-		else
-		{
-			echo '<script type="text/javascript">alert("Tree Data Fail Uploaded") </script>';
+		$file = $_FILES["tree_Image"]["name"];
+		$target_dir = "upload/";
+  		$target_file = $target_dir.basename($_FILES["tree_Image"]["name"]);
+		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+		$extensions_arr = array("jpg","jpeg","png","gif");
+		if( in_array($imageFileType,$extensions_arr) ){
+			if(move_uploaded_file($_FILES['tree_Image']['tmp_name'],$target_dir.$file)){
+				$spesiesName = $_POST['spesiesName'];
+				$plantDate = $_POST['plantDate'];
+				$tree_height = $_POST['tree_height'];
+				$diameter = $_POST['diameter'];
+				$status = $_POST['status'];
+				$GPS_location = $_POST['GPS_location'];
+				$tree_type = $_POST['tree_type'];
+				$BlockID = $_POST['BlockID'];
+				
+				$query = "INSERT INTO `tree`(`tree_Image`, `spesiesName`, `plantDate`, `tree_height`, `diameter`, `status`, `GPS_location`, `tree_type`, `BlockID`) 
+						VALUES ('".$file."', '$spesiesName', '$plantDate', '$tree_height', '$diameter', '$status', '$GPS_location', '$tree_type', '$BlockID')";
+				$query_run = mysqli_query($conn, $query);
+				
+				if($query_run)
+				{
+					echo '<script type="text/javascript">alert("Tree Data Uploaded") </script>';
+				}
+				else
+				{
+					echo '<script type="text/javascript">alert("Tree Data Fail Uploaded") </script>';
+				}
+			}
 		}
 	}
 
