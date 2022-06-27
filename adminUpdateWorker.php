@@ -42,7 +42,7 @@
 
 	<title>Worker| Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
-	<link rel="stylesheet" href="CSS/adminAddUser.css">
+	<link rel="stylesheet" href="CSS/adminUpdateCompany.css">
 </head>
 <body>
 
