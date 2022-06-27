@@ -80,7 +80,7 @@
 				}
 				else
 				{
-					echo '<script type="text/javascript"> alert("Invalid Tree ID...! Please Enter A Valid Tree ID.") </script>';
+					echo '<script type="text/javascript"> alert("The Tree Is Assigned To Other Worker...! Please Enter Again. ") </script>';
 				}
 			}
 		?>
