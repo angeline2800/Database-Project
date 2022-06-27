@@ -37,11 +37,16 @@
 		
 		<?php
 		include "dbConnection.php";
-			
+		session_start();
 			if(isset($_POST['search']))
 			{
+				$workerID = $_SESSION['user']['userID'];
 				$TreeID = $_POST['TreeID'];
-				$query = "SELECT * FROM tree where TreeID='$TreeID' ";
+				$query = "SELECT * FROM Tree 
+				INNER JOIN Tree_Worker ON Tree.TreeID = Tree_Worker.TreeID
+				INNER JOIN Worker ON Worker.userID = Tree_Worker.userID
+				where Tree.TreeID='$TreeID' and Worker.userID = '$workerID'";
+				
 				$query_run = mysqli_query($conn, $query);
 				
 				if($row = mysqli_fetch_array($query_run))
