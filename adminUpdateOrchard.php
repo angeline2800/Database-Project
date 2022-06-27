@@ -49,7 +49,7 @@
 			<form action="" method="post">
 				<div class="editOrchard">
 					<label>Orchard Address</label>
-					<input type = "text" name="orchard_add" id="orchard_add" value="<?php echo $orchard_add; ?>">
+					<input type = "text" name="orchard_add" id="orchard_add" value="<?php echo $orchard_add; ?>"><br>
 					<label>Orchard Location</label>
 					<input type = "text" name="orchard_location" id="orchard_location" value="<?php echo $orchard_location; ?>">
 					<br/>
