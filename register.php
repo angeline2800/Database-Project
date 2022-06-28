@@ -54,9 +54,6 @@
 			
 			$sucessMessage = "User added successfully!";
 			
-			//header("location: /tmf2034/DisplayUser.php");
-			//exit;
-			
 		}while(false);
 	}
 ?>
@@ -79,14 +76,14 @@
         <h2>New User</h2>
 		
 		<?php
-		if(!empty($errorMessage)){
-			echo "
-			<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-				<strong>$errorMessage</strong>
-				<button type='button' class='btn-close' data-bs-dismiss='alert' atia-label='Close' </button>
-			</div>
-			";
-		}
+			if(!empty($errorMessage)){
+				echo "
+				<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+					<strong>$errorMessage</strong>
+					<button type='button' class='btn-close' data-bs-dismiss='alert' atia-label='Close' </button>
+				</div>
+				";
+			}
 		?>
 		<form method="post">
 		<div class="row mb-3">
@@ -129,7 +126,6 @@
 			<label class="col-sm-3 col-form-label">User Type</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" name="userType" placeholder="enter worker/client/company" value="<?php echo $userType; ?>">
-
 				</div>
 		</div>
 		

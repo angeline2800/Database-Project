@@ -1,7 +1,5 @@
 <?php	
 
-	// CREATE dbConnection, Database, Tables, Data
-
 	// Create Connection
 	$servername = "localhost";
 	$username = "root";
@@ -497,7 +495,7 @@
 	 }
 	 else
 	 {
-		 echo "Error inserting into Table Company: " . mysqli_error($conn);
+		echo "Error inserting into Table Company: " . mysqli_error($conn);
 	 }
 
 	 //Insert Admin Data
@@ -529,7 +527,7 @@
 	 }
 	 else
 	 {
-		 echo "Error inserting into Table Admin: " . mysqli_error($conn);
+		echo "Error inserting into Table Admin: " . mysqli_error($conn);
 	 }
 
 	 //Insert Orchard Data
@@ -649,7 +647,7 @@
 	 }
 	 else
 	 {
-		 echo "Error inserting into Table Block: " . mysqli_error($conn);
+		echo "Error inserting into Table Block: " . mysqli_error($conn);
 	 }
 
 	 //Insert Tree Data
@@ -1062,7 +1060,7 @@
 	 }
 	 else
 	 {
-		 echo "Error inserting into Table Tree: " . mysqli_error($conn);
+		echo "Error inserting into Table Tree: " . mysqli_error($conn);
 	 }
 
 	 //Insert Block_Client Data
@@ -1138,7 +1136,7 @@
 	 }
 	 else
 	 {
-		 echo "Error inserting into Table Block_Client: " . mysqli_error($conn);
+		echo "Error inserting into Table Block_Client: " . mysqli_error($conn);
 	 }
 
 	 //Insert Tree_Worker Data
@@ -1467,18 +1465,14 @@
 		
 	 if (mysqli_query($conn, $sqlTreeWrkrData))
 	 {
-		echo "
-		<script type=\"text/javascript\">
+		echo "<script type=\"text/javascript\">
 		alert(\"Data is available now...!\");
-			window.location = 'UserLoginForm.php';
-		</script>
-	";
+		window.location = 'UserLoginForm.php';
+		</script>";
 	 }
 	 else
 	 {
 	 	echo "Error inserting into Table Tree_Worker: " . mysqli_error($conn);
 	 }
 
-	// mysqli_close($conn);
-	
 ?>

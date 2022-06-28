@@ -1,7 +1,5 @@
 <?php	
 
-	// CREATE dbConnection, Database, Tables, Data
-
 	// Create Connection
 	$servername = "localhost";
 	$username = "root";

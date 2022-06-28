@@ -1,11 +1,11 @@
 <?php include "dbConnection.php"; 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['back']))
     {
       header('location:admin.php');
     }
-    }
-    ?>
+  }
+?>
 
 <html>
 <head>
@@ -17,30 +17,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-<header class="header-border">
+  <header class="header-border">
     <div class="header-content">
-	
       <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
         <div class="slogan2">
-         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+          <b><p>YOUR GOOD HELPER IN LIFE</p></b>
         </div>
     </div>
   </header>
 
   <div class="header">
-	<h2>Tree Reports</h2>
-</div>
-<div class="content">
+	  <h2>Tree Reports</h2>
+  </div>
 
+  <div class="content">
     <div class="admin">
       <a href="reportDaily.php"><button>Trees Planted Daily</button></a>
       <a href="reportWeekly.php"><button>Trees Planted Weekly</button></a>
       <a href="reportMonthly.php"><button>Trees Planted Monthly</button></a>
     </div>
-  <form action="" method="post">
-  <button type="submit" class="btn" name="back">Back to Admin Page</button>
-  </form>
-
-</div>
+    <form action="" method="post">
+      <button type="submit" class="btn" name="back">Back to Admin Page</button>
+    </form>
+  </div>
 </body>
 </html>
