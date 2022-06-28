@@ -1469,7 +1469,7 @@
 	 {
 		echo "
 		<script type=\"text/javascript\">
-		alert(\"Database is activated now...!\");
+		alert(\"Data is available now...!\");
 			window.location = 'UserLoginForm.php';
 		</script>
 	";
