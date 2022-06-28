@@ -16,6 +16,14 @@ if(isset($_POST['Logout']))
     <link rel="shortcut icon" href="photo/tree.ico" />
     <link rel="stylesheet" href="CSS/Client.css">
     <title>Clients | Tree Profiling Management System </title>
+    <style>
+      form{
+            width: 80%;
+        }
+      .header {
+            width: 80%;
+      }
+    </style>
 </head>
 <body>
 
@@ -36,18 +44,26 @@ if(isset($_POST['Logout']))
   <form method="POST">
             <table>
                 <tr>
-                    <th>User ID</th>
                     <th>Block ID</th>
-                    <th>Purchase Date</th>
-                    <th>Block Quantity</th>
-                    <th>Total Price</th>
+                    <th>Tree ID</th>
+                    <th>Tree Image</th>
+                    <th>Species Name</th>
+                    <th>Plant Date</th>
+                    <th>Tree Height</th>
+                    <th>Diameter</th>
+                    <th>Status</th>
+                    <th>GPS Location</th>
+                    <th>Tree Type</th>
                 </tr>
 
                 <?php
                   if(isset($_SESSION['user']['userID'])) 
                   {
                    $userid = $_SESSION['user']['userID'];
-                   $query = "SELECT * FROM Block_Client WHERE userID = $userid";
+                   $query = "SELECT t.*, b.BlockID FROM Tree t
+                   INNER JOIN `Block` b ON  t.BlockID = b.BlockID
+                   INNER JOIN Block_Client ON b.BlockID = Block_Client.BlockID
+                   WHERE userID = $userid";
                    $result = mysqli_query($conn, $query);
            
                    if(mysqli_num_rows($result) > 0){
@@ -55,11 +71,16 @@ if(isset($_POST['Logout']))
                      {
                        
                        echo"<tr>";
-                       echo "<td>" .$row['userID']."</td>";
                        echo "<td>" .$row['BlockID']."</td>";
-                       echo "<td>" .$row['purchaseDate']."</td>";
-                       echo "<td>" .$row['blockQty']."</td>";
-                       echo "<td>" .$row['totalPrice']."</td>";
+                       echo "<td>" .$row["TreeID"]. "</td>";
+					             echo "<td>" .'<img width = "50px" height = "50px" src = "' . $row['tree_Image']. '"/>'. "</td>";
+				               echo "<td>" .$row["spesiesName"]. "</td>";
+                       echo "<td>" .$row["plantDate"]. "</td>";
+                       echo "<td>" .$row["tree_height"]. "</td>";
+                       echo "<td>" .$row['diameter']."</td>";
+                       echo "<td>" .$row['status']."</td>";
+                       echo "<td>" .$row['GPS_location']."</td>";
+                       echo "<td>" .$row['tree_type']."</td>";
                        echo"</tr>";
                        }      
                    }
