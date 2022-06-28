@@ -1,6 +1,6 @@
 <?php
 	include "dbConnection.php";
-	
+	session_start();
 	if(isset($_POST['delete']))
 	{
 		$workerID = $_SESSION['user']['userID'];
