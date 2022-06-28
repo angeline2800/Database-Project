@@ -1,13 +1,12 @@
 <?php include"dbConnection.php";
 
-session_start();
+	session_start();
 
-if(isset($_POST['Logout']))
-{
-  header('location:UserLogout.php');
-}
-
- ?>
+	if(isset($_POST['Logout']))
+	{
+	header('location:UserLogout.php');
+	}
+?>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -21,11 +20,10 @@ if(isset($_POST['Logout']))
 
 	<header class="header-border">
 	    <div class="header-content">
-
 	      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-		<div class="slogan2">
-			<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-		</div>
+			<div class="slogan2">
+				<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+			</div>
 	    </div>
 	</header>
 
@@ -35,14 +33,14 @@ if(isset($_POST['Logout']))
 		</div>
 
 		 <div class="content">          
-		  <div class="workerTree">
-		      <a href="workerInsertTreeData.php"><button>Add Trees</button></a>
-		      <a href="workerUpdateTreeData.php"><button>Update Trees</button></a>
-		      <a href="workerDeleteTreeData.php"><button>Delete Trees</button></a>
-		</div>
-		<form method="POST">
-		<button type="submit" class="btn" name="Logout">Logout</button>
-		</form>
+		  	<div class="workerTree">
+		      	<a href="workerInsertTreeData.php"><button>Add Trees</button></a>
+		      	<a href="workerUpdateTreeData.php"><button>Update Trees</button></a>
+		      	<a href="workerDeleteTreeData.php"><button>Delete Trees</button></a>
+			</div>
+			<form method="POST">
+				<button type="submit" class="btn" name="Logout">Logout</button>
+			</form>
 		</div>
 	</center>
        

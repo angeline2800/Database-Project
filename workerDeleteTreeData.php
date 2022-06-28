@@ -15,27 +15,24 @@
 				
 		if($row = mysqli_fetch_array($querySearch))
 		{
+			$query = "DELETE FROM `tree` WHERE TreeID='$TreeID' ";
+			$query_run = mysqli_query($conn, $query);
 		
-		$query = "DELETE FROM `tree` WHERE TreeID='$TreeID' ";
-		$query_run = mysqli_query($conn, $query);
-		
-		if($query_run)
-		{
-			echo"<script type=\"text/javascript\"> alert(\"Data Delete...!\");
-			window.location = 'worker.php'; </script>";
-		}
-		
-		else
-		{
-			echo '<script type="text/javascript"> alert("Data Not") </script>';
-		}
+			if($query_run)
+			{
+				echo"<script type=\"text/javascript\"> alert(\"Data Delete...!\");
+				window.location = 'worker.php'; </script>";
+			}
+			else
+			{
+				echo '<script type="text/javascript"> alert("Data Not") </script>';
+			}
 		}
 		else
 		{
 			echo '<script type="text/javascript"> alert("Invalid Tree ID...! Please Enter A Valid Tree ID.") </script>';
 		}
-	}
-	
+	}	
 ?>
 
 <html>
@@ -49,34 +46,31 @@
 
 </head>
 <body>
-<header class="header-border">
-    <div class="header-content">
-	
-      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-        <div class="slogan2">
-         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-        </div>
-    </div>
-  </header>
+	<header class="header-border">
+		<div class="header-content">
+			<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+			<div class="slogan2">
+				<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+			</div>
+		</div>
+	</header>
 
-  <div class="header">
-	<h2>Delete Tree Data</h2>
-</div>
-<div class="content">
-<center><h3> Please search the Tree ID to delete the tree data.</h3></center>
-<div class="searchTree">
-		<form action = "" method="POST">
-		<div class="searching">
-	<center>
-
-		<form action = "worker.php" method="POST">
-			<input type="text" name="TreeID" placeholder="Enter Tree ID" /required><br>
-			<input type="submit"class="delete" name="delete" value="Delete" />
-</div>
-</form>
-</div>
-</div>
-
+	<div class="header">
+		<h2>Delete Tree Data</h2>
+	</div>
+	<div class="content">
+		<center><h3> Please search the Tree ID to delete the tree data.</h3></center>
+		<div class="searchTree">
+			<form action = "" method="POST">
+				<div class="searching">
+				<center>
+				<form action = "worker.php" method="POST">
+					<input type="text" name="TreeID" placeholder="Enter Tree ID" /required><br>
+					<input type="submit"class="delete" name="delete" value="Delete" />
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
 
