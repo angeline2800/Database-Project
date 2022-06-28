@@ -1,91 +1,104 @@
+* { margin: 0px; padding: 0px; }
 
-        * { margin: 0px; padding: 0px; }
-        body {
-            font-size: 120%;
-            background: #E8DDFF;
-        }
+body 
+{
+    font-size: 120%;
+    background: #E8DDFF;
+}
       
-        .slogan {
-            font: bold 45px 'Comfortaa',cursive;
-            color:#200062;
-            padding-right: 180px;
-        }
-        .slogan img
-        {
-            width: 120px;
-            height: 100px;
-            float: left;
-            margin-left: 30px;
-            padding-left: 120px;
-        }
-        .slogan2 {
-            font-size: 30px;
-            padding-right: 270px;
-            font-family:'Courier New', Courier, monospace;
-            color:#454545;
-            padding-top: 3px;
-            margin-top: 5px;
-        }
-        .header-border {
-            background:#DCCCFF;
-            padding: 30px;
-            text-align: center;
-            border: 1px,solid;
-            padding-bottom: 19px;
-        }
+.slogan 
+{
+    font: bold 45px 'Comfortaa',cursive;
+    color:#200062;
+    padding-right: 180px;
+}
 
-        .header {
-            width: 50%;
-            margin: 30px auto 0px;
-            color: white;
-            background: #5F9EA0;
-            text-align: center;
-            border: 1px solid #B0C4DE;
-            border-bottom: none;
-            border-radius: 10px 10px 0px 0px;
-            padding: 25px;
-        }
-         .content {
-            width: 50%;
-            margin: 0px auto;
-            margin-bottom: 40px;
-            padding: 25px;
-            padding-bottom: 10px;
-            border: 1px solid #B0C4DE;
-            background: white;
-            border-radius: 0px 0px 10px 10px;
-        }
+.slogan img
+{
+    width: 120px;
+    height: 100px;
+    float: left;
+    margin-left: 30px;
+    padding-left: 120px;
+}
 
-        table th,td
-        {
-          border:3px solid black;
-          padding:5px;
-          padding-left: 40px;
-          padding-right: 40px;
-          margin-left: 5px;
-          margin-right: 5px;
-          margin-top: 10px;
-          margin-bottom: 30px;
-          text-align: center;
-          border-radius: 3px;
-          font: 18px 'Arvo', serif;
-        }
+.slogan2 
+{
+    font-size: 30px;
+    padding-right: 270px;
+    font-family:'Courier New', Courier, monospace;
+    color:#454545;
+    padding-top: 3px;
+    margin-top: 5px;
+}
 
-        h3 {
-            font-size: 20px;
-            padding-top: 30px;
-        }
+.header-border
+{
+    background:#DCCCFF;
+    padding: 30px;
+    text-align: center;
+    border: 1px,solid;
+    padding-bottom: 19px;
+}
 
-        h4{
-            margin-top: 40px;
-            margin-bottom: 10px;
-        }
+.header 
+{
+    width: 50%;
+    margin: 30px auto 0px;
+    color: white;
+    background: #5F9EA0;
+    text-align: center;
+    border: 1px solid #B0C4DE;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 25px;
+}
 
-        .chart
-        {
-            margin-left: 20px;
-        }
-.btn {
+.content 
+{
+    width: 50%;
+    margin: 0px auto;
+    margin-bottom: 40px;
+    padding: 25px;
+    padding-bottom: 10px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+table th,td
+{
+    border:3px solid black;
+    padding:5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 3px;
+    font: 18px 'Arvo', serif;
+}
+
+h3 
+{
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+h4{
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.chart
+{
+    margin-left: 20px;
+}
+
+.btn 
+{
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-top: 10px;
@@ -103,10 +116,11 @@
 
 .btn:hover
 {
-  background-color: #FF8282;
+    background-color: #FF8282;
 }
 
-.container {
+.container 
+{
     padding: 5px;
     text-align: center;
     font-size: 15px;
@@ -116,26 +130,25 @@
 
 .admin button
 {
-  width: 40%;
-  padding: 10px 10px;
-  margin: 15px 35px;
-  border: 1px #000040 solid;
-  border-radius: 8px;
-  background-color:#CBEDFF; 
-  color:#000040;
-  text-align: center;
-  font: 20px cursive;
-  cursor: pointer;
-  display:flexbox;
+    width: 40%;
+    padding: 10px 10px;
+    margin: 15px 35px;
+    border: 1px #000040 solid;
+    border-radius: 8px;
+    background-color:#CBEDFF; 
+    color:#000040;
+    text-align: center;
+    font: 20px cursive;
+    cursor: pointer;
+    display:flexbox;
 }
+
 .admin button:hover
 {
-  background-color: #9191FF;
+    background-color: #9191FF;
 }
 
 .selectDaily input
 {
-    height: 20px;
+     height: 20px;
 }
-   
-        

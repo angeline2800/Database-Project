@@ -1,12 +1,13 @@
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="photo/tree.ico" />
 		<title>Assign Tree Worker Form | Administration | Tree Profiling Management System </title>
 		<style>
 			* { margin: 0px; padding: 0px; }
-			.slogan {
+			.slogan 
+			{
 			    font: bold 45px 'Comfortaa',cursive;
 			    color:#200062;
 			    padding-right: 180px;
@@ -19,7 +20,8 @@
 			    margin-left: 30px;
 			    padding-left: 120px;
 			}
-			.slogan2 {
+			.slogan2 
+			{
 			    font-size: 30px;
 			    padding-right: 270px;
 			    font-family:'Courier New', Courier, monospace;
@@ -27,7 +29,8 @@
 			    padding-top: 3px;
 			    margin-top: 5px;
 			}
-			.header-border {
+			.header-border 
+			{
 			    background:#DCCCFF;
 			    padding: 30px;
 			    text-align: center;
@@ -35,7 +38,8 @@
 			    padding-bottom: 19px;
 			}
 				
-			.header {
+			.header 
+			{
             width: 40%;
             margin: 30px auto 0px;
             color: white;
@@ -45,27 +49,27 @@
             border-bottom: none;
             border-radius: 10px 10px 0px 0px;
             padding: 25px;
-        }
-         .content {
-            width: 40%;
-            margin: 0px auto;
-            margin-bottom: 20px;
-            padding: 25px;
-            padding-bottom: 50px;
-            border: 1px solid #B0C4DE;
-            background: white;
-            border-radius: 0px 0px 10px 10px;
-        }
-		
-		.assignTreeWorker {
-			width: 90%;
-			margin: 8px 70px;
-			padding: 0px;
-			margin-right: 0px;
-			border: 1px,solid,black;
-		}
-
-			form{
+			}
+			.content {
+				width: 40%;
+				margin: 0px auto;
+				margin-bottom: 20px;
+				padding: 25px;
+				padding-bottom: 50px;
+				border: 1px solid #B0C4DE;
+				background: white;
+				border-radius: 0px 0px 10px 10px;
+			}
+			.assignTreeWorker
+			{
+				width: 90%;
+				margin: 8px 70px;
+				padding: 0px;
+				margin-right: 0px;
+				border: 1px,solid,black;
+			}
+			form
+			{
 				max-width: 400px;
 				width: 100%;
 				text-align: left;
@@ -73,9 +77,9 @@
 				padding: 25px 30px;
 				border-radius: 5px;
 				display: block;
-				/* background-color: #fff2e6; */
 			}
-			input[type=text], input[type=date] {
+			input[type=text], input[type=date]
+			{
 				width: 100%;
 				padding: 12px 16px;
 				margin: 8px 0;
@@ -84,7 +88,8 @@
 				box-sizing: border-box;
 				font-size: 14px;
 			}
-			button{
+			button
+			{
 				background-color: #1260cc;
 				margin-bottom: 20px;
 				padding: 10px 30px;
@@ -119,89 +124,85 @@
 			{
 				background-color: #5353FF;
 			}
-
 		</style>
 	</head>
+
 	<body>
-	<header class="header-border">
-    <div class="header-content">
-	
-      <h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-        <div class="slogan2">
-         <b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-        </div>
-    </div>
-  </header>
-  <div class="header">
-		<h2>Assignment Form </h2>
-	</div>
+		<header class="header-border">
+			<div class="header-content">
+				<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+					<div class="slogan2">
+						<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+					</div>
+			</div>
+		</header>
+
+		<div class="header">
+			<h2>Assignment Form </h2>
+		</div>
 
 		<div class="content">
-			
 			<center><h3>Tree_Worker</h3></center>
+
 			<form action="" method="post">
-			<div class="assignTreeWorker">
-			<p>Enter TreeID: <input type="text" name="treeId"></p>
-			<p>Enter worker's userID: <input type="text" name="userId"></p>
-			<p>Enter date of responsibility: <input type="date" name="startDate"></p>
-			<button type="submit" name="assign"> Assign </button>
-			<!-- <button type="submit" class="back" name="back">Back</button> -->
-			<a href="assignTreeWorker.php"><button>Back</button></a>
-		</div>
+				<div class="assignTreeWorker">
+					<p>Enter TreeID: <input type="text" name="treeId"></p>
+					<p>Enter worker's userID: <input type="text" name="userId"></p>
+					<p>Enter date of responsibility: <input type="date" name="startDate"></p>
+					<button type="submit" name="assign"> Assign </button>
+					<a href="assignTreeWorker.php"><button>Back</button></a>
+				</div>
 			</form>
-			
-	<?php
-		include "dbConnection.php";
-		/* session_start();
-		if (isset($_SESSION['userID'] && ($_SESSION['userType'] == 'admin'))){ */
-			if ($_SERVER["REQUEST_METHOD"] == "POST") {
-				$treeid= $_POST["treeId"];
-				$userid= $_POST["userId"];
-				$date = $_POST["startDate"];
-				
-					if(isset($_POST["assign"])){
+
+			<?php include "dbConnection.php";
+				if ($_SERVER["REQUEST_METHOD"] == "POST")
+				{
+					$treeid= $_POST["treeId"];
+					$userid= $_POST["userId"];
+					$date = $_POST["startDate"];
+					
+					if(isset($_POST["assign"]))
+					{
 						$treeid = $_POST["treeId"];
 						$userid = $_POST["userId"];
 						$date = $_POST["startDate"];
-						if (empty($treeid)){
+
+						if (empty($treeid))
+						{
 							echo "<p style='color:red; font-weight: bold;'>TreeID is required!</p>"; 
 							exit();
 						}
-						else if (empty($userid)){
+						else if (empty($userid))
+						{
 							echo "<p style='color:red; font-weight: bold;'>userID is required!</p>"; 
 							exit();
 						}
-						else if (empty($date)){
+						else if (empty($date))
+						{
 							echo "<p style='color:red; font-weight: bold;'>Date of responsibility is required!</p>"; 
 							exit();
 						}
-							
+
 						$sql = "SELECT * FROM Tree t, Worker w WHERE t.TreeID='$treeid' AND w.userID='$userid'"; 
 						$result = mysqli_query($conn, $sql);
-										
-						if (mysqli_num_rows($result) > 0){
-							$sql = "INSERT INTO Tree_Worker(userID,TreeID,Worker_startDate)
-										VALUES ('$userid','$treeid', '$date')";
+
+						if (mysqli_num_rows($result) > 0)
+						{
+							$sql = "INSERT INTO Tree_Worker(userID,TreeID,Worker_startDate) VALUES ('$userid','$treeid', '$date')";
 							mysqli_query($conn, $sql);
 							echo "<h2 style='margin-bottom:50px;'>Assign successfully!</h2>";
 						} //if
-						else{
+						else
+						{
 							echo "<h2 style='margin-bottom:50px;'>The TreeID or userID is invalid! Please check again!</h2>";
 						}
-							
 					}
-					else{
+					else
+					{
 						header("Location: assignTreeWorker.php");
 					}	
 				}
-			
-	/* }
-	else{
-		header("Location: UserLoginForm.php");
-		exit();
-	} */
-?>
-
+			?>
 		</div>
 	</body>
 </html>

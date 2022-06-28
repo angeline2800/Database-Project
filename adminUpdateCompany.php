@@ -1,35 +1,35 @@
-<?php
-	include "dbConnection.php";
+<?php include "dbConnection.php";
 	
 	$userID = $_GET['userID'];
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if(isset($_POST['insert'])){
+
+	if ($_SERVER['REQUEST_METHOD'] == 'POST')
+	{
+		if(isset($_POST['insert']))
+		{
+			$userName = $_POST['userName'];
+			$userAdd = $_POST['userAdd'];
+			$userEmail = $_POST['userEmail'];
+			$userPhone = $_POST['userPhone'];
+			$userCountry = $_POST['userCountry'];
 		
-		$userName = $_POST['userName'];
-		$userAdd = $_POST['userAdd'];
-		$userEmail = $_POST['userEmail'];
-		$userPhone = $_POST['userPhone'];
-		$userCountry = $_POST['userCountry'];
-		
-		
-		$sql = "UPDATE `user` SET `userName`='$userName',`userAdd`='$userAdd',`userEmail`='$userEmail',
+			$sql = "UPDATE `user` SET `userName`='$userName',`userAdd`='$userAdd',`userEmail`='$userEmail',
 			`userPhone`='$userPhone',`userCountry`='$userCountry' WHERE userID =$userID";
-				
-		$result = mysqli_query($conn, $sql);
-		
-		if($result){
+			$result = mysqli_query($conn, $sql);
+
+			if($result)
+			{
 				header("Location: adminCompany.php?msg=Data updated successfully");
+			}
+			else
+			{
+				echo "Failed: " . mysqli_error($conn);
+			}
 		}
 		else
 		{
-			echo "Failed: " . mysqli_error($conn);
+			header("location: admin.php");
 		}
 	}
-	else
-	{
-		header("location: admin.php");
-	}
-}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +38,6 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<title>Company| Administration | Tree Profiling Management System</title>
 	<link rel="shortcut icon" href="photo/tree.ico" />
 	<link rel="stylesheet" href="CSS/adminUpdateCompany.css">
@@ -47,10 +46,10 @@
 
 	<header class="header-border">
 		<div class="header-content">
-		<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
-			<div class="slogan2">
-				<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
-			</div>
+			<h1 class="slogan"><span><img src="photo/headerLogo.png" alt="System - Logo" height="90"></span>TREE PROFILING MANAGEMENT SYSTEM</h1>
+				<div class="slogan2">
+					<b> <p>YOUR GOOD HELPER IN LIFE</p></b>
+				</div>
 		</div>
 	</header>
 
@@ -62,17 +61,16 @@
 		<center><h3>Click update after changing any information</h3></center>
 		
 		<?php
-			
 			$sql = "SELECT * FROM `user` WHERE userID = $userID LIMIT 1";
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_assoc($result);
 		?>
 		
 		<div class="updateUser">
-		<form action="" method="post">
-			<div class="editUser">
-				<label>Company Name</label>
-				<input type = "text" name="userName" value="<?php echo $row['userName']?>"><br>
+			<form action="" method="post">
+				<div class="editUser">
+					<label>Company Name</label>
+					<input type = "text" name="userName" value="<?php echo $row['userName']?>"><br>
 					<label>Company Address</label>
 					<input type = "text" name="userAdd" value="<?php echo $row['userAdd']?>"><br>
 					<label>Company Email</label>
@@ -81,15 +79,11 @@
 					<input type = "text" name="userPhone" value="<?php echo $row['userPhone']?>"><br>
 					<label>Company Country</label>
 					<input type = "text" name="userCountry" value="<?php echo $row['userCountry']?>"><br>
-					
-					
 					<input type="submit"class="addSubmit" name="insert" value="Save" />
 					<a href="admin.php"><button>Cancel</button></a>
-					</div>
 				</div>
 			</form>
-		</div>	
+		</div>
 	</div>
-	
 </body>
 </html>

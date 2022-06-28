@@ -1,94 +1,109 @@
+* { margin: 0px; padding: 0px; }
 
-        * { margin: 0px; padding: 0px; }
-        body {
-            font-size: 120%;
-            background: #E8DDFF;
-        }
-        .header {
-            width: 60%;
-            margin: 35px auto 0px;
-            color: white;
-            background: #5F9EA0;
-            text-align: center;
-            border: 1px solid #B0C4DE;
-            border-bottom: none;
-            border-radius: 10px 10px 0px 0px;
-            padding: 25px;
-        }
-        .slogan {
-            font: bold 45px 'Comfortaa',cursive;
-            color:#200062;
-            padding-right: 180px;
-        }
-        .slogan img
-        {
-            width: 120px;
-            height: 100px;
-            float: left;
-            margin-left: 30px;
-            padding-left: 120px;
-        }
-        .slogan2 {
-            font-size: 30px;
-            padding-right: 270px;
-            font-family:'Courier New', Courier, monospace;
-            color:#454545;
-            padding-top: 3px;
-            margin-top: 5px;
-        }
-        .header-border {
-            background:#DCCCFF;
-            padding: 30px;
-            text-align: center;
-            border: 1px,solid;
-            padding-bottom: 19px;
-        }
-        form, .content {
-            width: 60%;
-            margin: 0px auto;
-            margin-bottom: 20px;
-            padding: 25px;
-            padding-bottom: 10px;
-            border: 1px solid #B0C4DE;
-            background: white;
-            border-radius: 0px 0px 10px 10px;
-        }
-        
+body
+{
+    font-size: 120%;
+    background: #E8DDFF;
+}
 
-        table th,td
-        {
-          border:3px solid black;
-          padding:5px;
-          padding-left: 40px;
-          padding-right: 40px;
-          margin-left: 5px;
-          margin-right: 5px;
-          margin-top: 15px;
-          margin-bottom: 30px;
-          text-align: center;
-          border-radius: 3px;
-          font: 18px 'Arvo', serif;
-        }
-        .btn {
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            font-size: 15px;
-            color: white;
-            background:#FF4646 ;
-            border: none;
-            border-radius: 5px;
-            margin-left: 0px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        
-        .btn:hover
-        {
-          background-color: #FF8282;
-        }
-        h3 {
-            font-size: 20px;
-            padding-top: 30px;
-        }
+.header
+{
+    width: 60%;
+    margin: 35px auto 0px;
+    color: white;
+    background: #5F9EA0;
+    text-align: center;
+    border: 1px solid #B0C4DE;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    padding: 25px;
+}
+
+.slogan 
+{
+    font: bold 45px 'Comfortaa',cursive;
+    color:#200062;
+    padding-right: 180px;
+}
+
+.slogan img
+{
+    width: 120px;
+    height: 100px;
+    float: left;
+    margin-left: 30px;
+    padding-left: 120px;
+}
+
+.slogan2 
+{
+    font-size: 30px;
+    padding-right: 270px;
+    font-family:'Courier New', Courier, monospace;
+    color:#454545;
+    padding-top: 3px;
+    margin-top: 5px;
+}
+
+.header-border 
+{
+    background:#DCCCFF;
+    padding: 30px;
+    text-align: center;
+    border: 1px,solid;
+    padding-bottom: 19px;
+}
+
+form, .content 
+{
+    width: 60%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding: 25px;
+    padding-bottom: 10px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+table th,td
+{
+    border:3px solid black;
+    padding:5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 3px;
+    font: 18px 'Arvo', serif;
+}
+
+.btn 
+{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: white;
+    background:#FF4646 ;
+    border: none;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.btn:hover
+{
+    background-color: #FF8282;
+}
+
+h3 
+{
+    font-size: 20px;
+    padding-top: 30px;
+}

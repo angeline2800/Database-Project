@@ -1,14 +1,18 @@
 * { margin: 0px; padding: 0px; }
-body {
+
+body 
+{
     font-size: 120%;
     background: #E8DDFF;
 }
 
-.slogan {
+.slogan 
+{
     font: bold 45px 'Comfortaa',cursive;
     color:#200062;
     padding-right: 180px;
 }
+
 .slogan img
 {
     width: 120px;
@@ -17,7 +21,9 @@ body {
     margin-left: 30px;
     padding-left: 120px;
 }
-.slogan2 {
+
+.slogan2
+{
     font-size: 30px;
     padding-right: 270px;
     font-family:'Courier New', Courier, monospace;
@@ -25,7 +31,9 @@ body {
     padding-top: 3px;
     margin-top: 5px;
 }
-.header-border {
+
+.header-border 
+{
     background:#DCCCFF;
     padding: 30px;
     text-align: center;
@@ -33,7 +41,8 @@ body {
     padding-bottom: 19px;
 }
 
-.header {
+.header 
+{
     width: 40%;
     margin: 30px auto 0px;
     color: white;
@@ -45,7 +54,8 @@ body {
     padding: 25px;
 }
 
- .content {
+ .content 
+ {
     width: 40%;
     margin: 0px auto;
     margin-bottom: 50px;
@@ -56,7 +66,8 @@ body {
     border-radius: 0px 0px 10px 10px;
 }
 
-.searchTree {
+.searchTree
+{
     width: 60%;
     margin: 8px 130px;
     padding: 0px;
@@ -65,7 +76,8 @@ body {
     text-align: center;
 }
 
-.searchTree input {
+.searchTree input 
+{
     height: 40px;
     width: 80%;
     padding: 5px 15px;
@@ -78,25 +90,30 @@ body {
     border: 1px solid gray;
 }
 
-
-.searching .search {
-  
+.searching .search
+{
     color: white;
     background: #5F9EA0;
 } 
-.search:hover {
-    background-color: #5353FF;
-}
-.searching .delete {
-  
-    color: white;
-    background: #5F9EA0;
-} 
-.delete:hover {
+
+.search:hover 
+{
     background-color: #5353FF;
 }
 
-form{
+.searching .delete
+{
+    color: white;
+    background: #5F9EA0;
+} 
+
+.delete:hover
+{
+    background-color: #5353FF;
+}
+
+form
+{
     width: 100%;
     margin: 0px 0px;
    margin-bottom: 10px;
@@ -105,22 +122,26 @@ form{
     background: white;
 }
 
-.input-group {
+.input-group 
+{
     margin: auto;
     padding-top: 5px;
     text-align:right ;
     padding-right: 10px;
 }
-.input-group label {
+
+.input-group label 
+{
     text-align: left;
     margin: 5px;
     padding: 5px 10px;
     margin-left: 18px;
     margin-top: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
-.input-group input {
+
+.input-group input 
+{
     height: 40px;
     width: 55%;
     padding: 5px 15px;
@@ -132,7 +153,8 @@ form{
     border: 1px solid gray;
 }
 
-.input-group .insert {
+.input-group .insert 
+{
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
@@ -147,50 +169,53 @@ form{
     margin-right: 150px;
     margin-bottom: 20px;
 } 
-.insert:hover {
+
+.insert:hover 
+{
     background-color: #5353FF;
 }
 
 .workerTree button
 {
-  width: 35%;
-  padding: 10px 20px;
-  margin: 5px 150px;
-  margin-left: 60px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  border: 1px #000040 solid;
-  border-radius: 8px;
-  background-color:#CBEDFF; 
-  color:#000040;
-  text-align: center;
-  font-size: 15px;
+    width: 35%;
+    padding: 10px 20px;
+    margin: 5px 150px;
+    margin-left: 60px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 1px #000040 solid;
+    border-radius: 8px;
+    background-color:#CBEDFF; 
+    color:#000040;
+    text-align: center;
+    font-size: 15px;
 }
 
 .workerTree button:hover
 {
-  background-color: #9191FF;
+    background-color: #9191FF;
 }
 
-.updateTree {
+.updateTree
+{
     margin: auto;
     padding-top: 5px;
     text-align:right ;
     padding-right: 20px;
 }
 
-
-.updateTree label {
+.updateTree label 
+{
     text-align: right;
     margin: 5px;
     padding: 5px 10px;
     margin-left: 0px;
     margin-top: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
-.updateTree input {
+.updateTree input
+{
     height: 40px;
     width: 55%;
     padding: 5px 25px;
@@ -203,7 +228,8 @@ form{
     text-align: center;
 }
 
- .updateTree .updateBttn {
+ .updateTree .updateBttn 
+ {
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 10px;
@@ -219,7 +245,8 @@ form{
     margin-right: 140px;
     margin-bottom: 20px;
 } 
-.updateBttn:hover {
+
+.updateBttn:hover 
+{
     background-color: #5353FF;
 }
-

@@ -1,15 +1,16 @@
+<?php include "dbConnection.php";
 
-<?php
-
-	include "dbConnection.php";
 	$BlockID = $_GET['BlockID'];
+
 	$sql = "DELETE FROM `block` WHERE BlockID = $BlockID";
 	$result = mysqli_query($conn, $sql);
 	
-	if($result){
-			header("Location: adminBlock.php?msg=Record deleted successfully");
+	if($result)
+	{
+		header("Location: adminBlock.php?msg=Record deleted successfully");
 	}
-	else{
+	else
+	{
 		echo "Failed: " . mysqli_error($conn);
 	}
 ?>
